@@ -9,5 +9,17 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 body {
-  background: #ddd;
+  background: black;
+  background: linear-gradient(#9117271A 0%, #490C1400 35%);
+}
+.h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 1200px){
+    .h1, h1 {
+        font-size: 2.5rem;
+    }
+}
+input:focus{
+    outline: none;
 }

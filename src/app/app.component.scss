@@ -4,14 +4,13 @@ body,*{
 
 
 /**header**/
-
 header.header {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-
-}
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 9;
+  }
 
 .social-icons {
   width: 50px;
@@ -52,6 +51,17 @@ header.header {
   margin-left: 15px;
 }
 
+@media (max-width: 1281px){
+    header.header .container {
+        max-width: 1100px !important;
+    }
+}
+
+@media (max-width: 1025px){
+    header.header  .container {
+        max-width: 870px !important;
+    }
+}
 
 
 @media only screen and (max-width: 900px) {
@@ -120,3 +130,33 @@ header.header {
 }
 
 
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.dark-bg {
+    background: #911727 !important;
+}
+
+.dark-bg a.nav-link.active {
+    background: #fff;
+    color: #333 !important;
+}
+
+.dark-bg a.nav-link {
+    color: #fff;
+}
+
+nav, nav * {
+    transition: all 0.5s;
+}
+.navbar-logo{
+  width: 110px;
+}
+
+@media (max-width: 768px) {
+  .navbar.bg-light{
+    padding: 0 6px;
+}
+.navbar-brand{
+  margin-right: 0;
+}
+
+
+}

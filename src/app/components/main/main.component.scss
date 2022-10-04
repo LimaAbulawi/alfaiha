@@ -1,0 +1,121 @@
+.main p {
+    font-size: 23px;
+}
+
+.head {
+    color: #911727;
+    font-size: 58px;
+    font-weight: 600;
+}
+
+.logo {
+    width: 180px;
+    height: 37px;
+    margin-top: 10px;
+}
+
+.search {
+    height: 72px;
+    position: relative;
+    width: 468px;
+    margin-top: 100px;
+}
+
+.search input {
+    width: inherit;
+    background-color: #F4E9EA;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    padding-right: 30px;
+    padding-left: 16px;
+    line-height: 2;
+    padding-top: 0;
+    font-size: 20px;
+    // 
+}
+
+.search-img {
+    position: relative;
+    width: 90px;
+    height: inherit;
+    cursor: pointer;
+    // left: 23px;
+    background-color: #970a29;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+input::placeholder {
+    color: black;
+}
+
+.search-icon {
+    position: absolute;
+    cursor: pointer;
+    width: 33px !important;
+    height: 33px !important;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+// {
+//     left: 0;
+//     margin-left: auto;
+//     margin-right: auto;
+//     right: 0;
+// }
+
+section {
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+@media (max-width: 768px) {
+    section{
+            margin-top: 115px;
+            margin-bottom: 115px;
+    }
+    .head {
+        font-size: 32px;
+    }
+
+    .main p {
+        font-size: 86%;
+    }
+
+    .logo {
+        width: 95px;
+        height: 29px;
+    }
+
+    .search {
+        margin-top: 48px;
+        height: 42px;
+        width: 256px;
+    }
+
+    .search input {
+        padding-left: 0px;
+        padding-right: 13px;
+        font-size: 13px;
+    }
+
+    .search-img {
+        width: 31%;
+    }
+
+    .search-icon {
+        width: 37% !important;
+        height: 33% !important;
+    }
+}
+.icon-logo{
+    width: 30px;
+}
