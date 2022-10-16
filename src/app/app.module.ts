@@ -8,6 +8,9 @@ import { ProductsGalleryComponent } from './components/products-gallery/products
 import { WhoAreWeComponent } from './components/who-are-we/who-are-we.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
 import { NewsComponent } from './components/shared/news/news.component';
+import { NgxSlickJsModule } from "ngx-slickjs";
+import { CallusComponent } from './components/callus/callus.component';
+
 
 @NgModule({
   declarations: [
@@ -16,12 +19,24 @@ import { NewsComponent } from './components/shared/news/news.component';
     ProductsGalleryComponent,
     WhoAreWeComponent,
     TermsConditionsComponent,
-    NewsComponent
+    NewsComponent,
+    CallusComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxSlickJsModule.forRoot({
+      links: {
+        jquery: "https://code.jquery.com/jquery-3.4.0.min.js",
+        slickJs: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js",
+        slickCss: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css",
+        slickThemeCss: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+      }
+    }),
+
   ],
+  exports: [NewsComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

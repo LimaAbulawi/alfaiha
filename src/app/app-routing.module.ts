@@ -1,9 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CallusComponent } from './components/callus/callus.component';
 import { MainComponent } from './components/main/main.component';
+import { ProductsGalleryComponent } from './components/products-gallery/products-gallery.component';
+import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
+import { WhoAreWeComponent } from './components/who-are-we/who-are-we.component';
 
 const routes: Routes = [
   { path: "", component: MainComponent },
+  { path: "products", component: ProductsGalleryComponent , data: {routeName: "products"} },
+  { path: "weare", component: WhoAreWeComponent},
+  { path: "terms&conditions", component: TermsConditionsComponent },
+  { path: "callus", component: CallusComponent },
 ];
 
 @NgModule({

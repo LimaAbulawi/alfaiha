@@ -1,0 +1,65 @@
+.sub-products{
+    background-color: #970a29;
+    border-radius: 52px;
+    color: white;
+    padding: 19px;
+}
+.sub-products h2{
+// text-decoration: underline;
+}
+.head2{
+    text-align: center;
+    border-bottom-width: 1px;
+    padding-bottom: 9px;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+.list-group {
+    --bs-list-group-bg: inherit;
+    --bs-list-group-color: white;
+    --bs-list-group-border-width: 0px;
+    --bs-list-group-item-padding-x: 0rem;
+    --bs-list-group-item-padding-y: 0rem;
+    --bs-list-group-active-bg: white;
+    --bs-list-group-active-color: black;
+    --bs-list-group-border-radius: 0rem;
+    --bs-list-group-action-hover-bg: none;
+    --bs-list-group-action-color: #495057;
+    --bs-list-group-action-hover-color: none;
+}
+.list-group-item {
+    border-radius: 9px;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    font-size: 18px;
+    padding: 2px 10px;   
+}
+.cat button{
+    background-color: #ddabb3;
+    border-radius: 13px;
+    padding: 5px 15px;
+    color: black;
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.cat .active{
+    background-color: #970a29; 
+    color: white;
+}
+.products{
+  margin-top: 20px;
+}
+.items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.item{
+    width: 170px;
+    height: 200px;
+    border-radius: 25px;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -9,17 +9,105 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 body {
-  background: black;
-  background: linear-gradient(#9117271A 0%, #490C1400 35%);
+    background: linear-gradient(#9117271A 0%, #490C1400 35%);
 }
-.h1, h1 {
+
+.h1,
+h1 {
     font-size: calc(1.375rem + 1.5vw);
 }
-@media (min-width: 1200px){
-    .h1, h1 {
+
+@media (min-width: 1200px) {
+
+    .h1,
+    h1 {
         font-size: 2.5rem;
     }
 }
-input:focus{
+
+input:focus {
     outline: none;
+}
+
+section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+section:last-child {
+    margin-bottom: 0px;
+
+}
+
+@media (max-width: 768px) {
+    section {
+        margin-top: 115px;
+        margin-bottom: 115px;
+    }
+}
+
+.whoweare {
+    background-image: url("assets/Rectangle\ 33@2x.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    padding: 39PX;
+    border-radius: 43px;
+}
+
+.whoweare p {
+    color: white;
+}
+
+.rec {
+    border-radius: 100%;
+    background-color: #911727;
+    border-color: #ffffff;
+    border-width: 5px;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    top: -75px;
+    right: 24px;
+}
+
+.cout {
+    position: absolute;
+    width: 29px;
+    height: 65px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: white;
+    font-size: 97px;
+}
+
+.sub-h2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sub-h2 h2 {
+    font-size: 1.875rem
+        /* 30px */
+    ;
+    line-height: 2.25rem
+        /* 36px */
+    ;
+    padding-left: 0.75rem
+        /* 12px */
+    ;
+    padding-right: 0.75rem
+        /* 12px */
+    ;
+}
+
+.icon-logo {
+    width: 30px;
 }

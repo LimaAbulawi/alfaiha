@@ -48,29 +48,33 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" href="#">الرئيسية</a>
+                <a class="nav-link active" routerLink="/" [ngClass]="{'active':active==0}" (click)="active=0">الرئيسية</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">الرئيسية</a>
+                <a class="nav-link" routerLink="/products" [ngClass]="{'active':active==1}" (click)="active=1">معرض المنتجات</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link " href="#">الرئيسية</a>
+                <a class="nav-link " routerLink="/weare" [ngClass]="{'active': active==2}" (click)="active=2">من نحن</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">الرئيسية</a>
+                <a class="nav-link" routerLink="/terms&conditions" [ngClass]="{'active':active==3}" (click)="active=3">الشروط و الاحكام </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">الرئيسية</a>
+                <a class="nav-link" routerLink="/callus" [ngClass]="{'active':active==4}" (click)="active=4">اتصل بنا</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">English</a>  
               </li>
             </ul>
           </div>
 
           <a class="navbar-brand" href="#">
-            <img class="navbar-logo" src="../assets/logo@2x.png">
+            <img class="navbar-logo" src="../assets/logo@2x.png" *ngIf="!isScrollerd" >
+            <img class="navbar-logo" src="../assets/whitelogo@2x.png" *ngIf="isScrollerd" >
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -92,74 +96,79 @@
   </div>
 </header>
 
-<div class="container mt-12">
+<!-- router-outlet -->
+<div class="container mt-24">
   <div class="row flex justify-center">
-    <div class="col-md-10">
+    <div class="col-md-11 col-lg-10">
       <router-outlet></router-outlet>
     </div>
   </div>
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<!-- footer -->
+<section class="footerMargin">
+  <div class="footer ">
+    <div class="container ">
+      <div class="row">
+        <div class="col-4 line">
+          <img class="w-28 mb-2 first-line:" src="../assets/whitelogo@2x.png" alt="">
+          <p>الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية الفيحاء لتجارة الاجهزة
+            الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية</p>
+        </div>
+        <div class="col-4 line">
+          <h2 class="text-3xl mb-6">
+            روابط تهمك
+          </h2>
+          <div class="row">
+            <div class="col-6">
+              <p>
+                الشروط والأحكام
+              </p>
+              <p>
+                سياسة الخصوصية
+              </p>
+              <p>
+                اتصل بنا
+              </p>
+              <p>
+                من نحن
+              </p>
+            </div>
+            <div class="col-6">
+              <p>
+                سياسة الإسترجاع
+              </p>
+              <p>
+                سياسة الشحن
+              </p>
+              <p>
+                معرض المنتجات
+              </p>
+              <p>
+                الموزعين المعتمدين
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 ">
+          <h2 class="text-3xl mb-6"> اتصل بنا</h2>
+          <div class="flex call">
+            <img src="../assets/circle-phone-flip@2x.png" alt="">
+            <p>+123123123123</p>
+          </div>
+          <div class="flex call">
+            <img src="../assets/at-2@2x.png" alt="">
+            <p>info@alfaihascientific.com</p>
+          </div>
+          <div class="flex call">
+            <img src="../assets/marker@2x.png" alt="">
+            <p>العراق ، بغداد</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyRight">
+    <p>جميع الحقوق محفوظة - تصميم وبرمجة شركة نستطيع لتكنولوجيا المعلومات</p>
+  </div>
+</section>

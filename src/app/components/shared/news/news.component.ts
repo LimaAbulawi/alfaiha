@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Slick } from 'ngx-slickjs';
 
 @Component({
   selector: 'app-news',
@@ -11,5 +12,13 @@ export class NewsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  news: Slick.Config = {
+    infinite: true,
+    slidesToShow: 3.5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000 ,
+    variableWidth: false,
+    }
 
 }

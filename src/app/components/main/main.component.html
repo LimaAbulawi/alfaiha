@@ -9,7 +9,7 @@
             </div>
             <div class="flex search ">
                 <input type="text" placeholder="ابحث عن اسم منتج، او رقم منتج">
-               
+
                 <div class="search-img">
 
                     <img class="search-icon" src="../../../assets/search@2x.png" alt="">
@@ -22,12 +22,81 @@
     </div>
 
 </section>
-<section class="bg-red-300 mt-5">
-    who are we 
-</section>
-<section class="bg-red-300 mt-5">
-    <div class="flex items-center ">
-        <img class="icon-logo" src="../../../assets/Group 19@2x.png" alt="">
-        <h2 class="text-3xl px-3">منتجاتنا</h2>
+<section>
+    <div class="whoweare">
+        <div class="rec">
+            <h3 class="cout">"</h3>
+            <!-- <img class="absolute" src="../../../assets/“@2x.png" alt=""> -->
+        </div>
+        <div class="sub-h2 mt-[-40px]">
+            <img class="icon-logo" src="../../../assets/Group 15@2x.png" alt="">
+            <h2 class="!text-4xl  text-white font-semibold">من نحن ؟</h2>
+        </div>
+        <p>شركة علوم الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة
+            علوم الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم
+            الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم
+            الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم
+            الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم
+            الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم
+            الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم
+            الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم
+            الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم
+        </p>
     </div>
 </section>
+<section class="">
+    <div class="sub-h2">
+        <img class="icon-logo" src="../../../assets/Group 19@2x.png" alt="">
+        <h2>منتجاتنا</h2>
+    </div>
+    <div class="container" dir="ltr">
+        <div slickContainer #slickController="slick" [slickConfig]="ourProducts">
+            <ng-container *ngIf="slickController.initialize">
+                <div slickItem>
+                    <img src="../../../assets/f1@2x.png">
+                    <h4>سماعة طبيب لون اصفر</h4>
+                </div>
+                <div slickItem>
+                    <img src="../../../assets/f2@2x.png">
+                    <h4>سماعة طبيب لون اصفر</h4>
+                </div>
+                <div slickItem>
+                    <img src="../../../assets/f4@2x.png">
+                    <h4>سماعة طبيب لون اصفر</h4>
+                </div>
+                <div slickItem>
+                    <img src="../../../assets/f5@2x.png">
+                    <h4>سماعة طبيب لون اصفر</h4>
+                </div>
+                <div slickItem>
+                    <img src="../../../assets/f9@2x.png">
+                    <h4>سماعة طبيب لون اصفر</h4>
+                </div>
+                <div slickItem>
+                     <img src="../../../assets/f1@2x.png">
+                    <h4>سماعة طبيب لون اصفر</h4>
+                </div>
+                <div slickItem>
+                    <img  src="../../../assets/f2@2x.png">
+                    <h4>سماعة طبيب لون اصفر</h4>
+                </div>
+                <div slickItem>
+                    <img  src="../../../assets/f4@2x.png">
+                    <h4>سماعة طبيب لون اصفر</h4>
+                </div>
+                <div slickItem>
+                    <img  src="../../../assets/f5@2x.png">
+                    <h4>سماعة طبيب لون اصفر</h4>
+                </div>
+                <div slickItem>
+                    <img  src="../../../assets/f9@2x.png">
+                    <h4>سماعة طبيب لون اصفر</h4>
+                </div>
+
+                <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
+            </ng-container>
+        </div>
+    </div>
+</section>
+<!-- اخبار علوم الفيحاء -->
+<app-news></app-news>

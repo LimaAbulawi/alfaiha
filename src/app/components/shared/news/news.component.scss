@@ -1,0 +1,21 @@
+
+.card{
+    border: 0;
+}
+.card-body{
+    background-color: #f7f7f7;
+    border-bottom-right-radius: 26PX;
+    border-bottom-left-radius: 26px;
+    text-align: right;
+}
+.card-title{
+    font-weight: 600;
+}
+.slick-slide { /* spacing in between each slide */
+    margin:10px;
+    text-align: right;
+
+}
+.card-text{
+    font-size: 15px;
+}
