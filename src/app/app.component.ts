@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { Slick } from 'ngx-slickjs';
 
 @Component({
@@ -9,20 +10,30 @@ import { Slick } from 'ngx-slickjs';
 })
 export class AppComponent {
   title = 'Alfaiha';
-  active: number = 0;
+  active: any = 0;
   isScrollerd: boolean = false;
   pathName: Array<any> = [];
   path: any;
+  isEn: boolean = true;
+  name: any;
+  textDir: string = 'rtl';
 
-  constructor(private router: Router ,   private route: ActivatedRoute,) {
+  constructor(private router: Router, private route: ActivatedRoute, public translate: TranslateService ) {
 
-    this.route.data.subscribe((eachRoute)=>{
-      console.log("eachRoute" , eachRoute['routeName'])
-      console.log("lima")
-    })
-  }
-
-  ngOnInit(): void {
+    translate.addLangs(['en', 'ar']);
+    // Set default language
+    translate.setDefaultLang('ar');
+    translate.use('ar');
+    
+    // this.route.data.subscribe((eachRoute) => {
+      //   console.log("eachRoute", eachRoute['routeName'])
+      // })
+      
+      this.active = localStorage.getItem("active");
+    }
+    
+    ngOnInit(): void {
+    console.log(this.translate.currentLang)
   }
 
   @HostListener("window:scroll", ["$event"])
@@ -37,5 +48,21 @@ export class AppComponent {
     } else {
       this.isScrollerd = false;
     }
+  }
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+    this.isEn = !this.isEn;
+    if(lang === "ar"){
+      this.textDir = 'rtl';
+    }
+    else {
+      this.textDir = 'ltr';
+    }
+  }
+
+  setActive(event: any) {
+    localStorage.setItem("active", event);
+    this.active = localStorage.getItem("active");
   }
 }

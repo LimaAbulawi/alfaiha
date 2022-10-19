@@ -11,6 +11,14 @@ import { NewsComponent } from './components/shared/news/news.component';
 import { NgxSlickJsModule } from "ngx-slickjs";
 import { CallusComponent } from './components/callus/callus.component';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+export function httpTranslateLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 
 @NgModule({
   declarations: [
@@ -34,6 +42,14 @@ import { CallusComponent } from './components/callus/callus.component';
         slickThemeCss: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
       }
     }),
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
 
   ],
   exports: [NewsComponent],

@@ -45,7 +45,6 @@ header.header {
 .active {
   background: #970a29;
   color: #fff !important;
-  border-radius: 15px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -141,7 +140,9 @@ header.header {
 
 }
 
-
+.nav-link{
+  border-radius: 15px;
+}
 
 nav.navbar.navbar-expand-lg.navbar-light.bg-light.dark-bg {
   background: #911727 !important;
@@ -158,7 +159,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light.dark-bg {
 
 nav,
 nav * {
-  transition: all 0.5s;
+  transition: all 0.4s;
 }
 
 .navbar-logo {

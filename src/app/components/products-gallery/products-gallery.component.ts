@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-products-gallery',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsGalleryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _ser: ProductsService) { }
 
   ngOnInit(): void {
+    // this._ser.lang();
   }
 
 }
