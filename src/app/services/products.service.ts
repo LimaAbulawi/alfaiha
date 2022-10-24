@@ -21,8 +21,6 @@ export class ProductsService {
     .set('Authorization', 'Bearer '+localStorage.getItem('token'));
 
 
-
-
   constructor(private translate: TranslateService,private http: HttpClient) {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       console.log(event.lang);
@@ -58,10 +56,17 @@ export class ProductsService {
     return this.http.get<{}>(this.basicUrl + "/api/v1/cartCount/"+localStorage.getItem('anonymous-key'), { 'headers': this.headers })
   }
 
+  getNewsList(){
+    return this.http.get(this.basicUrl + "/api/v1/blogs", { 'headers': this.headers })
+  }
   getCart() {
     return this.http.get<{}>(this.basicUrl + "/api/v1/getCart/"+localStorage.getItem('anonymous-key'), { 'headers': this.headers })
   }
 
+  confirmOrder(form : any){
+    return this.http.post<any>(this.basicUrl + "/api/v1/checkout-create", form ,{ 'headers': this.headers2} )
+
+  }
 
 
 

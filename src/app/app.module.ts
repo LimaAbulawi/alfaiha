@@ -15,8 +15,11 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SingleProductComponent } from './single-product/single-product.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -33,13 +36,17 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     NewsComponent,
     CallusComponent,
     SingleProductComponent,
+    PrivacyPolicyComponent,
     CartComponent,
     CheckoutComponent,
 
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgxSlickJsModule.forRoot({
       links: {
         jquery: "https://code.jquery.com/jquery-3.4.0.min.js",
@@ -48,7 +55,6 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         slickThemeCss: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
       }
     }),
-    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: "cart", component: CartComponent , data: {routeName: "cart"} },
   { path: "checkout", component: CheckoutComponent , data: {routeName: "checkout"} },
   { path: "products", component: ProductsGalleryComponent , data: {routeName: "products"} },
-  { path: "products/:id", component: SingleProductComponent , data: {routeName: "product"} },
+  { path: "product/:id", component: SingleProductComponent , data: {routeName: "product"} },
   { path: "weare", component: WhoAreWeComponent},
   { path: "terms&conditions", component: TermsConditionsComponent },
   { path: "callus", component: CallusComponent },
