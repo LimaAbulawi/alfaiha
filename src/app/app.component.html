@@ -1,182 +1,204 @@
-<div  [dir]="textDir">
-  <header class="header">
-    <div class="container relative">
-      <div class="social-icons">
-        <ul>
-          <li>
-            <a routerLink="/cart">
-              <div class="cart">
-                <span class="counter">{{count}}</span>
-              <img src="../assets/Group 25@2x.png">
+<div [dir]="textDir">
+    <header class="header">
+        <div class="container relative">
+            <div class="social-icons">
+                <ul>
+                    <li>
+                        <a routerLink="/cart">
+                            <div class="cart">
+                                <span class="counter">{{count}}</span>
+                                <img src="../assets/Group 25@2x.png">
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="../assets/facebook-2@2x.png">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="../assets/twitter.png">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="../assets/instagram@2x.png">
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="../assets/whatsapp@2x.png">
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- social -->
+
+
+
+
+
+
             </div>
-            </a>
-          </li>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light" [ngClass]="{'dark-bg': isScrollerd}">
+                    <div class="container-fluid">
 
-          <li>
-            <a href="#">
-              <img src="../assets/facebook-2@2x.png">
-            </a>
-          </li>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav  mb-2 mb-lg-0">
+                                <li class="nav-item ">
+                                    <a class="nav-link active" routerLink="/" [ngClass]="{'active':active==0}"
+                                        (click)="setActive(0)">
+                                        {{'Navbar.main' | translate}}</a>
+                                </li>
 
-          <li>
-            <a href="#">
-              <img src="../assets/twitter.png">
-            </a>
-          </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" routerLink="/products" [ngClass]="{'active':active==1}"
+                                        (click)="setActive(1)"> {{'Navbar.products_gallery' | translate}} </a>
+                                </li>
 
-          <li>
-            <a href="#">
-              <img src="../assets/instagram@2x.png">
-            </a>
-          </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " routerLink="/weare" [ngClass]="{'active': active==2}"
+                                        (click)="setActive(2)">
+                                        {{'Navbar.who_we_are' | translate}} </a>
+                                </li>
 
-          <li>
-            <a href="#">
-              <img src="../assets/whatsapp@2x.png">
-            </a>
-          </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" routerLink="/terms&conditions" [ngClass]="{'active':active==3}"
+                                        (click)="setActive(3)">{{'Navbar.terms_conditions' | translate}} </a>
+                                </li>
 
-        </ul>
-        <!-- social -->
+                                <li class="nav-item">
+                                    <a class="nav-link" routerLink="/callus" [ngClass]="{'active':active==4}"
+                                        (click)="setActive(4)">{{'Navbar.call_us' | translate}} </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link cursor-pointer" (click)="translateLanguageTo('en')"
+                                        *ngIf="isEn">English</a>
+                                    <a class="nav-link cursor-pointer" (click)="translateLanguageTo('ar')"
+                                        *ngIf="!isEn">عربي</a>
+                                </li>
+                            </ul>
+                        </div>
 
+                        <a class="navbar-brand" href="#">
+                            <img class="navbar-logo" src="../assets/logo@2x.png" *ngIf="!isScrollerd">
+                            <img class="navbar-logo" src="../assets/whitelogo@2x.png" *ngIf="isScrollerd">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
 
-
-
-
-
-      </div>
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" [ngClass]="{'dark-bg': isScrollerd}">
-          <div class="container-fluid">
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav  mb-2 mb-lg-0">
-                <li class="nav-item ">
-                  <a class="nav-link active" routerLink="/" [ngClass]="{'active':active==0}" (click)="setActive(0)">
-                    {{'Navbar.main' | translate}}</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" routerLink="/products" [ngClass]="{'active':active==1}" (click)="setActive(1)"> {{'Navbar.products_gallery' | translate}} </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link " routerLink="/weare" [ngClass]="{'active': active==2}" (click)="setActive(2)">
-                    {{'Navbar.who_we_are' | translate}} </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" routerLink="/terms&conditions" [ngClass]="{'active':active==3}" (click)="setActive(3)">{{'Navbar.terms_conditions' | translate}} </a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" routerLink="/callus" [ngClass]="{'active':active==4}" (click)="setActive(4)">{{'Navbar.call_us' | translate}} </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link cursor-pointer" (click)="translateLanguageTo('en')" *ngIf="isEn">English</a>
-                  <a class="nav-link cursor-pointer" (click)="translateLanguageTo('ar')" *ngIf="!isEn">عربي</a>
-                </li>
-              </ul>
+                    </div>
+                </nav>
             </div>
-
-            <a class="navbar-brand" href="#">
-              <img class="navbar-logo" src="../assets/logo@2x.png" *ngIf="!isScrollerd" >
-              <img class="navbar-logo" src="../assets/whitelogo@2x.png" *ngIf="isScrollerd" >
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-          </div>
-        </nav>
-      </div>
-      <!-- nav -->
-      <div class="search-form">
-        <a href="#">
-          <img src="../assets/Group 30@2x.png">
-        </a>
-      </div>
-      <!-- search -->
-
-    </div>
-  </header>
-
-  <!-- router-outlet -->
-  <div class="container mt-24">
-    <div class="row flex justify-center">
-      <div class="col-md-11 col-lg-10">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-  </div>
-
-  <!-- footer -->
-  <section class="footerMargin">
-    <div class="footer ">
-      <div class="container ">
-        <div class="row">
-          <div class="col-4 " [ngClass]="{'line' : isEn}">
-            <img class="w-28 mb-2 first-line:" src="../assets/whitelogo@2x.png" alt="">
-            <p>الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية الفيحاء لتجارة الاجهزة
-              الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية</p>
-          </div>
-          <div class="col-4 line">
-            <h2 class="text-3xl mb-6">
-              روابط تهمك
-            </h2>
-            <div class="row">
-              <div class="col-6">
-                <p>
-                  الشروط والأحكام
-                </p>
-                <p>
-                  سياسة الخصوصية
-                </p>
-                <p>
-                  اتصل بنا
-                </p>
-                <p>
-                  من نحن
-                </p>
-              </div>
-              <div class="col-6">
-                <p>
-                  سياسة الإسترجاع
-                </p>
-                <p>
-                  سياسة الشحن
-                </p>
-                <p>
-                  معرض المنتجات
-                </p>
-                <p>
-                  الموزعين المعتمدين
-                </p>
-              </div>
+            <!-- nav -->
+            <div class="search-form">
+                <a href="#">
+                    <img src="../assets/Group 30@2x.png">
+                </a>
             </div>
-          </div>
-          <div class="col-4 " [ngClass]="{'line' : !isEn}">
-            <h2 class="text-3xl mb-6"> اتصل بنا</h2>
-            <div class="flex call">
-              <img src="../assets/circle-phone-flip@2x.png" alt="">
-              <p>+123123123123</p>
-            </div>
-            <div class="flex call">
-              <img src="../assets/at-2@2x.png" alt="">
-              <p>info@alfaihascientific.com</p>
-            </div>
-            <div class="flex call">
-              <img src="../assets/marker@2x.png" alt="">
-              <p>العراق ، بغداد</p>
-            </div>
-          </div>
+            <!-- search -->
+
         </div>
-      </div>
+    </header>
+
+    <!-- router-outlet -->
+    <div class="container mt-24">
+        <div class="row flex justify-center">
+            <div class="col-md-11 col-lg-10">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
     </div>
-    <div class="copyRight">
-      <p>جميع الحقوق محفوظة - تصميم وبرمجة شركة نستطيع لتكنولوجيا المعلومات</p>
-    </div>
-  </section>
+
+    <!-- footer -->
+    <section class="footerMargin">
+        <div class="footer ">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-4 " [ngClass]="{'line' : isEn}">
+                        <img class="w-28 mb-2 first-line:" src="../assets/whitelogo@2x.png" alt="">
+                        <p>الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية الفيحاء
+                            لتجارة الاجهزة
+                            الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية</p>
+                    </div>
+                    <div class="col-4 line">
+                        <h2 class="text-3xl mb-6">
+                            روابط تهمك
+                        </h2>
+                        <div class="row">
+                            <div class="col-6">
+                                <p>
+                                    <a href="" routerLink="/terms&conditions" (click)="setActive(3)">
+                                        الشروط والأحكام
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="" routerLink="/privacy_policy" (click)="setActive(0)">
+                                        سياسة الخصوصية </a>
+                                </p>
+                                <p>
+                                    <a href="" routerLink="/callus" (click)="setActive(4)">
+                                        اتصل بنا                                    </a>
+                                </p>
+                                <p>
+                                    <a href="" routerLink="/weare" (click)="setActive(2)">
+                                        من نحن
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="col-6">
+                                <p>
+                                    <a href="" routerLink="/returnPolicy" (click)="setActive(0)">
+                                        سياسة الإسترجاع
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="" routerLink="/ShippingPolicy" (click)="setActive(0)">
+                                        سياسة الشحن
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="" routerLink="/products" (click)="setActive(1)">
+                                        معرض المنتجات
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="" routerLink="/AuthorizedDistributors" (click)="setActive(1)">
+                                        الموزعين المعتمدين
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 " [ngClass]="{'line' : !isEn}">
+                        <h2 class="text-3xl mb-6"> اتصل بنا</h2>
+                        <div class="flex call">
+                            <img src="../assets/circle-phone-flip@2x.png" alt="">
+                            <p>+123123123123</p>
+                        </div>
+                        <div class="flex call">
+                            <img src="../assets/at-2@2x.png" alt="">
+                            <p>info@alfaihascientific.com</p>
+                        </div>
+                        <div class="flex call">
+                            <img src="../assets/marker@2x.png" alt="">
+                            <p>العراق ، بغداد</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyRight">
+            <p>جميع الحقوق محفوظة - تصميم وبرمجة شركة نستطيع لتكنولوجيا المعلومات</p>
+        </div>
+    </section>
 </div>

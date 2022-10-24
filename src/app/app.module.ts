@@ -19,6 +19,9 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReturnPolicyComponent } from './components/return-policy/return-policy.component';
+import { ShippingPolicyComponent } from './components/shipping-policy/shipping-policy.component';
+import { AuthorizedDistributorsComponent } from './components/authorized-distributors/authorized-distributors.component';
 
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
@@ -39,6 +42,9 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     PrivacyPolicyComponent,
     CartComponent,
     CheckoutComponent,
+    ReturnPolicyComponent,
+    ShippingPolicyComponent,
+    AuthorizedDistributorsComponent,
 
   ],
   imports: [
