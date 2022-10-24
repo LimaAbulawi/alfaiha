@@ -16,6 +16,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SingleProductComponent } from './single-product/single-product.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -33,6 +34,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     CallusComponent,
     SingleProductComponent,
     CartComponent,
+    CheckoutComponent,
 
   ],
   imports: [
