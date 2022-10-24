@@ -1,0 +1,48 @@
+<section>
+  <div class="row">
+    <div class="col-md-6">
+
+      <div class="container" dir="ltr">
+        <div slickContainer #slickController="slick" [slickConfig]="images">
+          <div *ngIf="slickController.initialize">
+            <ng-container *ngFor="let image of product.images">
+              <div slickItem>
+                <img src="{{ url }}/{{ image.image }}" class="img-fluid">
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+
+      <h2 class="product-title">{{ product.name }}</h2>
+
+      <p class="product-body">{{ product.content }}</p>
+      <button class="active" (click)="addToCart(product.id)" type="text">اضافة الي السلة</button>
+    </div>
+  </div>
+</section>
+<section class="">
+  <div class="sub-h2">
+    <img class="icon-logo" src="../../../assets/Group 19@2x.png" alt="">
+    <h2>منتجات متشابه</h2>
+  </div>
+  <div class="container" dir="ltr">
+    <div slickContainer #slickController="slick" [slickConfig]="ourProducts">
+      <div *ngIf="slickController.initialize">
+        <ng-container *ngFor="let produc of products">
+          <div slickItem >
+            <img src="{{ url }}/{{ produc.image }}">
+            <a routerLink="/products/{{ produc.id }}"><h4>{{ produc.name }}</h4></a>
+
+          </div>
+
+
+
+          <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>

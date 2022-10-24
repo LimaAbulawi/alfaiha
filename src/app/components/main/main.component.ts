@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Slick } from 'ngx-slickjs';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-main',
@@ -8,11 +9,22 @@ import { Slick } from 'ngx-slickjs';
 })
 export class MainComponent implements OnInit {
 
-  
+  products: any = [];
+  url: any = [];
 
-  constructor() { }
+  constructor(private _ser: ProductsService) { }
 
   ngOnInit(): void {
+    this.url = this._ser.basicUrl;
+    this.getProductsListFromService();
+  }
+
+  getProductsListFromService() {
+    return this._ser.getList().subscribe((res: any) => {
+      this.products = res.data;
+       console.log("this.products", this.products);
+
+    })
   }
   arrayLength = 10;
 

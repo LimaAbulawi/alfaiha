@@ -23,7 +23,9 @@
     "bootstrap": "^5.2.0",
     "jquery": "^3.6.1",
     "ngx-slickjs": "^1.5.0",
+    "randomstring": "^1.2.3",
     "rxjs": "~7.5.0",
+    "sweetalert2": "^11.6.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
@@ -32,6 +34,7 @@
     "@angular/cli": "~14.1.0",
     "@angular/compiler-cli": "^14.1.0",
     "@types/jasmine": "~4.0.0",
+    "@types/randomstring": "^1.1.8",
     "autoprefixer": "^10.4.12",
     "jasmine-core": "~4.2.0",
     "karma": "~6.4.0",

@@ -14,6 +14,7 @@ import { CallusComponent } from './components/callus/callus.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SingleProductComponent } from './single-product/single-product.component';
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -29,6 +30,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     TermsConditionsComponent,
     NewsComponent,
     CallusComponent,
+    SingleProductComponent,
 
   ],
   imports: [

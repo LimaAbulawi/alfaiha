@@ -5,77 +5,80 @@
         <ul>
           <li>
             <a href="#">
+              <div class="cart">
+                <span class="counter">{{count}}</span>
               <img src="../assets/Group 25@2x.png">
+            </div>
             </a>
           </li>
-  
+
           <li>
             <a href="#">
               <img src="../assets/facebook-2@2x.png">
             </a>
           </li>
-  
+
           <li>
             <a href="#">
               <img src="../assets/twitter.png">
             </a>
           </li>
-  
+
           <li>
             <a href="#">
               <img src="../assets/instagram@2x.png">
             </a>
           </li>
-  
+
           <li>
             <a href="#">
               <img src="../assets/whatsapp@2x.png">
             </a>
           </li>
-  
+
         </ul>
         <!-- social -->
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
       </div>
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" [ngClass]="{'dark-bg': isScrollerd}">
           <div class="container-fluid">
-  
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav  mb-2 mb-lg-0">
                 <li class="nav-item ">
                   <a class="nav-link active" routerLink="/" [ngClass]="{'active':active==0}" (click)="setActive(0)">
                     {{'Navbar.main' | translate}}</a>
                 </li>
-  
+
                 <li class="nav-item">
                   <a class="nav-link" routerLink="/products" [ngClass]="{'active':active==1}" (click)="setActive(1)"> {{'Navbar.products_gallery' | translate}} </a>
                 </li>
-  
+
                 <li class="nav-item">
                   <a class="nav-link " routerLink="/weare" [ngClass]="{'active': active==2}" (click)="setActive(2)">
                     {{'Navbar.who_we_are' | translate}} </a>
                 </li>
-  
+
                 <li class="nav-item">
                   <a class="nav-link" routerLink="/terms&conditions" [ngClass]="{'active':active==3}" (click)="setActive(3)">{{'Navbar.terms_conditions' | translate}} </a>
                 </li>
-  
+
                 <li class="nav-item">
                   <a class="nav-link" routerLink="/callus" [ngClass]="{'active':active==4}" (click)="setActive(4)">{{'Navbar.call_us' | translate}} </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link cursor-pointer" (click)="translateLanguageTo('en')" *ngIf="isEn">English</a>  
-                  <a class="nav-link cursor-pointer" (click)="translateLanguageTo('ar')" *ngIf="!isEn">عربي</a>  
+                  <a class="nav-link cursor-pointer" (click)="translateLanguageTo('en')" *ngIf="isEn">English</a>
+                  <a class="nav-link cursor-pointer" (click)="translateLanguageTo('ar')" *ngIf="!isEn">عربي</a>
                 </li>
               </ul>
             </div>
-  
+
             <a class="navbar-brand" href="#">
               <img class="navbar-logo" src="../assets/logo@2x.png" *ngIf="!isScrollerd" >
               <img class="navbar-logo" src="../assets/whitelogo@2x.png" *ngIf="isScrollerd" >
@@ -85,7 +88,7 @@
               aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-  
+
           </div>
         </nav>
       </div>
@@ -96,10 +99,10 @@
         </a>
       </div>
       <!-- search -->
-  
+
     </div>
   </header>
-  
+
   <!-- router-outlet -->
   <div class="container mt-24">
     <div class="row flex justify-center">
@@ -108,7 +111,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- footer -->
   <section class="footerMargin">
     <div class="footer ">

@@ -212,3 +212,23 @@ nav * {
   margin-left: 10px;
   margin-right: 10px;
 }
+
+
+.cart {
+  position: relative;
+}
+
+span.counter {
+  position: absolute;
+  background: #fff;
+  width: 17px;
+  height: 17px;
+  line-height: 17px;
+  text-align: CENTER;
+  border-radius: 31px;
+  left: 6px;
+  top: 6px;
+  color: #970a29;
+  font-size: 12px;
+  font-weight: bold;
+}
