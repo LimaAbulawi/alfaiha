@@ -56,9 +56,6 @@ export class ProductsService {
     return this.http.get<{}>(this.basicUrl + "/api/v1/cartCount/"+localStorage.getItem('anonymous-key'), { 'headers': this.headers })
   }
 
-  getNewsList(){
-    return this.http.get(this.basicUrl + "/api/v1/blogs", { 'headers': this.headers })
-  }
   getCart() {
     return this.http.get<{}>(this.basicUrl + "/api/v1/getCart/"+localStorage.getItem('anonymous-key'), { 'headers': this.headers })
   }
