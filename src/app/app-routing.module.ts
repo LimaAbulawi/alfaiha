@@ -6,9 +6,11 @@ import { ProductsGalleryComponent } from './components/products-gallery/products
 import { SingleProductComponent } from './single-product/single-product.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
 import { WhoAreWeComponent } from './components/who-are-we/who-are-we.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   { path: "", component: MainComponent },
+  { path: "cart", component: ProductsGalleryComponent , data: {routeName: "cart"} },
   { path: "products", component: ProductsGalleryComponent , data: {routeName: "products"} },
   { path: "products/:id", component: SingleProductComponent , data: {routeName: "product"} },
   { path: "weare", component: WhoAreWeComponent},
