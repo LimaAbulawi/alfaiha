@@ -1,0 +1,22 @@
+<form action="" class="" [formGroup]="confirmOrderForm" (ngSubmit)="confirmOrder()">
+  <div class="row mt-32">
+    <div class="col-md-4">
+      <input type="text" formControlName="name" class="inputData" placeholder="الاسم الكامل">
+      <input type="text" formControlName="address" class="inputData" placeholder="العنوان  ">
+      <input type="text" formControlName="email" class="inputData" placeholder="البريد الالكتروني ">
+      <input type="text" formControlName="phone" class="inputData" placeholder="الهاتف ">
+    </div>
+    <div class="col-md-4">
+      <textarea type="text" formControlName="note" class="inputData h-full " placeholder="الملاحظات ">
+
+
+</textarea>
+    </div>
+    <div class="col-md-4">
+      <button class="active custom-btn" type="submit">تاكيد الطلب</button>
+      <button class="active custom-btn tow" routerLink="/products" type="text">متابعه التسوق</button>
+
+
+    </div>
+  </div>
+</form>

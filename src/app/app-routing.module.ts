@@ -7,10 +7,12 @@ import { SingleProductComponent } from './single-product/single-product.componen
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
 import { WhoAreWeComponent } from './components/who-are-we/who-are-we.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   { path: "", component: MainComponent },
   { path: "cart", component: CartComponent , data: {routeName: "cart"} },
+  { path: "checkout", component: CheckoutComponent , data: {routeName: "checkout"} },
   { path: "products", component: ProductsGalleryComponent , data: {routeName: "products"} },
   { path: "product/:id", component: SingleProductComponent , data: {routeName: "product"} },
   { path: "weare", component: WhoAreWeComponent},

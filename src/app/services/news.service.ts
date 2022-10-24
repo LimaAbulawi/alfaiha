@@ -8,6 +8,7 @@ export class NewsService {
   basicUrl = "https://alfaihascientific.com/alfaihascientific.com/api/public";
   headers = new HttpHeaders()
     .set('content-type', 'application/json')
+    .set('Authorization', 'Bearer '+localStorage.getItem('token'));
 
     headers2 = new HttpHeaders()
     .set('Authorization', 'Bearer '+localStorage.getItem('token'));

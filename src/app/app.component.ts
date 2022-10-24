@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ProductsService } from './services/products.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({

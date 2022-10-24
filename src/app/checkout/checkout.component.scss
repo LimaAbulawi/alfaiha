@@ -1,16 +1,3 @@
-.product-item {
-  margin: 15px 0;
-  border-bottom: 1px solid #000;
-}
-
-h3.cart-title {
-  font-weight: bold;
-  margin: 24px 0px;
-}
-span.custom-color {
-  font-weight: bold;
-  color: #9d002a;
-}
 button.active.custom-btn {
   background: #970a29;
   color: #fff;
@@ -24,4 +11,15 @@ button.active.custom-btn {
 button.active.custom-btn.tow{
   color: #000;
   background-color: antiquewhite;
+}
+.inputData{
+  padding: 10px 20px;
+  background-color: white;
+    border: 1px solid #F5E6E9;
+    border-radius: 21px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+.inputData::placeholder{
+  color: #000;
 }
