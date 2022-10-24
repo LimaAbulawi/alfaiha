@@ -7,60 +7,16 @@
     <div class="" dir="ltr">
         <div slickContainer #slickController="slick" [slickConfig]="news">
             <ng-container *ngIf="slickController.initialize">
+              <ng-container *ngFor="let blog of blogs">
                 <!-- card -->
                 <div slickItem class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../../../assets/Rectangle 36@2x.png" alt="Card image cap">
+                    <img class="card-img-top" src="{{ url }}/{{ blog.image }}">
                     <div class="card-body">
-                        <h5 class="card-title">جهاز فحص السكر المنزلي</h5>
-                        <p class="card-text">وصف جهاز فحص السكر المنزلي وصف جهاز فحص السكر المنزلي وصف جهاز فحص السكر
-                            المنزلي وصف جهاز فحص السكر المنزل</p>
+                        <h5 class="card-title">{{ blog.name }}</h5>
+                        <p class="card-text">{{ blog.content }}</p>
                     </div>
                 </div>
-                <!-- card -->
-                <div slickItem class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../../../assets/Rectangle 38@2x.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">جهاز مخبري SC120694</h5>
-                        <p class="card-text">وصف جهاز مخبري SC120694 وصف جهاز مخبري SC120694 وصف جهاز مخبري SC120694 وصف
-                            جهاز مخبري SC120694 وصف جهاز مخبري SC120694</p>
-                    </div>
-                </div>
-                <!-- card -->
-                <div slickItem class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../../../assets/Rectangle 36@2x.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">جهاز فحص السكر المنزلي</h5>
-                        <p class="card-text">وصف جهاز فحص السكر المنزلي وصف جهاز فحص السكر المنزلي وصف جهاز فحص السكر
-                            المنزلي وصف جهاز فحص السكر المنزل</p>
-                    </div>
-                </div>
-                <!-- card -->
-                <div slickItem class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../../../assets/Rectangle 38@2x.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">جهاز مخبري SC120694</h5>
-                        <p class="card-text">وصف جهاز مخبري SC120694 وصف جهاز مخبري SC120694 وصف جهاز مخبري SC120694 وصف
-                            جهاز مخبري SC120694 وصف جهاز مخبري SC120694</p>
-                    </div>
-                </div>
-                <!-- card -->
-                <div slickItem class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../../../assets/Rectangle 36@2x.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">جهاز فحص السكر المنزلي</h5>
-                        <p class="card-text">وصف جهاز فحص السكر المنزلي وصف جهاز فحص السكر المنزلي وصف جهاز فحص السكر
-                            المنزلي وصف جهاز فحص السكر المنزل</p>
-                    </div>
-                </div>
-                <!-- card -->
-                <div slickItem class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../../../assets/Rectangle 38@2x.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">جهاز مخبري SC120694</h5>
-                        <p class="card-text">وصف جهاز مخبري SC120694 وصف جهاز مخبري SC120694 وصف جهاز مخبري SC120694 وصف
-                            جهاز مخبري SC120694 وصف جهاز مخبري SC120694</p>
-                    </div>
-                </div>
+              </ng-container>
                 <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
             </ng-container>
         </div>

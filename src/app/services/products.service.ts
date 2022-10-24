@@ -35,9 +35,20 @@ export class ProductsService {
     return this.http.get(this.basicUrl + "/api/v1/products", { 'headers': this.headers })
   }
 
+  getCategoriesList() {
+    // console.log(localStorage.getItem(LOCALSTORAGE_TOKEN_KEY));
+    return this.http.get(this.basicUrl + "/api/v1/categories", { 'headers': this.headers })
+  }
+
+  getNewsList() {
+    // console.log(localStorage.getItem(LOCALSTORAGE_TOKEN_KEY));
+    return this.http.get(this.basicUrl + "/api/v1/blogs", { 'headers': this.headers })
+  }
+
   getProduct(Id: number) {
     return this.http.get(this.basicUrl + "/api/v1/products/"+Id, { 'headers': this.headers })
   }
+
 
   addToCart(Id: number) {
     return this.http.get(this.basicUrl + "/api/v1/addToCart/"+localStorage.getItem('anonymous-key') +'/'+ Id, { 'headers': this.headers })
@@ -50,6 +61,8 @@ export class ProductsService {
   getCart() {
     return this.http.get<{}>(this.basicUrl + "/api/v1/getCart/"+localStorage.getItem('anonymous-key'), { 'headers': this.headers })
   }
+
+
 
 
 

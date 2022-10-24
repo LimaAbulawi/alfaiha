@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Slick } from 'ngx-slickjs';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-news',
@@ -7,10 +8,21 @@ import { Slick } from 'ngx-slickjs';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
-
-  constructor() { }
+  blogs: any = [];
+  url: any = [];
+  constructor(private _ser: ProductsService) { }
 
   ngOnInit(): void {
+    this.url = this._ser.basicUrl;
+    this.getnewsListFromService();
+  }
+
+  getnewsListFromService() {
+    return this._ser.getNewsList().subscribe((res: any) => {
+      this.blogs = res.data;
+       console.log("this.products", this.blogs);
+
+    })
   }
   news: Slick.Config = {
     infinite: true,
