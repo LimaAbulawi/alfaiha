@@ -42,8 +42,6 @@ export class AppComponent {
     if( !localStorage.getItem('anonymous-key')){
 
       localStorage.setItem('anonymous-key', (Math.random() + 1).toString(36).substring(7));
-
-      this.forceLogin();
     }
     console.log( localStorage.getItem('anonymous-key') )
     this.cartCount();
@@ -58,16 +56,7 @@ export class AppComponent {
     })
   }
 
-  forceLogin() {
-    return this._ser.forceLogin().subscribe((res: any) => {
-      this.token = res.data.token;
-      if( localStorage.getItem('token') == '' ){
 
-        localStorage.setItem('token', this.token);
-      }
-      console.log("this.token", localStorage.getItem('token'));
-    })
-  }
 
 
   @HostListener("window:scroll", ["$event"])

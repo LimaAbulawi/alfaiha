@@ -12,15 +12,13 @@ const httpOptions = {
 })
 export class ProductsService {
   currentLang: any;
-  basicUrl = "http://127.0.0.1:8000";
+  basicUrl = "https://alfaihascientific.com/alfaihascientific.com/api/public";
   headers = new HttpHeaders()
     .set('content-type', 'application/json')
     .set('Authorization', 'Bearer '+localStorage.getItem('token'));
 
     headers2 = new HttpHeaders()
     .set('Authorization', 'Bearer '+localStorage.getItem('token'));
-
-
 
 
   constructor(private translate: TranslateService,private http: HttpClient) {
@@ -40,17 +38,16 @@ export class ProductsService {
   }
 
   addToCart(Id: number) {
-    return this.http.get(this.basicUrl + "/api/v1/addToCart/"+ Id, { 'headers': this.headers })
+    return this.http.get(this.basicUrl + "/api/v1/addToCart/"+localStorage.getItem('anonymous-key') +'/'+ Id, { 'headers': this.headers })
   }
 
   cartCount() {
-    return this.http.get<{}>(this.basicUrl + "/api/v1/cartCount/", { 'headers': this.headers })
+    return this.http.get<{}>(this.basicUrl + "/api/v1/cartCount/"+localStorage.getItem('anonymous-key'), { 'headers': this.headers })
   }
 
-  forceLogin() {
-    return this.http.post<{}>(this.basicUrl + "/api/v1/login/",{'email':localStorage.getItem('anonymous-key')}, { 'headers': this.headers })
+  getNewsList(){
+    return this.http.get(this.basicUrl + "/api/v1/blogs", { 'headers': this.headers })
   }
-
 
   lang() {
     this.currentLang = this.translate.currentLang;
