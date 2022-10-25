@@ -1,13 +1,23 @@
 <form action="" class="" [formGroup]="confirmOrderForm" (ngSubmit)="confirmOrder()">
   <div class="row mt-32">
     <div class="col-md-4">
-      <input type="text" formControlName="name" class="inputData" placeholder="الاسم الكامل">
-      <input type="text" formControlName="address" class="inputData" placeholder="العنوان  ">
-      <input type="text" formControlName="email" class="inputData" placeholder="البريد الالكتروني ">
-      <input type="text" formControlName="phone" class="inputData" placeholder="الهاتف ">
+      <input type="text" formControlName="name" class="inputData" placeholder="الاسم الكامل" [ngClass]="{'!border-red-600':
+      this.confirmOrderForm.get('name')?.touched && this.confirmOrderForm.get('name')?.hasError('required') }">
+      <input type="text" formControlName="address" class="inputData" placeholder="العنوان"
+        [ngClass]="{'!border-red-600':
+        this.confirmOrderForm.get('address')?.touched && this.confirmOrderForm.get('address')?.hasError('required') }">
+      <input type="text" formControlName="email" class="inputData" placeholder="البريد الالكتروني"
+      [ngClass]="{'!border-red-600':
+        this.confirmOrderForm.get('email')?.touched && this.confirmOrderForm.get('email')?.hasError('required')
+        || (this.confirmOrderForm.get('email')?.touched && this.confirmOrderForm.get('email')?.hasError('email')) }">
+      <input type="text" formControlName="phone" class="inputData" placeholder="الهاتف"
+      [ngClass]="{'!border-red-600':
+      this.confirmOrderForm.get('phone')?.touched && this.confirmOrderForm.get('phone')?.hasError('required') }">
     </div>
     <div class="col-md-4">
-      <textarea type="text" formControlName="note" class="inputData h-full " placeholder="الملاحظات ">
+      <textarea type="text" formControlName="note" class="inputData h-full " placeholder="الملاحظات "
+      [ngClass]="{'!border-red-600':
+      this.confirmOrderForm.get('note')?.touched && this.confirmOrderForm.get('note')?.hasError('required') }">
 
 
 </textarea>

@@ -10,9 +10,9 @@ import Swal from 'sweetalert2'
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor( private fb: FormBuilder , private _ser: ProductsService) { }
+  constructor(private fb: FormBuilder, private _ser: ProductsService) { }
 
- 
+
   resMsg!: string;
   confirmOrderForm = this.fb.group({
     name: ['', Validators.required],
@@ -27,23 +27,27 @@ export class CheckoutComponent implements OnInit {
   confirmOrder() {
     debugger
     console.log(this.confirmOrderForm.value);
+
     if (!this.confirmOrderForm.valid) {
       this.confirmOrderForm.markAllAsTouched();
+
+    } else {
+      this._ser.confirmOrder(this.confirmOrderForm.value).subscribe((res: any) => {
+        this.resMsg = res.msg;
+
+        if (res.code == 200) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'تم تأكيد الطلب',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+
+        console.log("res", res);
+      });
     }
-    
-    this._ser.confirmOrder(this.confirmOrderForm.value).subscribe((res: any) => {
-      this.resMsg = res.msg;
-      if (res.code == 200) {
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'تم تأكيد الطلب',
-          showConfirmButton: false,
-          timer: 1500
-        })
-      }
-      console.log("res", res);
-    });
   }
 
 }
