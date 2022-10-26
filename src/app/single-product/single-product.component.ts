@@ -52,7 +52,7 @@ export class SingleProductComponent implements OnInit {
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'تم اضافة المنتج الي السلة',
+            title: 'تم اضافة المنتج الى السلة',
             showConfirmButton: false,
             timer: 1500
           })

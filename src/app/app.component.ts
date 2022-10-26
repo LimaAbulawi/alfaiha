@@ -23,7 +23,7 @@ export class AppComponent {
   textDir: string = 'rtl';
 
 
-  constructor(private router: Router, private route: ActivatedRoute, public translate: TranslateService,private _ser: ProductsService ) {
+  constructor(private router: Router, private route: ActivatedRoute, public translate: TranslateService, private _ser: ProductsService) {
 
     translate.addLangs(['en', 'ar']);
     // Set default language
@@ -31,20 +31,27 @@ export class AppComponent {
     translate.use('ar');
 
     // this.route.data.subscribe((eachRoute) => {
-      //   console.log("eachRoute", eachRoute['routeName'])
-      // })
-
+    //   console.log("eachRoute", eachRoute['routeName'])
+    // })
+    console.log("this.active", this.router.url);
+    // first run
+    if (localStorage.getItem("active") !== null) {
       this.active = localStorage.getItem("active");
-    }
+    } else {
+      localStorage.setItem('active', this.active);
+    this.router.navigate(['/']);
 
-    ngOnInit(): void {
+    }
+  }
+
+  ngOnInit(): void {
     console.log(this.translate.currentLang);
     // localStorage.removeItem('anonymous-key')
-    if( !localStorage.getItem('anonymous-key')){
+    if (!localStorage.getItem('anonymous-key')) {
 
       localStorage.setItem('anonymous-key', (Math.random() + 1).toString(36).substring(7));
     }
-    console.log( localStorage.getItem('anonymous-key') )
+    console.log(localStorage.getItem('anonymous-key'))
     this.cartCount();
 
 
@@ -77,7 +84,7 @@ export class AppComponent {
   translateLanguageTo(lang: string) {
     this.translate.use(lang);
     this.isEn = !this.isEn;
-    if(lang === "ar"){
+    if (lang === "ar") {
       this.textDir = 'rtl';
     }
     else {

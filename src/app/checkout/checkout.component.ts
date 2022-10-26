@@ -25,7 +25,7 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
   }
   confirmOrder() {
-    debugger
+    
     console.log(this.confirmOrderForm.value);
 
     if (!this.confirmOrderForm.valid) {

@@ -4,7 +4,7 @@ button.active.custom-btn {
   font-weight: bold;
   padding: 15px 30px;
   border-radius: 15px;
-  margin: 15px 0;
+  margin: 31px 0 0px;
   width: 100%;
   text-align: center;
 }
@@ -18,8 +18,12 @@ button.active.custom-btn.tow{
     border: 1px solid #F5E6E9;
     border-radius: 21px;
     width: 100%;
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
 }
 .inputData::placeholder{
   color: #000;
+}
+.head{
+  font-size: 50px;
+  color: #911727;
 }

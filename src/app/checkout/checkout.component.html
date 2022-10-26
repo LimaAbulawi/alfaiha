@@ -1,28 +1,69 @@
+
 <form action="" class="" [formGroup]="confirmOrderForm" (ngSubmit)="confirmOrder()">
-  <div class="row mt-32">
-    <div class="col-md-4">
+  <div class="row mt-24">
+    <h2 class="head">تأكيد الطلب</h2>
+    <div class="col-sm-12 col-md-4">
+      <!-- name is required -->
+      <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
+      this.confirmOrderForm.get('name')?.touched && this.confirmOrderForm.get('name')?.hasError('required') }">
+        !name is required
+      </label>
+      <!-- name input -->
       <input type="text" formControlName="name" class="inputData" placeholder="الاسم الكامل" [ngClass]="{'!border-red-600':
       this.confirmOrderForm.get('name')?.touched && this.confirmOrderForm.get('name')?.hasError('required') }">
-      <input type="text" formControlName="address" class="inputData" placeholder="العنوان"
-        [ngClass]="{'!border-red-600':
+
+      <!-- address is required -->
+      <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
+   this.confirmOrderForm.get('address')?.touched && this.confirmOrderForm.get('address')?.hasError('required') }">
+        
+        !address is required
+      </label>
+      <input type="text" formControlName="address" class="inputData" placeholder="العنوان" [ngClass]="{'!border-red-600':
         this.confirmOrderForm.get('address')?.touched && this.confirmOrderForm.get('address')?.hasError('required') }">
-      <input type="text" formControlName="email" class="inputData" placeholder="البريد الالكتروني"
-      [ngClass]="{'!border-red-600':
+
+      <!-- email validation -->
+      <div class="flex justify-between mb-1">
+        <!-- email is required -->
+        <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
+        this.confirmOrderForm.get('email')?.touched && this.confirmOrderForm.get('email')?.hasError('required') }">
+          
+          !email is required
+        </label>
+        <!-- must be valid email -->
+        <label class="errorLabel"
+          *ngIf="this.confirmOrderForm.get('email')?.touched && this.confirmOrderForm.get('email')?.hasError('email')">
+          
+          !must be valid email
+        </label>
+      </div>
+      <!-- email input -->
+      <input type="text" formControlName="email" class="inputData" placeholder="البريد الالكتروني" [ngClass]="{'!border-red-600':
         this.confirmOrderForm.get('email')?.touched && this.confirmOrderForm.get('email')?.hasError('required')
         || (this.confirmOrderForm.get('email')?.touched && this.confirmOrderForm.get('email')?.hasError('email')) }">
-      <input type="text" formControlName="phone" class="inputData" placeholder="الهاتف"
-      [ngClass]="{'!border-red-600':
+
+      <!-- phone is required -->
+      <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
+   this.confirmOrderForm.get('phone')?.touched && this.confirmOrderForm.get('phone')?.hasError('required') }">
+        
+        !phone is required
+      </label>
+      <!-- phone input -->
+      <input type="text" formControlName="phone" class="inputData" placeholder="الهاتف" [ngClass]="{'!border-red-600':
       this.confirmOrderForm.get('phone')?.touched && this.confirmOrderForm.get('phone')?.hasError('required') }">
     </div>
-    <div class="col-md-4">
-      <textarea type="text" formControlName="note" class="inputData h-full " placeholder="الملاحظات "
-      [ngClass]="{'!border-red-600':
-      this.confirmOrderForm.get('note')?.touched && this.confirmOrderForm.get('note')?.hasError('required') }">
-
-
-</textarea>
+    <div class="col-sm-12 col-md-4">
+      <!-- note is required -->
+      <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
+   this.confirmOrderForm.get('note')?.touched && this.confirmOrderForm.get('note')?.hasError('required') }">
+        
+        !note is required
+      </label>
+      <!-- phone input -->
+      <textarea type="text" formControlName="note" class="inputData h-[92%] " placeholder="الملاحظات "
+        [ngClass]="{'!border-red-600':
+      this.confirmOrderForm.get('note')?.touched && this.confirmOrderForm.get('note')?.hasError('required') }"></textarea>
     </div>
-    <div class="col-md-4">
+    <div class="col-sm-12 col-md-4">
       <button class="active custom-btn" type="submit">تاكيد الطلب</button>
       <button class="active custom-btn tow" routerLink="/products" type="text">متابعه التسوق</button>
 
