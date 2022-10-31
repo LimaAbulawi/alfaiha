@@ -1,4 +1,3 @@
-
 <form action="" class="" [formGroup]="confirmOrderForm" (ngSubmit)="confirmOrder()">
   <div class="row mt-24">
     <h2 class="head">تأكيد الطلب</h2>
@@ -15,7 +14,7 @@
       <!-- address is required -->
       <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
    this.confirmOrderForm.get('address')?.touched && this.confirmOrderForm.get('address')?.hasError('required') }">
-        
+
         !address is required
       </label>
       <input type="text" formControlName="address" class="inputData" placeholder="العنوان" [ngClass]="{'!border-red-600':
@@ -23,16 +22,16 @@
 
       <!-- email validation -->
       <div class="flex justify-between mb-1">
+
         <!-- email is required -->
         <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
         this.confirmOrderForm.get('email')?.touched && this.confirmOrderForm.get('email')?.hasError('required') }">
-          
           !email is required
         </label>
+
         <!-- must be valid email -->
         <label class="errorLabel"
           *ngIf="this.confirmOrderForm.get('email')?.touched && this.confirmOrderForm.get('email')?.hasError('email')">
-          
           !must be valid email
         </label>
       </div>
@@ -41,21 +40,31 @@
         this.confirmOrderForm.get('email')?.touched && this.confirmOrderForm.get('email')?.hasError('required')
         || (this.confirmOrderForm.get('email')?.touched && this.confirmOrderForm.get('email')?.hasError('email')) }">
 
-      <!-- phone is required -->
-      <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
-   this.confirmOrderForm.get('phone')?.touched && this.confirmOrderForm.get('phone')?.hasError('required') }">
+      <!-- phone validation -->
+      <div class="flex justify-between mb-1">
+
+        <!-- phone is required -->
+        <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
+       this.confirmOrderForm.get('phone')?.touched && this.confirmOrderForm.get('phone')?.hasError('required') }">
+          !phone is required
+        </label>
         
-        !phone is required
-      </label>
+        <!-- must be valid phone -->
+        <label class="errorLabel" *ngIf="this.confirmOrderForm
+                   .get('phone')?.touched && this.confirmOrderForm.get('phone')?.value?.length !=10">
+          !phone must be 10 numbers
+        </label>
+      </div>
       <!-- phone input -->
       <input type="text" formControlName="phone" class="inputData" placeholder="الهاتف" [ngClass]="{'!border-red-600':
-      this.confirmOrderForm.get('phone')?.touched && this.confirmOrderForm.get('phone')?.hasError('required') }">
+      this.confirmOrderForm.get('phone')?.touched && this.confirmOrderForm.get('phone')?.hasError('required') }"
+        (input)="onInput($event)" minlength="10" maxlength="10">
     </div>
     <div class="col-sm-12 col-md-4">
       <!-- note is required -->
       <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
    this.confirmOrderForm.get('note')?.touched && this.confirmOrderForm.get('note')?.hasError('required') }">
-        
+
         !note is required
       </label>
       <!-- phone input -->

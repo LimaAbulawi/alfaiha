@@ -10,8 +10,6 @@ import Swal from 'sweetalert2'
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private _ser: ProductsService) { }
-
 
   resMsg!: string;
   confirmOrderForm = this.fb.group({
@@ -22,19 +20,23 @@ export class CheckoutComponent implements OnInit {
     note: ['', Validators.required],
   })
 
+  constructor(private fb: FormBuilder, private _ser: ProductsService) { }
+
   ngOnInit(): void {
   }
   confirmOrder() {
-    
+
+    this.confirmOrderForm.controls.phone.setValue(this.destroyMask(this.confirmOrderForm.controls.phone.value))
     console.log(this.confirmOrderForm.value);
-
-    if (!this.confirmOrderForm.valid) {
+    if (this.confirmOrderForm.invalid) {
+      debugger
       this.confirmOrderForm.markAllAsTouched();
+    }
 
-    } else {
+    if (this.confirmOrderForm.valid) {
+      console.log("lima");
       this._ser.confirmOrder(this.confirmOrderForm.value).subscribe((res: any) => {
         this.resMsg = res.msg;
-
         if (res.code == 200) {
           Swal.fire({
             position: 'top-end',
@@ -44,10 +46,21 @@ export class CheckoutComponent implements OnInit {
             timer: 1500
           })
         }
-
         console.log("res", res);
       });
     }
+
+ 
+
   }
+
+  onInput(event: any) {
+    event.target.value = this.destroyMask(event.target.value);
+  }
+
+  destroyMask(event: any) {
+    return event.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+  }
+
 
 }
