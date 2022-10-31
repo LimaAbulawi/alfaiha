@@ -1,4 +1,4 @@
-<form action="" class="" [formGroup]="confirmOrderForm" (ngSubmit)="confirmOrder()">
+<form action="" class="" [formGroup]="confirmOrderForm" (ngSubmit)="submit()">
   <div class="row mt-24">
     <h2 class="head">تأكيد الطلب</h2>
     <div class="col-sm-12 col-md-4">
@@ -48,7 +48,7 @@
        this.confirmOrderForm.get('phone')?.touched && this.confirmOrderForm.get('phone')?.hasError('required') }">
           !phone is required
         </label>
-        
+
         <!-- must be valid phone -->
         <label class="errorLabel" *ngIf="this.confirmOrderForm
                    .get('phone')?.touched && this.confirmOrderForm.get('phone')?.value?.length !=10">

@@ -24,15 +24,14 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  confirmOrder() {
-
-    this.confirmOrderForm.controls.phone.setValue(this.destroyMask(this.confirmOrderForm.controls.phone.value))
+  
+  submit() {
+    this.confirmOrderForm.controls.phone.setValue(this.destroyMask(this.confirmOrderForm.controls.phone.value));
     console.log(this.confirmOrderForm.value);
+    
     if (this.confirmOrderForm.invalid) {
-      debugger
       this.confirmOrderForm.markAllAsTouched();
     }
-
     if (this.confirmOrderForm.valid) {
       console.log("lima");
       this._ser.confirmOrder(this.confirmOrderForm.value).subscribe((res: any) => {
@@ -49,15 +48,11 @@ export class CheckoutComponent implements OnInit {
         console.log("res", res);
       });
     }
-
- 
-
   }
 
   onInput(event: any) {
     event.target.value = this.destroyMask(event.target.value);
   }
-
   destroyMask(event: any) {
     return event.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
   }
