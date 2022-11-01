@@ -34,12 +34,10 @@
         <ng-container *ngFor="let produc of products">
           <div slickItem >
             <img src="{{ url }}/{{ produc.image }}">
-            <a routerLink="/products/{{ produc.id }}"><h4>{{ produc.name }}</h4></a>
-
+            <a routerLink="/product/{{produc.id}}" (click)="scroll()">
+              <h4>{{produc.name}}</h4>
+            </a>
           </div>
-
-
-
           <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
         </ng-container>
       </div>

@@ -25,7 +25,7 @@ export class SingleProductComponent implements OnInit {
       top: 0,
       behavior: 'smooth'
     });
-    
+
     const id = this.route.snapshot.paramMap.get('id');
     console.log("this.id", id);
     this.url = this._ser.basicUrl;
@@ -78,6 +78,13 @@ export class SingleProductComponent implements OnInit {
 
     // 
 
+  }
+
+  scroll() {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
   arrayLength = 10;
 
