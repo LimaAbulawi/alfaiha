@@ -65,9 +65,6 @@ export class ProductsService {
 
   }
 
-
-
-
   lang() {
     this.currentLang = this.translate.currentLang;
     console.log("currentLang", this.currentLang);

@@ -15,10 +15,17 @@ export class SingleProductComponent implements OnInit {
   products: any = [];
   product: any = [];
   url: any = [];
+  count: any;
 
   constructor(private _ser: ProductsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    window.scroll({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
     const id = this.route.snapshot.paramMap.get('id');
     console.log("this.id", id);
     this.url = this._ser.basicUrl;
@@ -44,9 +51,14 @@ export class SingleProductComponent implements OnInit {
 
   addToCart(Id: any) {
     // this.isShown[Id] = !this.isShown[Id];
+    this.count = this._ser.cartCount().
+      subscribe((res: any) => {
+        console.log("this.count", res.data);
+      });
+    localStorage.setItem("count", this.count);
+
     return this._ser.addToCart(Id).
       subscribe((res: any) => {
-
         console.log("this.code", res.data);
         if (res.code == 200) {
           Swal.fire({
@@ -56,8 +68,16 @@ export class SingleProductComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+          // to get cart length
+          setTimeout(() => {
+            window.location.reload();
+          }, 650)
         }
+
       })
+
+    // 
+
   }
   arrayLength = 10;
 

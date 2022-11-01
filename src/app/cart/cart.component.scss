@@ -25,3 +25,15 @@ button.active.custom-btn.tow{
   color: #000;
   background-color: antiquewhite;
 }
+.plusminus{
+  background-color: #f3e7e9;
+  border-radius: 6px;
+  width: 31px;
+  height: 31px;
+  display: flex;
+}
+.plusminus span{
+  margin: auto;
+  font-size: 19px;
+  font-weight: 550;
+}

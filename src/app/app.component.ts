@@ -53,9 +53,17 @@ export class AppComponent {
     }
     console.log(localStorage.getItem('anonymous-key'))
     this.cartCount();
-
-
   }
+  
+  // ngOnChange(){
+  //   debugger
+  //   this.count = localStorage.getItem("count");
+  //   console.log("this.count", this.count);
+  //   return this._ser.cartCount().subscribe((res: any) => {
+  //     this.count = res.data;
+  //     console.log("this.count", this.count);
+  //   })
+  // }
 
   cartCount() {
     return this._ser.cartCount().subscribe((res: any) => {

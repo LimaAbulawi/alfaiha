@@ -2,21 +2,41 @@
   <div class="col-md-8">
     <h1>قائمة الطلب</h1>
     <ng-container *ngFor="let product of products">
-    <div class="product-item">
-      <div class="row">
-        <div class="col-md-2">
-          <img class="img-fluid" src="{{ url }}/{{ product.product_image }}">
-        </div>
-        <div class="col-md-10"><h3 class="cart-title">{{product.product_name}}</h3>
-          <span><span class="custom-color">رمز المنتج :</span> {{product.product_code}}</span>
+      <div class="product-item">
+        <div class="row">
+          <div class="col-md-2">
+            <img class="img-fluid" src="{{ url }}/{{ product.product_image }}">
+          </div>
+          <div class="col-md-8">
+            <h3 class="cart-title">{{product.product_name}}</h3>
+            <span><span class="custom-color">رمز المنتج :</span> {{product.product_code}}</span>
+          </div>
+          <div class="col-md-2">
+            <div class="flex">
+              <div class="plusminus cursor-pointer" (click)="subtract(product)" >
+                <span>
+                  -
+                </span>
+              </div>
+              <div class="plusminus !bg-[#970a29] text-white cursor-default">
+                <span>
+                  {{product.quantity}}
+                </span>
+              </div>
+              <div class="plusminus cursor-pointer" (click)="adding(product)">
+                <span>
+                  +
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </ng-container>
+    </ng-container>
   </div>
   <div class="col-md-4">
-    <button class="active custom-btn" routerLink="/checkout"  type="text">تاكيد الطلب</button>
-    <button class="active custom-btn tow" routerLink="/products"  type="text">متابعه التسوق</button>
+    <button class="active custom-btn" routerLink="/checkout" type="text">تاكيد الطلب</button>
+    <button class="active custom-btn tow" routerLink="/products" type="text">متابعه التسوق</button>
 
 
   </div>
