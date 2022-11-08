@@ -23,11 +23,9 @@ import { ReturnPolicyComponent } from './components/return-policy/return-policy.
 import { ShippingPolicyComponent } from './components/shipping-policy/shipping-policy.component';
 import { AuthorizedDistributorsComponent } from './components/authorized-distributors/authorized-distributors.component';
 
-
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
-
 
 @NgModule({
   declarations: [

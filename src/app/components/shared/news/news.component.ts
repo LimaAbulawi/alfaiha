@@ -32,6 +32,7 @@ export class NewsComponent implements OnInit {
     autoplay: true,
     autoplaySpeed: 2000,
     variableWidth: false,
+    mouseWheelMove : false,     
   }
   // getNewsList() {
   //   return this.ser.getNewsList().subscribe((res: any) => {

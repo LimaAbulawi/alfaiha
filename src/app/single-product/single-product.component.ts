@@ -16,6 +16,7 @@ export class SingleProductComponent implements OnInit {
   product: any = [];
   url: any = [];
   count: any;
+  arrayLength = 10;
 
   constructor(private _ser: ProductsService, private route: ActivatedRoute) { }
 
@@ -61,14 +62,13 @@ export class SingleProductComponent implements OnInit {
       subscribe((res: any) => {
         console.log("this.code", res.data);
         if (res.code == 200) {
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'تم اضافة المنتج الى السلة',
-            showConfirmButton: false,
-            timer: 1500
-          })
-          // to get cart length
+          // Swal.fire({
+          //   position: 'top-end',
+          //   icon: 'success',
+          //   title: 'تم اضافة المنتج الى السلة',
+          //   showConfirmButton: false,
+          //   timer: 1500
+          // })
           setTimeout(() => {
             window.location.reload();
           }, 650)
@@ -86,7 +86,6 @@ export class SingleProductComponent implements OnInit {
       behavior: 'smooth'
     });
   }
-  arrayLength = 10;
 
   ourProducts: Slick.Config = {
     // infinite: true,

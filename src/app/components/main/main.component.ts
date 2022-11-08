@@ -11,6 +11,7 @@ export class MainComponent implements OnInit {
 
   products: any = [];
   url: any = [];
+  arrayLength = 10;
 
   constructor(private _ser: ProductsService) { }
 
@@ -22,29 +23,29 @@ export class MainComponent implements OnInit {
   getProductsListFromService() {
     return this._ser.getList().subscribe((res: any) => {
       this.products = res.data;
-       console.log("this.products", this.products);
+      console.log("this.products", this.products);
 
     })
   }
-  arrayLength = 10;
 
   ourProducts: Slick.Config = {
     // infinite: true,
     slidesToShow: 6.5,
     slidesToScroll: 1,
-
     autoplay: true,
-    autoplaySpeed: 2000 ,
+    autoplaySpeed: 2000,
+    // verticalSwiping : false,
     // variableWidth: false,
-    }
-  news: Slick.Config = {
-    infinite: true,
-    slidesToShow: 3.5,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000 ,
-    variableWidth: false,
-    }
+  }
+
+  // news: Slick.Config = {
+  //   infinite: true,
+  //   slidesToShow: 3.5,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 2000,
+  //   variableWidth: false,
+  // }
 
   getArray(count: number) {
     return new Array(count)
