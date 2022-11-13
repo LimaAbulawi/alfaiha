@@ -18,4 +18,34 @@
     "We_Are":{
         "h1":"who we are "
     }
+    ,
+    "news":{
+        "h1":"Faiha Science News "
+    }
+    ,
+    "footer":{
+        "links":"Links that interest you",
+        "terms_conditions":"Terms And Conditions",
+        "privacy_policy":"Privacy Policy",
+        "call_us":"Call Us",
+        "return_policy":"Return Policy",
+        "shipping_policy":"Shipping Policy",
+        "authorized_distributors":"authorized distributors",
+        "discription": "Al Fayhaa for the trade of medical and laboratory devices Al Fayhaa for the trade of medical and laboratory devices",
+        "callUs":{
+            "place":"Baghdad - Bab Al-Moadham - the intersection of the Sarafiya Bridge - Al Sarafiya Building - 3rd floor"
+        }
+    },
+    "catigories":{
+    "h1":"catigories",
+        "thermofisher":"thermofisher",
+        "applied":"applied",
+        "invitrogen":"invitrogen",
+        "lap_equipment":"lap equipment"
+    },
+    "cart":{
+        "confirm":"confirm order",
+        "continue_shopping":"Continue shopping",
+        "order_list":"Order List"
+    }
 }

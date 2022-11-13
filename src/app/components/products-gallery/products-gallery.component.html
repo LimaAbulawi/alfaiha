@@ -1,100 +1,54 @@
 <section>
-    <div class="row">
-        <div class="col-3">
-            <div class="sub-products">
-                <div class="">
-                    <h2 class="head2">
-                        {{'Products.h1' | translate}}
-                    </h2>
-                    <div class="list-group" id="list-tab" role="tablist">
-                        <a class="list-group-item list-group-item-action active" id="list-home-list"
-                            data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">جميع
-                            المنتجات</a>
-                            <ng-container *ngFor="let cat of cats">
-                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
-                            href="#list-profile" role="tab" aria-controls="list-profile">{{ cat.name }}</a>
-                          </ng-container>
-                    </div>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-3">
+      <div class="sub-products">
+        <div class="">
+          <h2 class="head2">
+            {{'Products.h1' | translate}}
+          </h2>
+          <div class="list-group" id="list-tab" role="tablist">
+            <!-- <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
+              href="#list-home" role="tab" aria-controls="list-home">
+              {{'catigories.thermofisher' | translate}}
+            </a> -->
+            <!-- catigories -->
+            <ng-container *ngFor="let cat of cats  ; let i = index">
+              <a class="list-group-item list-group-item-action " id="list-home-list{{cat.id}}" data-bs-toggle="list"
+                href="#list-home{{cat.id}}" role="tab" aria-controls="list-home"
+                [ngClass]="{'active , show': i== 0 }" >{{ cat.name }}</a>
+            </ng-container>
+          </div>
         </div>
-        <div class="col-9">
-            <div class="flex cat">
-              <ng-container *ngFor="let cat of cats">
-                <button class="active" type="text">{{ cat.name }}</button>
-              </ng-container>
-
-            </div>
-            <div class="products">
-                <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="list-home" role="tabpanel"
-                        aria-labelledby="list-home-list">
-                        <div class="items">
-                            <!-- for -->
-
-                            <ng-container *ngFor="let product of products">
-                              <div class="item" >
-                                <img class="img-fluid" src="{{ url }}/{{ product.image }}">
-                                <a routerLink="/product/{{ product.id }}"><h4>{{ product.name }}</h4></a>
-
-                              </div>
-
-
-
-                              <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
-                            </ng-container>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-                      <div class="items">
-                        <!-- for -->
-
-                        <ng-container *ngFor="let product of products">
-                          <div class="item" >
-                            <img class="img-fluid" src="{{ url }}/{{ product.image }}">
-                            <a routerLink="/products/{{ product.id }}"><h4>{{ product.name }}</h4></a>
-
-                          </div>
-
-
-
-                          <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
-                        </ng-container>
-                    </div></div>
-                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-                      <div class="items">
-                        <!-- for -->
-
-                        <ng-container *ngFor="let product of products">
-                          <div class="item" >
-                            <img class="img-fluid" src="{{ url }}/{{ product.image }}">
-                            <a routerLink="/products/{{ product.id }}"><h4>{{ product.name }}</h4></a>
-
-                          </div>
-
-
-
-                          <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
-                        </ng-container>
-                    </div></div>
-                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-                      <div class="items">
-                        <!-- for -->
-
-                        <ng-container *ngFor="let product of products">
-                          <div class="item" >
-                            <img class="img-fluid" src="{{ url }}/{{ product.image }}">
-                            <a routerLink="/products/{{ product.id }}"><h4>{{ product.name }}</h4></a>
-
-                          </div>
-
-
-
-                          <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
-                        </ng-container>
-                    </div></div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="col-9">
+      <div class="flex cat">
+        <!-- sup catigories -->
+        <ng-container *ngFor="let cat of cats">
+          <button class="active" type="text">{{ cat.name }}</button>
+        </ng-container>
+      </div>
+      <div class="products">
+        <div class="tab-content" id="nav-tabContent">
+          <ng-container *ngFor="let cat of cats ; let i = index ">
+          <div class="tab-pane fade  "  id="list-home{{ cat.id }}" role="tabpanel" 
+          >
+            <div class="items">
+              <!-- for -->
+              <ng-container *ngFor="let product of products">
+                <div class="item">
+                  <img class="img-fluid" src="{{ url }}/{{ product.image }}">
+                  <a routerLink="/product/{{ product.id }}">
+                    <h4>{{ product.name }}</h4>
+                  </a>
+                </div>
+                <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

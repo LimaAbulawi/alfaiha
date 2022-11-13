@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+
 const httpOptions = {
   headers: new HttpHeaders({
    'Authorization': 'Bearer '+localStorage.getItem('token')
@@ -13,6 +14,7 @@ const httpOptions = {
 export class ProductsService {
   currentLang: any;
   basicUrl = "https://alfaihascientific.com/alfaihascientific.com/api/public";
+ 
   headers = new HttpHeaders()
     .set('content-type', 'application/json')
     .set('Authorization', 'Bearer '+localStorage.getItem('token'));

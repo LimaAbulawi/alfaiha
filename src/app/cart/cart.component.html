@@ -1,6 +1,6 @@
 <div class="row mt-32">
   <div class="col-md-8">
-    <h1>قائمة الطلب</h1>
+    <h1>{{'cart.order_list' | translate}} </h1>
     <ng-container *ngFor="let product of products">
       <div class="product-item">
         <div class="row">
@@ -35,9 +35,7 @@
     </ng-container>
   </div>
   <div class="col-md-4">
-    <button class="active custom-btn" routerLink="/checkout" type="text">تاكيد الطلب</button>
-    <button class="active custom-btn tow" routerLink="/products" type="text">متابعه التسوق</button>
-
-
+    <button class="active custom-btn" routerLink="/checkout" type="text">{{'cart.confirm' | translate}} </button>
+    <button class="active custom-btn tow" routerLink="/products" type="text"> {{'cart.continue_shopping' | translate}} </button>
   </div>
 </div>

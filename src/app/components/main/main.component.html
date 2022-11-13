@@ -1,26 +1,15 @@
-<section>
-  <div class="row main">
-    <div class="col-8">
-      <h1 class="head">{{'Main.h1' | translate}}</h1>
-      <p>لتجارة الاجهزة الطبية والمختبرية</p>
-      <div class="flex items-baseline">
-        <p> الوكلاء الوحيدون في العراق لـ</p>
-        <img class="logo" src="../../../assets/logo-color@2x.png" alt="">
-      </div>
-      <div class="flex search ">
-        <input type="text" placeholder="ابحث عن اسم منتج، او رقم منتج">
-
-        <div class="search-img">
-
-          <img class="search-icon" src="../../../assets/search@2x.png" alt="">
-        </div>
+<section class="overflow-hidden">
+  <div class="h-96 " dir="ltr">
+    <div slickContainer #slickController="slick" [slickConfig]="slidersSlick">
+      <div *ngIf="slickController.initialize">
+        <ng-container *ngFor="let slider of sliders">
+          <div slickItem >
+            <img src="{{ url }}/{{ slider.image }}" class="">
+          </div>
+        </ng-container>
       </div>
     </div>
-    <div class="col-4">
-      <img class="" src="../../../assets/Group 5@2x.png">
-    </div>
-  </div>
-
+  </div> 
 </section>
 <section>
   <div class="whoweare">
@@ -47,7 +36,8 @@
 <section class="">
   <div class="sub-h2">
     <img class="icon-logo" src="../../../assets/Group 19@2x.png" alt="">
-    <h2>منتجاتنا</h2>
+    <h2>                        {{'Products.h1' | translate}}
+    </h2>
   </div>
   <div class="container" dir="ltr">
     <div slickContainer #slickController="slick" [slickConfig]="ourProducts">
@@ -55,7 +45,9 @@
         <ng-container *ngFor="let product of products">
           <div slickItem >
             <img src="{{ url }}/{{ product.image }}">
-            <a routerLink="/product/{{ product.id }}"><h4>{{ product.name }}</h4></a>
+            <a routerLink="/product/{{ product.id }}">
+              <h4>{{ product.name }}</h4>
+            </a>
           </div>
           <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
         </ng-container>

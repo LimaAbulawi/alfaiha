@@ -13,37 +13,31 @@
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="https://www.facebook.com/faihascientific">
                             <img src="../assets/facebook-2@2x.png">
                         </a>
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="https://twitter.com/i/flow/login">
                             <img src="../assets/twitter.png">
                         </a>
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="https://www.instagram.com/">
                             <img src="../assets/instagram@2x.png">
                         </a>
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="https://web.whatsapp.com/">
                             <img src="../assets/whatsapp@2x.png">
                         </a>
                     </li>
 
                 </ul>
                 <!-- social -->
-
-
-
-
-
-
             </div>
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light" [ngClass]="{'dark-bg': isScrollerd}">
@@ -126,72 +120,75 @@
                 <div class="row">
                     <div class="col-4 " [ngClass]="{'line' : isEn}">
                         <img class="w-28 mb-2 first-line:" src="../assets/whitelogo@2x.png" alt="">
-                        <p>الفيحاء لتجارة الاجهزة الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية الفيحاء
-                            لتجارة الاجهزة
-                            الطبية والمختبرية شركة علوم الفيحاء لتجارة الاجهزة الطبية</p>
+                        <p>
+                            {{'footer.discription' | translate}}
+                        </p>
                     </div>
                     <div class="col-4 line">
                         <h2 class="text-3xl mb-6">
-                            روابط تهمك
+                            {{'footer.links' | translate}}
                         </h2>
                         <div class="row">
                             <div class="col-6">
                                 <p>
                                     <a href="" routerLink="/terms&conditions" (click)="setActive(3)">
-                                        الشروط والأحكام
+                                        {{'footer.terms_conditions' | translate}}
                                     </a>
                                 </p>
                                 <p>
                                     <a href="" routerLink="/privacy_policy" (click)="setActive(0)">
-                                        سياسة الخصوصية </a>
+                                        {{'footer.privacy_policy' | translate}}
+                                    </a>
                                 </p>
                                 <p>
                                     <a href="" routerLink="/callus" (click)="setActive(4)">
-                                        اتصل بنا                                    </a>
+                                        {{'footer.call_us' | translate}}
+                                    </a>
                                 </p>
                                 <p>
                                     <a href="" routerLink="/weare" (click)="setActive(2)">
-                                        من نحن
+                                        {{'We_Are.h1' | translate}}
                                     </a>
                                 </p>
                             </div>
                             <div class="col-6">
                                 <p>
                                     <a href="" routerLink="/returnPolicy" (click)="setActive(0)">
-                                        سياسة الإسترجاع
+                                        {{'footer.return_policy' | translate}}
                                     </a>
                                 </p>
                                 <p>
                                     <a href="" routerLink="/ShippingPolicy" (click)="setActive(0)">
-                                        سياسة الشحن
+                                        {{'footer.shipping_policy' | translate}}
                                     </a>
                                 </p>
                                 <p>
                                     <a href="" routerLink="/products" (click)="setActive(1)">
-                                        معرض المنتجات
+                                        {{'Navbar.products_gallery' | translate}}
                                     </a>
                                 </p>
                                 <p>
                                     <a href="" routerLink="/AuthorizedDistributors" (click)="setActive(0)">
-                                        الموزعين المعتمدين
+                                        {{'footer.authorized_distributors' | translate}}
                                     </a>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-4 " [ngClass]="{'line' : !isEn}">
-                        <h2 class="text-3xl mb-6"> اتصل بنا</h2>
+                        <h2 class="text-3xl mb-6"> {{'footer.call_us' | translate }} </h2>
                         <div class="flex call">
                             <img src="../assets/circle-phone-flip@2x.png" alt="">
-                            <p>+123123123123</p>
+                            <p> 07837006604 - 07837006610</p>
                         </div>
                         <div class="flex call">
                             <img src="../assets/at-2@2x.png" alt="">
-                            <p>info@alfaihascientific.com</p>
+                            <p>sales@alfaihascientific.com</p>
                         </div>
                         <div class="flex call">
                             <img src="../assets/marker@2x.png" alt="">
-                            <p>العراق ، بغداد</p>
+                            <p>    {{'footer.callUs.place' | translate}}
+                            </p>
                         </div>
                     </div>
                 </div>

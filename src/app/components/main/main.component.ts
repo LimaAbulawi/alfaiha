@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Slick } from 'ngx-slickjs';
 import { ProductsService } from 'src/app/services/products.service';
+import { SlidersService } from 'src/app/services/sliders.service';
 
 @Component({
   selector: 'app-main',
@@ -10,14 +11,37 @@ import { ProductsService } from 'src/app/services/products.service';
 export class MainComponent implements OnInit {
 
   products: any = [];
+  sliders: any = [];
   url: any = [];
   arrayLength = 10;
 
-  constructor(private _ser: ProductsService) { }
+  constructor(private _ser: ProductsService  , private sliderSer: SlidersService) { }
 
   ngOnInit(): void {
     this.url = this._ser.basicUrl;
     this.getProductsListFromService();
+    this.getSlidersListFromService();
+  }
+
+  ourProducts: Slick.Config = {
+    infinite: true,
+    slidesToShow: 6.5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    // verticalSwiping : false,
+    // variableWidth: false,
+    // mouseWheelMove : false,
+  }
+
+  slidersSlick: Slick.Config = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    variableWidth: false,
+    pauseOnFocus : true
   }
 
   getProductsListFromService() {
@@ -28,24 +52,13 @@ export class MainComponent implements OnInit {
     })
   }
 
-  ourProducts: Slick.Config = {
-    // infinite: true,
-    slidesToShow: 6.5,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    // verticalSwiping : false,
-    // variableWidth: false,
+  getSlidersListFromService() {
+    return this.sliderSer.getList().subscribe((res: any) => {
+      this.sliders = res.Sliders;
+      console.log("this.sliders", this.sliders);
+    })
   }
 
-  // news: Slick.Config = {
-  //   infinite: true,
-  //   slidesToShow: 3.5,
-  //   slidesToScroll: 1,
-  //   autoplay: true,
-  //   autoplaySpeed: 2000,
-  //   variableWidth: false,
-  // }
 
   getArray(count: number) {
     return new Array(count)
