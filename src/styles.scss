@@ -8,6 +8,10 @@
 // @import "~bootstrap/dist/css/bootstrap.css";
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+// @import "~animate.css/animate.min";
+@import '~animate.css/animate.min';
+
+
 body {
     background: linear-gradient(#9117271A 0%, #490C1400 35%);
 }
@@ -51,7 +55,7 @@ section:last-child {
 }
 
 .whoweare {
-    background-image: url("assets/Rectangle\ 33@2x.png");
+    background-image: url("assets/images/Rectangle\ 33@2x.png");
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;

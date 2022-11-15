@@ -30,13 +30,15 @@ header.header {
   left: -50px;
   top: 15px;
 }
-
-.navbar.bg-light {
-  background: #FFF !important;
+.customNav{
   height: 80px;
   border-radius: 26px;
   padding: 0 30px;
 }
+
+// .navbar.bg-light {
+//   background: #FFF !important;
+// }
 
 .navbar-expand-lg .navbar-nav .nav-link {
   font-weight: bold;
@@ -144,6 +146,9 @@ header.header {
   border-radius: 15px;
 }
 
+.bgCusromPink{
+  background-color: #f4e8ea;
+}
 nav.navbar.navbar-expand-lg.navbar-light.bg-light.dark-bg {
   background: #911727 !important;
 }
@@ -231,4 +236,19 @@ span.counter {
   color: #970a29;
   font-size: 12px;
   font-weight: bold;
+}
+
+.search-bar{
+  position: absolute;
+  top: 0;
+  width: calc(100% - 20px);
+  left: 10px;
+  // display: none;
+  // left: -2000px;
+  transition: all 1s;
+}
+.search-bar.showed{
+  // display: block;
+  left: auto;
+  right: auto;
 }

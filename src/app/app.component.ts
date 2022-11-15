@@ -14,6 +14,7 @@ export class AppComponent {
   title = 'Alfaiha';
   active: any = 0;
   isScrollerd: boolean = false;
+  isSearch: boolean = true;
   pathName: Array<any> = [];
   path: any;
   count: any;

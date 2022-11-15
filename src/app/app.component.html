@@ -7,40 +7,41 @@
                         <a routerLink="/cart">
                             <div class="cart">
                                 <span class="counter">{{count}}</span>
-                                <img src="../assets/Group 25@2x.png">
+                                <img src="../assets/images/Group 25@2x.png">
                             </div>
                         </a>
                     </li>
 
                     <li>
                         <a href="https://www.facebook.com/faihascientific">
-                            <img src="../assets/facebook-2@2x.png">
+                            <img src="../assets/images/facebook-2@2x.png">
                         </a>
                     </li>
 
                     <li>
                         <a href="https://twitter.com/i/flow/login">
-                            <img src="../assets/twitter.png">
+                            <img src="../assets/images/twitter.png">
                         </a>
                     </li>
 
                     <li>
                         <a href="https://www.instagram.com/">
-                            <img src="../assets/instagram@2x.png">
+                            <img src="../assets/images/instagram@2x.png">
                         </a>
                     </li>
 
                     <li>
                         <a href="https://web.whatsapp.com/">
-                            <img src="../assets/whatsapp@2x.png">
+                            <img src="../assets/images/whatsapp@2x.png">
                         </a>
                     </li>
 
                 </ul>
                 <!-- social -->
             </div>
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light" [ngClass]="{'dark-bg': isScrollerd}">
+            <div class="container relative">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light customNav"
+                    [ngClass]="{'dark-bg': isScrollerd}">
                     <div class="container-fluid">
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -81,8 +82,8 @@
                         </div>
 
                         <a class="navbar-brand" href="#">
-                            <img class="navbar-logo" src="../assets/logo@2x.png" *ngIf="!isScrollerd">
-                            <img class="navbar-logo" src="../assets/whitelogo@2x.png" *ngIf="isScrollerd">
+                            <img class="navbar-logo" src="../assets/images/logo@2x.png" *ngIf="!isScrollerd">
+                            <img class="navbar-logo" src="../assets/images/whitelogo@2x.png" *ngIf="isScrollerd">
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -92,15 +93,23 @@
 
                     </div>
                 </nav>
+                <nav class="navbar customNav search-bar bg-[#970a29] animate__animated" [ngClass]="{'bgCusromPink': isScrollerd , 'animate__fadeInLeft': !isSearch
+                ,'animate__fadeOutLeft': isSearch}">
+                    lima
+                </nav>
             </div>
             <!-- nav -->
             <div class="search-form">
-                <a href="#">
-                    <img src="../assets/Group 30@2x.png">
+                <a href="#" (click)="isSearch = !isSearch">
+                    <img src="../assets/images/Group 30@2x.png">
                 </a>
             </div>
             <!-- search -->
-
+            <!-- <div class="container">
+                <nav class="navbar customNav bg-[#970a29]" [ngClass]="{'bgCusromPink': isScrollerd}">
+                    lima
+                </nav>
+            </div> -->
         </div>
     </header>
 
@@ -119,7 +128,7 @@
             <div class="container ">
                 <div class="row">
                     <div class="col-4 " [ngClass]="{'line' : isEn}">
-                        <img class="w-28 mb-2 first-line:" src="../assets/whitelogo@2x.png" alt="">
+                        <img class="w-28 mb-2 first-line:" src="../assets/images/whitelogo@2x.png" alt="">
                         <p>
                             {{'footer.discription' | translate}}
                         </p>
@@ -187,7 +196,7 @@
                         </div>
                         <div class="flex call">
                             <img src="../assets/marker@2x.png" alt="">
-                            <p>    {{'footer.callUs.place' | translate}}
+                            <p> {{'footer.callUs.place' | translate}}
                             </p>
                         </div>
                     </div>
