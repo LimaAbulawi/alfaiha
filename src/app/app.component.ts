@@ -34,14 +34,12 @@ export class AppComponent {
     // this.route.data.subscribe((eachRoute) => {
     //   console.log("eachRoute", eachRoute['routeName'])
     // })
-    console.log("this.active", this.router.url);
     // first run
     if (localStorage.getItem("active") !== null) {
       this.active = localStorage.getItem("active");
     } else {
       localStorage.setItem('active', this.active);
     this.router.navigate(['/']);
-
     }
   }
 

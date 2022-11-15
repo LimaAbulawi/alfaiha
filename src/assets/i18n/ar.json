@@ -43,5 +43,8 @@
         "confirm": "أكد الطلب",
         "continue_shopping": "متابعة التسوق",
         "order_list": "قائمة الطلب"
+    },
+    "single_product":{
+        "add_to_cart":"اضافة الي السلة"
     }
 }

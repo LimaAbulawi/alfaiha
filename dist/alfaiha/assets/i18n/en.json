@@ -47,5 +47,8 @@
         "confirm":"confirm order",
         "continue_shopping":"Continue shopping",
         "order_list":"Order List"
+    },
+    "single_product":{
+        "add_to_cart":"add to cart"
     }
 }

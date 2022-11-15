@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Slick } from 'ngx-slickjs';
 import { ProductsService } from '../services/products.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2'
 
 
@@ -18,7 +18,7 @@ export class SingleProductComponent implements OnInit {
   count: any;
   arrayLength = 10;
 
-  constructor(private _ser: ProductsService, private route: ActivatedRoute) { }
+  constructor(private _ser: ProductsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -73,14 +73,15 @@ export class SingleProductComponent implements OnInit {
             window.location.reload();
           }, 650)
         }
-
       })
-
     // 
-
   }
 
-  scroll() {
+  scroll(Id: number) {
+    // this.router.navigate([`/product/${Id}`])
+    setTimeout(() => {
+      window.location.reload();
+    }, 500)
     window.scroll({
       top: 0,
       behavior: 'smooth'
@@ -91,22 +92,19 @@ export class SingleProductComponent implements OnInit {
     // infinite: true,
     slidesToShow: 6.5,
     slidesToScroll: 1,
-
     autoplay: true,
     autoplaySpeed: 2000,
     // variableWidth: false,
   }
 
   images: Slick.Config = {
-    // infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-
     autoplay: true,
     autoplaySpeed: 2000,
     dots: true,
     arrows: true
-    // variableWidth: false,
   }
+
 
 }
