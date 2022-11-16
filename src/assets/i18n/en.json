@@ -1,11 +1,11 @@
 {
     "TITLE": "Welcome, your profile details are",
     "Navbar":{
-        "main":"main",
-        "products_gallery":"products gallery",
-        "who_we_are":"who we are",
-        "terms_conditions":"terms conditions",
-        "call_us":"call us"
+        "main":"Main",
+        "products_gallery":"Products Gallery",
+        "who_we_are":"Who We Are",
+        "terms_conditions":"Terms&Conditions",
+        "call_us":"Call Us"
     },
     "Main":{
         "h1":"Al-Fayha' Sciences"

@@ -1,6 +1,7 @@
 body,
 * {
   font-family: 'Tajawal', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }
 
 
@@ -50,7 +51,7 @@ header.header {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  padding: 6px 20px;
+  padding: 6px 16px;
   // margin-left: 15px;
 }
 
@@ -144,6 +145,7 @@ header.header {
 
 .nav-link{
   border-radius: 15px;
+  font-size: 18px;
 }
 
 .bgCusromPink{
