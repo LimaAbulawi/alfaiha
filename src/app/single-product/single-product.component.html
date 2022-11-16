@@ -17,8 +17,11 @@
     <div class="col-md-6">
 
       <h2 class="product-title">{{ product.name }}</h2>
-
+      
       <p class="product-body">{{ product.content }}</p>
+      <p class="product-title">brand :{{ product.brand }}</p>
+      <p class="product-title">country :{{ product.country }}</p>
+      
       <button class="active custom-btn" (click)="addToCart(product.id)" type="text">{{'single_product.add_to_cart' |
         translate}} </button>
     </div>
@@ -35,7 +38,7 @@
         <ng-container *ngFor="let product of products">
           <div slickItem>
             <img src="{{ url }}/{{product.image}}">
-            <!--  -->
+            <!-- -->
             <a routerLink="/product/{{product.id}}" (click)="scroll(product.id)" class="cursor-pointer">
               <h4>{{product.name}}</h4>
             </a>
