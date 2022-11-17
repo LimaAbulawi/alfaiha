@@ -50,13 +50,11 @@
                                     <a class="nav-link active" routerLink="/" [ngClass]="{'active':active == 0}"
                                         (click)="setActive(0)">
                                         {{'Navbar.main' | translate}}</a>
-                            <i class="fa-solid fa-house"></i>
-
                                 </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" routerLink="/products" [ngClass]="{'active': active == 1}"
-                                        (click)="setActive(1)"> {{'Navbar.products_gallery' | translate}}  </a>
+                                        (click)="setActive(1)"> {{'Navbar.products_gallery' | translate}} </a>
                                 </li>
 
                                 <li class="nav-item">
@@ -131,9 +129,23 @@
                 <div class="row">
                     <div class="col-4 " [ngClass]="{'line' : isEn}">
                         <img class="w-28 mb-2 first-line:" src="../assets/images/whitelogo@2x.png" alt="">
-                        <p>
+                        <p class="mb-3"> 
                             {{'footer.discription' | translate}}
                         </p>
+                        <div class="footerLink">
+                            <a href="https://www.facebook.com/faihascientific">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://twitter.com/i/flow/login">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://web.whatsapp.com/">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
                     </div>
                     <div class="col-4 line">
                         <h2 class="text-3xl mb-6">

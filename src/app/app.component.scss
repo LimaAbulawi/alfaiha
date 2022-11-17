@@ -1,5 +1,4 @@
-body,
-* {
+body{
   font-family: 'Tajawal', sans-serif;
   font-family: 'Kanit', sans-serif;
 }
@@ -253,4 +252,8 @@ span.counter {
   // display: block;
   left: auto;
   right: auto;
+}
+.footerLink a{
+  margin: 10px 10px;
+  font-size: 23px;
 }

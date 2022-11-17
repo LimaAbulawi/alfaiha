@@ -36,7 +36,7 @@
 <section class="">
   <div class="sub-h2">
     <img class="icon-logo" src="../../../assets/images/Group 19@2x.png" alt="">
-    <h2>                        {{'Products.h1' | translate}}
+    <h2>{{'Products.h1' | translate}}
     </h2>
   </div>
   <div class="container" dir="ltr">
@@ -44,7 +44,7 @@
       <div *ngIf="slickController.initialize">
         <ng-container *ngFor="let product of products">
           <div slickItem >
-            <img src="{{ url }}/{{ product.image }}">
+            <img class="itemimg" src="{{url}}/{{ product.image }}">
             <a routerLink="/product/{{ product.id }}">
               <h4>{{ product.name }}</h4>
             </a>
