@@ -13,6 +13,8 @@ export class CartComponent implements OnInit {
   products: any = [];
   url: any = [];
   productCountity: number = 1;
+  isdelete: any;
+  product_quantity: any;
 
   constructor(private _ser: ProductsService, private route: ActivatedRoute) { }
 
@@ -30,10 +32,16 @@ export class CartComponent implements OnInit {
 
   adding(product: any) {
     product.quantity += 1;
+console.log(product.quantity)
+    return this._ser.updateCart( product.product_id, 1).subscribe((res: any) => {
+      this.product_quantity = res;
+      console.log("this.product_quantity", this.product_quantity);
+    })
   }
 
   subtract(product: any) {
      product.quantity -= 1;
+
     if (product.quantity == 0) {
       Swal.fire({
         // title: 'Are you sure?',
@@ -46,12 +54,13 @@ export class CartComponent implements OnInit {
       }).then((result) => {
         if (result.isConfirmed) {
           // remove api
-          // this._ser.delete(Id).subscribe((res: any) => {
-          //   this.isdelete = res;
-          //   window.location.reload();
-          // });
+          this._ser.delete(product.product_id).subscribe((res: any) => {
+            this.isdelete = res;
+            console.log(this.isdelete)
+            window.location.reload();
+          });
         }
       })
-    } 
+    }
   }
 }

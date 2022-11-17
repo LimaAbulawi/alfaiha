@@ -17,6 +17,7 @@ export class SingleProductComponent implements OnInit {
   url: any = [];
   count: any;
   arrayLength = 10;
+  counter :any = 0;
 
   constructor(private _ser: ProductsService, private route: ActivatedRoute, private router: Router) { }
 
@@ -62,19 +63,23 @@ export class SingleProductComponent implements OnInit {
       subscribe((res: any) => {
         console.log("this.code", res.data);
         if (res.code == 200) {
-          // Swal.fire({
-          //   position: 'top-end',
-          //   icon: 'success',
-          //   title: 'تم اضافة المنتج الى السلة',
-          //   showConfirmButton: false,
-          //   timer: 1500
-          // })
-          setTimeout(() => {
-            window.location.reload();
-          }, 650)
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'تم اضافة المنتج الى السلة',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+          this.counter = document.getElementById('counter');
+
+          this.counter.innerHTML = parseInt( this.counter.innerHTML ) + 1;
+          // setTimeout(() => {
+          //   window.location.reload();
+          // }, 650)
         }
       })
-    // 
+    //
   }
 
   scroll(Id: number) {

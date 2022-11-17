@@ -6,7 +6,7 @@
                     <li>
                         <a routerLink="/cart">
                             <div class="cart">
-                                <span class="counter">{{count}}</span>
+                                <span class="counter" id="counter">{{count}}</span>
                                 <img src="../assets/images/Group 25@2x.png">
                             </div>
                         </a>
@@ -31,7 +31,7 @@
                     </li>
 
                     <li>
-                        <a href="https://web.whatsapp.com/">
+                        <a href="https://wa.me/+9647846872475/?text" target="_blank">
                             <img src="../assets/images/whatsapp@2x.png">
                         </a>
                     </li>
@@ -129,7 +129,7 @@
                 <div class="row">
                     <div class="col-4 " [ngClass]="{'line' : isEn}">
                         <img class="w-28 mb-2 first-line:" src="../assets/images/whitelogo@2x.png" alt="">
-                        <p class="mb-3"> 
+                        <p class="mb-3">
                             {{'footer.discription' | translate}}
                         </p>
                         <div class="footerLink">
@@ -142,7 +142,7 @@
                             <a href="https://www.instagram.com/">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://web.whatsapp.com/">
+                            <a href="https://wa.me/+9647846872475/?text" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>

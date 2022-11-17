@@ -14,7 +14,7 @@ const httpOptions = {
 export class ProductsService {
   currentLang: any;
   basicUrl = "https://alfaihascientific.com/alfaihascientific.com/api/public";
- 
+
   headers = new HttpHeaders()
     .set('content-type', 'application/json')
     .set('Authorization', 'Bearer '+localStorage.getItem('token'));
@@ -70,5 +70,11 @@ export class ProductsService {
   lang() {
     this.currentLang = this.translate.currentLang;
     console.log("currentLang", this.currentLang);
+  }
+  delete(Id:number) {
+    return this.http.get<{}>(this.basicUrl + "/api/v1/deleteFromCart/"+localStorage.getItem('anonymous-key')+"/"+ Id, { 'headers': this.headers })
+  }
+  updateCart(Id:number , quantity :number) {
+    return this.http.get<{}>(this.basicUrl + "/api/v1/updateCart/"+localStorage.getItem('anonymous-key')+"/"+ Id+"/"+ quantity, { 'headers': this.headers })
   }
 }
