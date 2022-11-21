@@ -43,7 +43,6 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light customNav"
                     [ngClass]="{'dark-bg': isScrollerd}">
                     <div class="container-fluid">
-
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav  mb-2 mb-lg-0">
                                 <li class="nav-item ">
@@ -93,16 +92,32 @@
 
                     </div>
                 </nav>
-                <nav class="navbar customNav search-bar bg-[#970a29] animate__animated" [ngClass]="{'bgCusromPink': isScrollerd , 'animate__fadeInLeft': !isSearch
+                <form action="" [formGroup]="searchForm">
+                    <nav class="navbar customNav search-bar bg-[#970a29] animate__animated " [ngClass]="{'bgCusromPink': isScrollerd , 'animate__fadeInLeft': !isSearch
                 ,'animate__fadeOutLeft': isSearch}">
-                    lima
-                </nav>
+                        <div class="w-1/2">
+                            <input type="text" placeholder="{{'search.h2' | translate}}" class="search_input"
+                                formControlName="name">
+                        </div>
+                        <div class="">
+                            <!-- search -->
+                            <div class="">
+                                <div class="search_icon !bg-[#f4e9ea]" (click)="submit()">
+                                    <!-- <img src="../assets/images/search.png" > -->
+                                    <i class="fas fa-search"></i>
+                                    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </form>
             </div>
             <!-- nav -->
             <div class="search-form">
-                <a href="#" (click)="isSearch = !isSearch">
-                    <img src="../assets/images/Group 30@2x.png">
-                </a>
+                <div class="relative search_icon" (click)="isSearch = !isSearch">
+                    <img src="../assets/images/search.png" [ngClass]="{'block': isSearch , 'hidden': !isSearch}">
+                    <img src="../assets/images/cross-small.png" [ngClass]="{'block': !isSearch , 'hidden': isSearch}">
+                </div>
             </div>
             <!-- search -->
             <!-- <div class="container">
@@ -128,10 +143,10 @@
             <div class="container ">
                 <div class="row">
                     <div class="col-4 " [ngClass]="{'line' : isEn}">
-                        <img class="w-28 mb-2 first-line:" src="../assets/images/whitelogo@2x.png" alt="">
-                        <p class="mb-3">
-                            {{'footer.discription' | translate}}
-                        </p>
+                        <div class="footer-logo">
+                            <img class="w-28 mb-2 first-line:" src="../assets/images/whitelogo@2x.png" alt="">
+                            <img class="w-28 mb-2 first-line:" src="../assets/images/OIP.jfif" alt="">
+                        </div>
                         <div class="footerLink">
                             <a href="https://www.facebook.com/faihascientific">
                                 <i class="fab fa-facebook-f"></i>

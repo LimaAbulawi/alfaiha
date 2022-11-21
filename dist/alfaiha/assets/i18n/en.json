@@ -1,54 +1,59 @@
 {
     "TITLE": "Welcome, your profile details are",
-    "Navbar":{
-        "main":"Main",
-        "products_gallery":"Products Gallery",
-        "who_we_are":"Who We Are",
-        "terms_conditions":"Terms&Conditions",
-        "call_us":"Call Us"
+    "Navbar": {
+        "main": "Main",
+        "products_gallery": "Products Gallery",
+        "who_we_are": "Who We Are",
+        "terms_conditions": "Terms&Conditions",
+        "call_us": "Call Us"
     },
-    "Main":{
-        "h1":"Al-Fayha' Sciences"
-    }
-    ,
-    "Products":{
-        "h1":"our products"
-    }
-    ,
-    "We_Are":{
-        "h1":"who we are "
-    }
-    ,
-    "news":{
-        "h1":"Faiha Science News "
-    }
-    ,
-    "footer":{
-        "links":"Links that interest you",
-        "terms_conditions":"Terms And Conditions",
-        "privacy_policy":"Privacy Policy",
-        "call_us":"Call Us",
-        "return_policy":"Return Policy",
-        "shipping_policy":"Shipping Policy",
-        "authorized_distributors":"authorized distributors",
+    "Main": {
+        "h1": "Al-Fayha' Sciences"
+    },
+    "Products": {
+        "h1": "our products"
+    },
+    "We_Are": {
+        "h1": "who we are "
+    },
+    "news": {
+        "h1": "Faiha Science News "
+    },
+    "footer": {
+        "links": "Links that interest you",
+        "terms_conditions": "Terms And Conditions",
+        "privacy_policy": "Privacy Policy",
+        "call_us": "Call Us",
+        "return_policy": "Return Policy",
+        "shipping_policy": "Shipping Policy",
+        "authorized_distributors": "authorized distributors",
         "discription": "Al Fayhaa for the trade of medical and laboratory devices Al Fayhaa for the trade of medical and laboratory devices",
-        "callUs":{
-            "place":"Baghdad - Bab Al-Moadham - the intersection of the Sarafiya Bridge - Al Sarafiya Building - 3rd floor"
+        "callUs": {
+            "place": "Baghdad - Bab Al-Moadham - the intersection of the Sarafiya Bridge - Al Sarafiya Building - 3rd floor"
         }
     },
-    "catigories":{
-    "h1":"catigories",
-        "thermofisher":"thermofisher",
-        "applied":"applied",
-        "invitrogen":"invitrogen",
-        "lap_equipment":"lap equipment"
+    "catigories": {
+        "h1": "catigories",
+        "thermofisher": "thermofisher",
+        "applied": "applied",
+        "invitrogen": "invitrogen",
+        "lap_equipment": "lap equipment"
     },
-    "cart":{
-        "confirm":"confirm order",
-        "continue_shopping":"Continue shopping",
-        "order_list":"Order List"
+    "cart": {
+        "confirm": "confirm order",
+        "continue_shopping": "Continue shopping",
+        "order_list": "Order List"
     },
-    "single_product":{
-        "add_to_cart":"add to cart"
+    "single_product": {
+        "add_to_cart": "add to cart"
+    },
+    "More": {
+        "h2": "more"
+    },
+    "check_out": {
+        "p": "After confirming the order, the sales team at Al-Fayhaa Company will contact you."
+    },
+    "search": {
+        "h2": "Search for a product name or product number"
     }
 }

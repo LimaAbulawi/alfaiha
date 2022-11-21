@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ProductsService } from './services/products.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class AppComponent {
   textDir: string = 'rtl';
 
 
-  constructor(private router: Router, private route: ActivatedRoute, public translate: TranslateService, private _ser: ProductsService) {
+  constructor(private router: Router, private route: ActivatedRoute, public translate: TranslateService, private _ser: ProductsService, private fb: FormBuilder) {
 
     translate.addLangs(['en', 'ar']);
     // Set default language
@@ -39,7 +40,7 @@ export class AppComponent {
       this.active = localStorage.getItem("active");
     } else {
       localStorage.setItem('active', this.active);
-    this.router.navigate(['/']);
+      this.router.navigate(['/']);
     }
   }
 
@@ -53,16 +54,6 @@ export class AppComponent {
     console.log(localStorage.getItem('anonymous-key'))
     this.cartCount();
   }
-  
-  // ngOnChange(){
-  //   debugger
-  //   this.count = localStorage.getItem("count");
-  //   console.log("this.count", this.count);
-  //   return this._ser.cartCount().subscribe((res: any) => {
-  //     this.count = res.data;
-  //     console.log("this.count", this.count);
-  //   })
-  // }
 
   cartCount() {
     return this._ser.cartCount().subscribe((res: any) => {
@@ -102,5 +93,28 @@ export class AppComponent {
   setActive(event: any) {
     localStorage.setItem("active", event);
     this.active = localStorage.getItem("active");
+  }
+
+  searchForm = this.fb.group({
+    name: ['', Validators.required],
+  })
+  resMsg!: string;
+
+  submit(){
+    // this.isSearch = !this.isSearch;
+    console.log("searchForm",this.searchForm.value);
+
+    if (this.searchForm.invalid) {
+      this.searchForm.markAllAsTouched();
+    }
+    if (this.searchForm.valid) {
+      console.log("name");
+      this._ser.search(this.searchForm.value).subscribe((res: any) => {
+        this.resMsg = res.msg;
+        if (res.code == 200) {
+        }
+        console.log("ressearch", res);
+      });
+    }
   }
 }

@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Slick } from 'ngx-slickjs';
 import { ProductsService } from 'src/app/services/products.service';
 import { SlidersService } from 'src/app/services/sliders.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -15,7 +16,7 @@ export class MainComponent implements OnInit {
   url: any = [];
   arrayLength = 10;
 
-  constructor(private _ser: ProductsService  , private sliderSer: SlidersService) { }
+  constructor(private _ser: ProductsService, private sliderSer: SlidersService, private router: Router) { }
 
   ngOnInit(): void {
     this.url = this._ser.basicUrl;
@@ -41,7 +42,7 @@ export class MainComponent implements OnInit {
     autoplay: true,
     autoplaySpeed: 2000,
     variableWidth: false,
-    pauseOnFocus : true
+    pauseOnFocus: true
   }
 
   getProductsListFromService() {
@@ -62,5 +63,8 @@ export class MainComponent implements OnInit {
 
   getArray(count: number) {
     return new Array(count)
+  }
+  navigateToProducts() {
+    this.router.navigate(['products'])
   }
 }

@@ -17,10 +17,10 @@
     <div class="col-md-6">
 
       <h2 class="product-title">{{ product.name }}</h2>
-      
-      <p class="product-body">{{ product.content }}</p>
-      <p class="product-title">brand :{{ product.brand }}</p>
-      <p class="product-title">country :{{ product.country }}</p>
+      <h3 class="product-title">catigory number :{{ product.catnumber}} </h3>
+      <p class="product-body">{{ product.content}}</p>
+      <p class="product-title">brand :{{ product.brand}}</p>
+      <p class="product-title">country :{{ product.country}}</p>
       
       <button class="active custom-btn" (click)="addToCart(product.id)" type="text">{{'single_product.add_to_cart' |
         translate}} </button>

@@ -1,3 +1,79 @@
-<section class="">
-    <p>callus works!</p>
-</section>
+<form action="" class="" [formGroup]="callUsForm" (ngSubmit)="submit()">
+    <div class="row mt-24">
+        <h2 class="head"> {{'Navbar.call_us' | translate}}</h2>
+        <div class="col-sm-12 col-md-4">
+            <!-- name is required -->
+            <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
+        this.callUsForm.get('name')?.touched && this.callUsForm.get('name')?.hasError('required') }">
+                !name is required
+            </label>
+            <!-- name input -->
+            <input type="text" formControlName="name" class="inputData" placeholder="الاسم الكامل" [ngClass]="{'!border-red-600':
+        this.callUsForm.get('name')?.touched && this.callUsForm.get('name')?.hasError('required') }">
+            <!-- email validation -->
+            <div class="flex justify-between mb-1">
+
+                <!-- email is required -->
+                <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
+this.callUsForm.get('email')?.touched && this.callUsForm.get('email')?.hasError('required') }">
+                    !email is required
+                </label>
+
+                <!-- must be valid email -->
+                <label class="errorLabel"
+                    *ngIf="this.callUsForm.get('email')?.touched && this.callUsForm.get('email')?.hasError('email')">
+                    !must be valid email
+                </label>
+            </div>
+            <!-- email input -->
+            <input type="text" formControlName="email" class="inputData" placeholder="البريد الالكتروني" [ngClass]="{'!border-red-600':
+this.callUsForm.get('email')?.touched && this.callUsForm.get('email')?.hasError('required')
+|| (this.callUsForm.get('email')?.touched && this.callUsForm.get('email')?.hasError('email')) }">
+            <!-- phone validation -->
+            <div class="flex justify-between mb-1">
+
+                <!-- phone is required -->
+                <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
+this.callUsForm.get('phone')?.touched && this.callUsForm.get('phone')?.hasError('required') }">
+                    !phone is required
+                </label>
+
+                <!-- must be valid phone -->
+                <label class="errorLabel" *ngIf="this.callUsForm
+         .get('phone')?.touched && this.callUsForm.get('phone')?.value?.length !=10">
+                    !phone must be 10 numbers
+                </label>
+            </div>
+            <!-- phone input -->
+            <input type="text" formControlName="phone" class="inputData" placeholder="الهاتف" [ngClass]="{'!border-red-600':
+this.callUsForm.get('phone')?.touched && this.callUsForm.get('phone')?.hasError('required') }"
+                (input)="onInput($event)" minlength="10" maxlength="10">
+            <!-- title is required -->
+            <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
+     this.callUsForm.get('title')?.touched && this.callUsForm.get('title')?.hasError('required') }">
+
+                !title is required
+            </label>
+            <input type="text" formControlName="title" class="inputData" placeholder="عنوان الرسالة" [ngClass]="{'!border-red-600':
+          this.callUsForm.get('title')?.touched && this.callUsForm.get('title')?.hasError('required') }">
+
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <!-- message_content is required -->
+            <label class="errorLabel opacity-0"
+                [ngClass]="{'!opacity-100':
+     this.callUsForm.get('message_content')?.touched && this.callUsForm.get('message_content')?.hasError('required') }">
+                !message content is required
+            </label>
+            <!-- phone input -->
+            <textarea type="text" formControlName="message_content" class="inputData h-[92%] "
+                placeholder="محتوى الرسالة"
+                [ngClass]="{'!border-red-600':
+        this.callUsForm.get('message_content')?.touched && this.callUsForm.get('message_content')?.hasError('required') }"></textarea>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <button class="active custom-btn" type="submit">إرسال الرسالة </button>
+
+        </div>
+    </div>
+</form>

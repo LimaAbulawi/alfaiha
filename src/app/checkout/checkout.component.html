@@ -68,7 +68,7 @@
         !note is required
       </label>
       <!-- phone input -->
-      <textarea type="text" formControlName="note" class="inputData h-[92%] " placeholder="الملاحظات "
+      <textarea type="text" formControlName="note" class="inputData h-[92%] " placeholder="ملاحظات حول الطلب "
         [ngClass]="{'!border-red-600':
       this.confirmOrderForm.get('note')?.touched && this.confirmOrderForm.get('note')?.hasError('required') }"></textarea>
     </div>
@@ -80,3 +80,9 @@
     </div>
   </div>
 </form>
+
+<div class="addresses mt-7">
+  <img class="icon-logo" src="../../../assets/images/Group 19@2x.png" alt="">
+  <h2 class="text-lg my-4 mx-2 font-medium">{{'check_out.p' | translate}}
+  </h2>
+</div>

@@ -1,4 +1,4 @@
-import { HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -12,9 +12,8 @@ export class NewsService {
 
     headers2 = new HttpHeaders()
     .set('Authorization', 'Bearer '+localStorage.getItem('token'));
-  http: any;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getList() {
     return this.http.get(this.basicUrl + "/api/v1/blogs", { 'headers': this.headers })

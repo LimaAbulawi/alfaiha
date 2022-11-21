@@ -12,28 +12,25 @@ export class ProductsGalleryComponent implements OnInit {
   cats: any = [];
   url: any = [];
 
-  constructor(private _ser: ProductsService) { }
+  constructor(private _ser: ProductsService) {
+
+  }
 
   ngOnInit(): void {
     this.url = this._ser.basicUrl;
-    this.getProductsListFromService();
     this.getCatListFromService();
+    this.getProductsListFromService();
   }
 
   getProductsListFromService() {
     return this._ser.getList().subscribe((res: any) => {
       this.products = res.data;
-       console.log("this.products", this.products);
-
     })
   }
 
   getCatListFromService() {
     return this._ser.getCategoriesList().subscribe((res: any) => {
       this.cats = res.Categorys;
-       console.log("this.cats", this.cats);
-       console.log("res", res);
-
     })
   }
 }

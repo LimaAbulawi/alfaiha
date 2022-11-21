@@ -1,22 +1,35 @@
 <section>
     <div class="sub-h2">
-        <img class="icon-logo" src="../../../../assets/images/Group 19@2x.png" alt="">
-        <h2>  {{'news.h1' | translate}}</h2>
+        <div class="addresses">
+            <img class="icon-logo" src="../../../assets/images/Group 19@2x.png" alt="">
+            <h2>{{'news.h1' | translate}}
+            </h2>
+        </div>
+        <div class="more">
+            <h3>
+                {{'More.h2' | translate}}
+            </h3>
+            <div class="red_circle">
+                <i class="fas fa-chevron-left"></i>
+                <!-- <i class="fas fa-chevron-right"></i> -->
+            </div>
+        </div>
     </div>
+
     <!-- carsoul -->
     <div class="" dir="ltr">
         <div slickContainer #slickController="slick" [slickConfig]="news">
             <ng-container *ngIf="slickController.initialize">
-              <ng-container *ngFor="let blog of blogs">
-                <!-- card -->
-                <div slickItem class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ url }}/{{ blog.image }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ blog.name }}</h5>
-                        <p class="card-text">{{ blog.content }}</p>
+                <ng-container *ngFor="let blog of blogs">
+                    <!-- card -->
+                    <div slickItem class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ url }}/{{ blog.image }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ blog.name }}</h5>
+                            <p class="card-text">{{ blog.content }}</p>
+                        </div>
                     </div>
-                </div>
-              </ng-container>
+                </ng-container>
                 <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
             </ng-container>
         </div>

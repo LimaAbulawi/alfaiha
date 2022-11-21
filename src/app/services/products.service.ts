@@ -66,14 +66,21 @@ export class ProductsService {
     return this.http.post<any>(this.basicUrl + "/api/v1/checkout-create", form ,{ 'headers': this.headers2} )
 
   }
+  search(form : any){
+
+    console.log("form", form);
+    return this.http.post<any>(this.basicUrl + "/api/v1/search", form ,{ 'headers': this.headers2} )
+  }
 
   lang() {
     this.currentLang = this.translate.currentLang;
     console.log("currentLang", this.currentLang);
   }
+
   delete(Id:number) {
     return this.http.get<{}>(this.basicUrl + "/api/v1/deleteFromCart/"+localStorage.getItem('anonymous-key')+"/"+ Id, { 'headers': this.headers })
   }
+
   updateCart(Id:number , quantity :number) {
     return this.http.get<{}>(this.basicUrl + "/api/v1/updateCart/"+localStorage.getItem('anonymous-key')+"/"+ Id+"/"+ quantity, { 'headers': this.headers })
   }

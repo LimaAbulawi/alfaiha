@@ -12,6 +12,7 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
 import { ReturnPolicyComponent } from './components/return-policy/return-policy.component';
 import { ShippingPolicyComponent } from './components/shipping-policy/shipping-policy.component';
 import { AuthorizedDistributorsComponent } from './components/authorized-distributors/authorized-distributors.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   { path: "", component: MainComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: "returnPolicy", component: ReturnPolicyComponent },
   { path: "ShippingPolicy", component: ShippingPolicyComponent },
   { path: "AuthorizedDistributors", component: AuthorizedDistributorsComponent },
+  { path: "search", component: SearchComponent },
 ];
 
 @NgModule({
