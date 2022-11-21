@@ -52,7 +52,7 @@ export class SingleProductComponent implements OnInit {
   }
 
   addToCart(Id: any) {
-    
+
     return this._ser.addToCart(Id).
       subscribe((res: any) => {
         console.log("this.code", res.data);
@@ -103,6 +103,8 @@ export class SingleProductComponent implements OnInit {
     dots: true,
     arrows: true
   }
-
+  navigateToProducts() {
+    this.router.navigate(['products'])
+  }
 
 }

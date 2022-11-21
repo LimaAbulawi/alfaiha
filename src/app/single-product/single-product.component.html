@@ -33,8 +33,17 @@
       <img class="icon-logo" src="../../../assets/images/Group 19@2x.png" alt="">
       <h2>منتجات متشابه</h2>
     </div>
+    <div class="more">
+      <h3>
+        {{'More.h2' | translate}}
+      </h3>
+      <div class="red_circle" (click)="navigateToProducts()">
+        <i class="fas fa-chevron-left"></i>
+        <!-- <i class="fas fa-chevron-right"></i> -->
+      </div>
+    </div>
   </div>
-
+ 
 
   <div class="container" dir="ltr">
     <div slickContainer #slickController="slick" [slickConfig]="ourProducts">

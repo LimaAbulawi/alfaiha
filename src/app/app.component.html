@@ -93,7 +93,7 @@
                     </div>
                 </nav>
                 <form action="" [formGroup]="searchForm">
-                    <nav class="navbar customNav search-bar bg-[#970a29] animate__animated " [ngClass]="{'bgCusromPink': isScrollerd , 'animate__fadeInLeft': !isSearch
+                    <nav class="navbar customNav search-bar animate__animated " [ngClass]="{'bgCusromPink': isScrollerd , 'animate__fadeInLeft': !isSearch
                 ,'animate__fadeOutLeft': isSearch}">
                         <div class="w-1/2">
                             <input type="text" placeholder="{{'search.h2' | translate}}" class="search_input"
@@ -102,7 +102,7 @@
                         <div class="">
                             <!-- search -->
                             <div class="">
-                                <div class="search_icon !bg-[#f4e9ea]" (click)="submit()">
+                                <div class="search_icon " (click)="submit()">
                                     <!-- <img src="../assets/images/search.png" > -->
                                     <i class="fas fa-search"></i>
                                     <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
