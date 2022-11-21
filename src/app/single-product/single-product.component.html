@@ -21,7 +21,7 @@
       <p class="product-body">{{ product.content}}</p>
       <p class="product-title">brand :{{ product.brand}}</p>
       <p class="product-title">country :{{ product.country}}</p>
-      
+
       <button class="active custom-btn" (click)="addToCart(product.id)" type="text">{{'single_product.add_to_cart' |
         translate}} </button>
     </div>
@@ -29,9 +29,13 @@
 </section>
 <section class="">
   <div class="sub-h2">
-    <img class="icon-logo" src="../../../assets/images/Group 19@2x.png" alt="">
-    <h2>منتجات متشابه</h2>
+    <div class="addresses">
+      <img class="icon-logo" src="../../../assets/images/Group 19@2x.png" alt="">
+      <h2>منتجات متشابه</h2>
+    </div>
   </div>
+
+
   <div class="container" dir="ltr">
     <div slickContainer #slickController="slick" [slickConfig]="ourProducts">
       <div *ngIf="slickController.initialize">

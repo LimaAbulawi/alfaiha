@@ -52,13 +52,7 @@ export class SingleProductComponent implements OnInit {
   }
 
   addToCart(Id: any) {
-    // this.isShown[Id] = !this.isShown[Id];
-    this.count = this._ser.cartCount().
-      subscribe((res: any) => {
-        console.log("this.count", res.data);
-      });
-    localStorage.setItem("count", this.count);
-
+    
     return this._ser.addToCart(Id).
       subscribe((res: any) => {
         console.log("this.code", res.data);
@@ -72,7 +66,6 @@ export class SingleProductComponent implements OnInit {
           })
 
           this.counter = document.getElementById('counter');
-
           this.counter.innerHTML = parseInt( this.counter.innerHTML ) + 1;
           // setTimeout(() => {
           //   window.location.reload();
