@@ -40,10 +40,18 @@ header.header {
   width: 50px;
   color: white;
   font-size: 26px;
+  position: relative;
+  cursor: pointer;
 }
 
 .search_icon img {
-  width: 25px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 26px;
 }
 
 .customNav {
