@@ -37,7 +37,7 @@ export class CallusComponent implements OnInit {
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'تم تأكيد الطلب',
+            title: 'تم ارسال الرسالة ',
             showConfirmButton: false,
             timer: 1500
           })
