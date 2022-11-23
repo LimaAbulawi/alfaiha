@@ -38,8 +38,8 @@
         {{'More.h2' | translate}}
       </h3>
       <div class="red_circle" (click)="navigateToProducts()">
-        <i class="fas fa-chevron-left"></i>
-        <!-- <i class="fas fa-chevron-right"></i> -->
+        <i class="fas fa-chevron-left" [ngClass]="{'block': isLeft ,'hidden': !isLeft }"></i>
+        <i class="fas fa-chevron-right" [ngClass]="{'block': !isLeft ,'hidden':isLeft }"></i>
       </div>
     </div>
   </div>

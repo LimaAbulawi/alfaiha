@@ -3,6 +3,7 @@ import { Slick } from 'ngx-slickjs';
 import { ProductsService } from '../services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2'
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -18,8 +19,20 @@ export class SingleProductComponent implements OnInit {
   count: any;
   arrayLength = 10;
   counter :any = 0;
+  lang: any;
+  isLeft: boolean = true;
+  
+  constructor(private _ser: ProductsService, private route: ActivatedRoute, private router: Router, private translate: TranslateService) {
 
-  constructor(private _ser: ProductsService, private route: ActivatedRoute, private router: Router) { }
+    translate.onLangChange.subscribe(lang => {
+      this.lang = lang.lang;
+      if (this.lang == 'ar') {
+        this.isLeft = true;
+      }else {
+        this.isLeft = false;
+      }
+    })
+  }
 
   ngOnInit(): void {
 

@@ -3,6 +3,7 @@ import { Slick } from 'ngx-slickjs';
 import { ProductsService } from 'src/app/services/products.service';
 import { SlidersService } from 'src/app/services/sliders.service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main',
@@ -15,8 +16,22 @@ export class MainComponent implements OnInit {
   sliders: any = [];
   url: any = [];
   arrayLength = 10;
+  lang: any;
+  isLeft: boolean = true;
 
-  constructor(private _ser: ProductsService, private sliderSer: SlidersService, private router: Router) { }
+  constructor(private _ser: ProductsService, private sliderSer: SlidersService,
+    private router: Router, private translate: TranslateService) {
+
+    translate.onLangChange.subscribe(lang => {
+      this.lang = lang.lang;
+      if (this.lang == 'ar') {
+        this.isLeft = true;
+      }else {
+        this.isLeft = false;
+      }
+    })
+
+  }
 
   ngOnInit(): void {
     this.url = this._ser.basicUrl;
