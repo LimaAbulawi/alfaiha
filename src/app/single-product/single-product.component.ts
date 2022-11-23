@@ -3,7 +3,6 @@ import { Slick } from 'ngx-slickjs';
 import { ProductsService } from '../services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2'
-import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -19,20 +18,8 @@ export class SingleProductComponent implements OnInit {
   count: any;
   arrayLength = 10;
   counter :any = 0;
-  lang: any;
-  isLeft: boolean = true;
-  
-  constructor(private _ser: ProductsService, private route: ActivatedRoute, private router: Router, private translate: TranslateService) {
 
-    translate.onLangChange.subscribe(lang => {
-      this.lang = lang.lang;
-      if (this.lang == 'ar') {
-        this.isLeft = true;
-      }else {
-        this.isLeft = false;
-      }
-    })
-  }
+  constructor(private _ser: ProductsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -65,6 +52,12 @@ export class SingleProductComponent implements OnInit {
   }
 
   addToCart(Id: any) {
+    // this.isShown[Id] = !this.isShown[Id];
+    this.count = this._ser.cartCount().
+      subscribe((res: any) => {
+        console.log("this.count", res.data);
+      });
+    localStorage.setItem("count", this.count);
 
     return this._ser.addToCart(Id).
       subscribe((res: any) => {
@@ -78,7 +71,10 @@ export class SingleProductComponent implements OnInit {
             timer: 1500
           })
 
+
+
           this.counter = document.getElementById('counter');
+
           this.counter.innerHTML = parseInt( this.counter.innerHTML ) + 1;
           // setTimeout(() => {
           //   window.location.reload();
@@ -116,8 +112,6 @@ export class SingleProductComponent implements OnInit {
     dots: true,
     arrows: true
   }
-  navigateToProducts() {
-    this.router.navigate(['products'])
-  }
+
 
 }

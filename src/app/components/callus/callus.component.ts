@@ -3,15 +3,19 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { CallUsService } from 'src/app/services/call-us.service';
 import Swal from 'sweetalert2';
 
+
+
 @Component({
   selector: 'app-callus',
   templateUrl: './callus.component.html',
   styleUrls: ['./callus.component.scss']
 })
+
 export class CallusComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private _ser: CallUsService) { }
   resMsg!: string;
+
 
   callUsForm = this.fb.group({
     name: ['', Validators.required],
@@ -25,25 +29,27 @@ export class CallusComponent implements OnInit {
   submit() {
     this.callUsForm.controls.phone.setValue(this.destroyMask(this.callUsForm.controls.phone.value));
     console.log(this.callUsForm.value);
-    
+
     if (this.callUsForm.invalid) {
       this.callUsForm.markAllAsTouched();
     }
     if (this.callUsForm.valid) {
-      console.log("lima");
-      this._ser.callus(this.callUsForm.value).subscribe((res: any) => {
-        this.resMsg = res.msg;
-        if (res.code == 200) {
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'تم ارسال الرسالة ',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        }
-        console.log("res", res);
-      });
+
+
+      // console.log("lima");
+      // this._ser.callus(this.callUsForm.value).subscribe((res: any) => {
+      //   this.resMsg = res.msg;
+      //   if (res.code == 200) {
+      //     Swal.fire({
+      //       position: 'top-end',
+      //       icon: 'success',
+      //       title: 'تم ارسال الرسالة ',
+      //       showConfirmButton: false,
+      //       timer: 1500
+      //     })
+      //   }
+      //   console.log("res", res);
+      // });
     }
   }
 

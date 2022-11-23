@@ -27,7 +27,7 @@
       <div class="products">
         <div class="tab-content" id="nav-tabContent">
           <ng-container *ngFor="let cat of cats ; let i = index ">
-          <div class="tab-pane fade"  id="list-home{{cat.id}}" role="tabpanel">
+          <div class="tab-pane fade " [ngClass]="{'active , show': i== 0}" id="list-home{{cat.id}}" role="tabpanel">
             <div class="items">
               <!-- for -->
               <ng-container *ngFor="let product of products">
