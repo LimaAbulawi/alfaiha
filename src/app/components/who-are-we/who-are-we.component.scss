@@ -9,3 +9,14 @@
     font-size: 24px;
     line-height: 32px;
 }
+.who_slider{
+    position: relative;
+}
+.who_slider img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
