@@ -3,6 +3,7 @@ import { Slick } from 'ngx-slickjs';
 import { ProductsService } from '../services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2'
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -15,21 +16,38 @@ export class SingleProductComponent implements OnInit {
   products: any = [];
   product: any = [];
   url: any = [];
-  count: any;
+  cart: any;
   arrayLength = 10;
-  counter :any = 0;
+  counter: any = 0;
+  lang: any;
+  isLeft: boolean = true;
+  trueorfalse: any;
 
-  constructor(private _ser: ProductsService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private _ser: ProductsService, private route: ActivatedRoute, private router: Router,
+    private translate: TranslateService) {
 
+    translate.onLangChange.subscribe((lang: any) => {
+      this.lang = lang.lang;
+      if (this.lang == 'ar') {
+        this.isLeft = true;
+      } else {
+        this.isLeft = false;
+      }
+    })
+  }
   ngOnInit(): void {
 
     window.scroll({
       top: 0,
       behavior: 'smooth'
     });
-
+    this._ser.getCart().
+      subscribe((res: any) => {
+        this.cart = res.data.products;
+  
+      });
     const id = this.route.snapshot.paramMap.get('id');
-    console.log("this.id", id);
+
     this.url = this._ser.basicUrl;
     this.details(id);
     this.getProductsListFromService();
@@ -38,7 +56,6 @@ export class SingleProductComponent implements OnInit {
   getProductsListFromService() {
     return this._ser.getList().subscribe((res: any) => {
       this.products = res.data;
-      console.log("this.products", this.products);
     })
   }
 
@@ -47,21 +64,14 @@ export class SingleProductComponent implements OnInit {
     return this._ser.getProduct(Id).
       subscribe((res: any) => {
         this.product = res.data;
-        console.log("this.product", this.product);
       })
   }
 
   addToCart(Id: any) {
-    // this.isShown[Id] = !this.isShown[Id];
-    this.count = this._ser.cartCount().
-      subscribe((res: any) => {
-        console.log("this.count", res.data);
-      });
-    localStorage.setItem("count", this.count);
-
+    this.trueorfalse = this.cart.filter((x: any) => { return x.product_id === Id; });
     return this._ser.addToCart(Id).
       subscribe((res: any) => {
-        console.log("this.code", res.data);
+   
         if (res.code == 200) {
           Swal.fire({
             position: 'center',
@@ -70,18 +80,18 @@ export class SingleProductComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+          if (this.trueorfalse.length == 0) {
+            this.counter = document.getElementById('counter');
+            this.counter.innerHTML = parseInt(this.counter.innerHTML) + 1;
+          }
 
-
-
-          this.counter = document.getElementById('counter');
-
-          this.counter.innerHTML = parseInt( this.counter.innerHTML ) + 1;
-          // setTimeout(() => {
-          //   window.location.reload();
-          // }, 650)
+          this._ser.getCart().
+            subscribe((res: any) => {
+              this.cart = res.data.products;
+            });
         }
+
       })
-    //
   }
 
   scroll(Id: number) {
@@ -115,3 +125,7 @@ export class SingleProductComponent implements OnInit {
 
 
 }
+function setState(arg0: { searchField: any; }) {
+  throw new Error('Function not implemented.');
+}
+
