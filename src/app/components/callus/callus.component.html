@@ -8,7 +8,8 @@
                 !name is required
             </label>
             <!-- name input -->
-            <input type="text" formControlName="name" class="inputData" placeholder="الاسم الكامل" [ngClass]="{'!border-red-600':
+            <input type="text" formControlName="name" class="inputData" placeholder="{{'callus.fullname' | translate}}"
+                [ngClass]="{'!border-red-600':
         this.callUsForm.get('name')?.touched && this.callUsForm.get('name')?.hasError('required') }">
             <!-- email validation -->
             <div class="flex justify-between mb-1">
@@ -26,7 +27,8 @@ this.callUsForm.get('email')?.touched && this.callUsForm.get('email')?.hasError(
                 </label>
             </div>
             <!-- email input -->
-            <input type="text" formControlName="email" class="inputData" placeholder="البريد الالكتروني" [ngClass]="{'!border-red-600':
+            <input type="text" formControlName="email" class="inputData" placeholder="{{'callus.email' | translate}}"
+                [ngClass]="{'!border-red-600':
 this.callUsForm.get('email')?.touched && this.callUsForm.get('email')?.hasError('required')
 || (this.callUsForm.get('email')?.touched && this.callUsForm.get('email')?.hasError('email')) }">
             <!-- phone validation -->
@@ -45,7 +47,8 @@ this.callUsForm.get('phone')?.touched && this.callUsForm.get('phone')?.hasError(
                 </label>
             </div>
             <!-- phone input -->
-            <input type="text" formControlName="phone" class="inputData" placeholder="الهاتف" [ngClass]="{'!border-red-600':
+            <input type="text" formControlName="phone" class="inputData"
+                placeholder="{{'callus.phonenumber' | translate}}" [ngClass]="{'!border-red-600':
 this.callUsForm.get('phone')?.touched && this.callUsForm.get('phone')?.hasError('required') }"
                 (input)="onInput($event)" minlength="10" maxlength="10">
             <!-- title is required -->
@@ -54,7 +57,8 @@ this.callUsForm.get('phone')?.touched && this.callUsForm.get('phone')?.hasError(
 
                 !title is required
             </label>
-            <input type="text" formControlName="title" class="inputData" placeholder="عنوان الرسالة" [ngClass]="{'!border-red-600':
+            <input type="text" formControlName="title" class="inputData" placeholder="{{'callus.title' | translate}}"
+                [ngClass]="{'!border-red-600':
           this.callUsForm.get('title')?.touched && this.callUsForm.get('title')?.hasError('required') }">
 
         </div>
@@ -67,13 +71,27 @@ this.callUsForm.get('phone')?.touched && this.callUsForm.get('phone')?.hasError(
             </label>
             <!-- phone input -->
             <textarea type="text" formControlName="message_content" class="inputData h-[92%] "
-                placeholder="محتوى الرسالة"
+                placeholder="{{'callus.content' | translate}}"
                 [ngClass]="{'!border-red-600':
         this.callUsForm.get('message_content')?.touched && this.callUsForm.get('message_content')?.hasError('required') }"></textarea>
         </div>
-        <div class="col-sm-12 col-md-4">
-            <button class="active custom-btn" type="submit">إرسال الرسالة </button>
-
+        <div class="col-sm-12 col-md-4 callus">
+            <button class="active custom-btn" type="submit">{{'callus.send' | translate}}</button>
+            <div class="">
+                <div class="flex call">
+                    <img src="../../../assets/images/circle-phone-flip@2x.png" alt="">
+                    <p> 07837006604 - 07837006610</p>
+                </div>
+                <div class="flex call">
+                    <img src="../../../assets/images/at-2@2x.png" alt="">
+                    <p>sales@alfaihascientific.com</p>
+                </div>
+                <div class="flex call">
+                    <img src="../../../assets/images/marker@2x.png" alt="">
+                    <p> {{'footer.callUs.place' | translate}}
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </form>

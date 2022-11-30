@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BagesService } from 'src/app/services/bages.service';
 
 @Component({
   selector: 'app-who-are-we',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhoAreWeComponent implements OnInit {
 
-  constructor() { }
+  resdata: any;
+
+  constructor(private _ser: BagesService) {
+ 
+   }
 
   ngOnInit(): void {
+    this._ser.getView('about-us').subscribe((res: any) => {
+      this.resdata = res.data;
+      console.log("about-us", this.resdata);
+    });
   }
 
 }

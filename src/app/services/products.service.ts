@@ -40,11 +40,7 @@ export class ProductsService {
     return this.http.get(this.basicUrl + "/api/v1/categories", { 'headers': this.headers })
   }
 
-  getNewsList() {
-    // console.log(localStorage.getItem(LOCALSTORAGE_TOKEN_KEY));
-    return this.http.get(this.basicUrl + "/api/v1/blogs", { 'headers': this.headers })
-  }
-
+ 
   getProduct(Id: number) {
     return this.http.get(this.basicUrl + "/api/v1/products/"+Id, { 'headers': this.headers })
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BagesService } from 'src/app/services/bages.service';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivacyPolicyComponent implements OnInit {
 
-  constructor() { }
+  resdata: any;
+
+  constructor(private _ser: BagesService) {
+ 
+   }
 
   ngOnInit(): void {
+    this._ser.getView('Privacy_Policy').subscribe((res: any) => {
+      this.resdata = res.data;
+      console.log("Privacy_Policy", this.resdata);
+    });
   }
 
 }

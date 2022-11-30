@@ -2,18 +2,16 @@
   <div class="row">
     <div class="col-3">
       <div class="sub-products">
-        <div class="">
-          <h2 class="head2">
-            {{'Products.h1' | translate}}
-          </h2>
-          <div class="list-group" id="list-tab" role="tablist">
-            <!-- catigories -->
-            <ng-container *ngFor="let cat of cats  ; let i = index">
-              <a class="list-group-item list-group-item-action " id="list-home-list{{cat.id}}" data-bs-toggle="list"
-                href="#list-home{{cat.id}}" role="tab" aria-controls="list-home"
-                [ngClass]="{'active , show': i== 0}">{{cat.name}}</a>
-            </ng-container>
-          </div>
+        <h2 class="head2">
+          {{'Products.h1' | translate}}
+        </h2>
+        <div class="list-group" id="list-tab" role="tablist">
+          <!-- catigories -->
+          <ng-container *ngFor="let cat of cats  ; let i = index">
+            <a class="list-group-item list-group-item-action " id="list-home-list{{cat.id}}" data-bs-toggle="list"
+              href="#list-home{{cat.id}}" role="tab" aria-controls="list-home"
+              [ngClass]="{'active , show': i== 0}">{{cat.name}}</a>
+          </ng-container>
         </div>
       </div>
     </div>
@@ -27,21 +25,22 @@
       <div class="products">
         <div class="tab-content" id="nav-tabContent">
           <ng-container *ngFor="let cat of cats ; let i = index ">
-          <div class="tab-pane fade " [ngClass]="{'active , show': i== 0}" id="list-home{{cat.id}}" role="tabpanel">
-            <div class="items">
-              <!-- for -->
-              <ng-container *ngFor="let product of products">
-                <div class="item">
-                  <img class="img-fluid" src="{{ url }}/{{ product.image }}">
-                  <a routerLink="/product/{{ product.id }}">
-                    <h4>{{ product.name }}</h4>
-                  </a>
-                </div>
-                <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
-              </ng-container>
+            <div class="tab-pane fade " [ngClass]="{'active , show': i== 0}" id="list-home{{cat.id}}" role="tabpanel">
+              <div class="items">
+                <!-- for -->
+                <ng-container *ngFor="let product of products">
+                  <div class="item">
+                    <img class="img-fluid" src="{{ url }}/{{ product.image }}">
+                    <a routerLink="/product/{{ product.id }}">
+                      <h4>{{ product.cat_number }}</h4>
+                    </a>
+                  </div>
+                  
+                  <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
+                </ng-container>
+              </div>
             </div>
-          </div>
-        </ng-container>
+          </ng-container>
         </div>
       </div>
     </div>

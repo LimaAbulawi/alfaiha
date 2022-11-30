@@ -30,7 +30,10 @@
         "discription": "Al Fayhaa for the trade of medical and laboratory devices Al Fayhaa for the trade of medical and laboratory devices",
         "callUs": {
             "place": "Baghdad - Bab Al-Moadham - the intersection of the Sarafiya Bridge - Al Sarafiya Building - 3rd floor"
-        }
+        },
+        "blogs": "al-faiha Blogs",
+        "copyright": "All Rights Reserved - Designed and Developed by WeCan Information Technology Company"
+
     },
     "catigories": {
         "h1": "catigories",
@@ -55,5 +58,14 @@
     },
     "search": {
         "h2": "Search for a product name or product number"
+    }
+    ,
+    "callus": {
+        "content": "Message content",
+        "fullname": "full name",
+        "email": "email",
+        "phonenumber": "phone number",
+        "title": "Message title",
+        "send": "send message"
     }
 }

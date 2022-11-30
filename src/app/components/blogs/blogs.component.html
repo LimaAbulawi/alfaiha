@@ -1,0 +1,19 @@
+<section>
+    <div class="row mt-24 ">
+        <h2 class="text-4xl text-[#970a29] ">
+            {{'footer.blogs' | translate}}
+        </h2>
+        <div class="col-sm-12 col-md-4 mt-4" *ngFor="let blog of blogs">
+            <!-- card -->
+            <div  class="card" >
+                <div class="card-img">
+                    <img class="card-img-top" src="{{basicUrl}}/{{ blog.image }}">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ blog.name }}</h5>
+                    <p class="card-text">{{ blog.content }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

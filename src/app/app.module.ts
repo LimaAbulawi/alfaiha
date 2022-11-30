@@ -22,6 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReturnPolicyComponent } from './components/return-policy/return-policy.component';
 import { ShippingPolicyComponent } from './components/shipping-policy/shipping-policy.component';
 import { AuthorizedDistributorsComponent } from './components/authorized-distributors/authorized-distributors.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
+import { SearchComponent } from './components/search/search.component';
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -43,6 +45,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     ReturnPolicyComponent,
     ShippingPolicyComponent,
     AuthorizedDistributorsComponent,
+    BlogsComponent,
+    SearchComponent
 
   ],
   imports: [

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Slick } from 'ngx-slickjs';
 import { NewsService } from 'src/app/services/news.service';
@@ -10,12 +11,13 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
+
   blogs: any = [];
   url: any = [];
   lang: any;
   isLeft: boolean = true;
   
-  constructor(private _ser: ProductsService, private translate: TranslateService) {
+  constructor(private router: Router,private _ser: NewsService, private translate: TranslateService) {
 
     translate.onLangChange.subscribe(lang => {
       this.lang = lang.lang;
@@ -33,9 +35,9 @@ export class NewsComponent implements OnInit {
   }
 
   getnewsListFromService() {
-    return this._ser.getNewsList().subscribe((res: any) => {
+    return this._ser.getList().subscribe((res: any) => {
       this.blogs = res.data;
-      console.log("this.products", this.blogs);
+      console.log("this.blogs", this.blogs);
 
     })
   }
@@ -54,4 +56,7 @@ export class NewsComponent implements OnInit {
   //     console.log("this.News", this.News);
   //   })
   // }
+  navigateToBloges() {
+    this.router.navigate(['bolgs'])
+  }
 }

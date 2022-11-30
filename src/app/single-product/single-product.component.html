@@ -14,13 +14,17 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 sinle-product">
 
-      <h2 class="product-title">{{ product.name }}</h2>
-      <h3 class="product-title">catigory number :{{ product.catnumber}} </h3>
+      <h2 class="">{{ product.name }}</h2>
+      <h3 class="">catalog number :{{ product.catnumber}} </h3>
       <p class="product-body">{{ product.content}}</p>
-      <p class="product-title">brand :{{ product.brand}}</p>
-      <p class="product-title">country :{{ product.country}}</p>
+      <h3 class="">brand :
+        <span>{{ product.brand}}</span>
+      </h3>
+      <h3 class="">country :
+        <span>{{ product.country}}</span>
+      </h3>
 
       <button class="active custom-btn" (click)="addToCart(product.id)" type="text">{{'single_product.add_to_cart' |
         translate}} </button>

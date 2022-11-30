@@ -44,7 +44,7 @@ export class SingleProductComponent implements OnInit {
     this._ser.getCart().
       subscribe((res: any) => {
         this.cart = res.data.products;
-  
+
       });
     const id = this.route.snapshot.paramMap.get('id');
 
@@ -71,7 +71,7 @@ export class SingleProductComponent implements OnInit {
     this.trueorfalse = this.cart.filter((x: any) => { return x.product_id === Id; });
     return this._ser.addToCart(Id).
       subscribe((res: any) => {
-   
+
         if (res.code == 200) {
           Swal.fire({
             position: 'center',
@@ -84,7 +84,6 @@ export class SingleProductComponent implements OnInit {
             this.counter = document.getElementById('counter');
             this.counter.innerHTML = parseInt(this.counter.innerHTML) + 1;
           }
-
           this._ser.getCart().
             subscribe((res: any) => {
               this.cart = res.data.products;

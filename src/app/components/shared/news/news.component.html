@@ -9,7 +9,7 @@
             <h3>
                 {{'More.h2' | translate}}
             </h3>
-            <div class="red_circle">
+            <div class="red_circle" (click)="navigateToBloges()">
                 <i class="fas fa-chevron-left" [ngClass]="{'block': isLeft ,'hidden': !isLeft }"></i>
                 <i class="fas fa-chevron-right" [ngClass]="{'block': !isLeft ,'hidden':isLeft }"></i>
             </div>
@@ -22,8 +22,10 @@
             <ng-container *ngIf="slickController.initialize">
                 <ng-container *ngFor="let blog of blogs">
                     <!-- card -->
-                    <div slickItem class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{ url }}/{{ blog.image }}">
+                    <div slickItem class="card">
+                        <div class="card-img">
+                            <img class="card-img-top" src="{{ url }}/{{ blog.image }}">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ blog.name }}</h5>
                             <p class="card-text">{{ blog.content }}</p>

@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ProductsService } from './services/products.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { BagesService } from './services/bages.service';
 
 
 @Component({
@@ -23,9 +24,12 @@ export class AppComponent {
   isEn: boolean = true;
   name: any;
   textDir: string = 'rtl';
+  slug: any;
+  serchValue: any;
 
-
-  constructor(private router: Router, private route: ActivatedRoute, public translate: TranslateService, private _ser: ProductsService, private fb: FormBuilder) {
+  constructor(private router: Router, private route: ActivatedRoute,
+    public translate: TranslateService, private _ser: ProductsService, private fb: FormBuilder
+    , private ser: BagesService) {
 
     translate.addLangs(['en', 'ar']);
     // Set default language
@@ -90,9 +94,17 @@ export class AppComponent {
     }
   }
 
-  setActive(event: any) {
+  setActive(event: any, slug: any) {
     localStorage.setItem("active", event);
     this.active = localStorage.getItem("active");
+
+    if (slug != 'none') {
+      return this.ser.getView(slug).subscribe((res: any) => {
+        this.slug = res.data;
+        console.log("this.slug", this.slug);
+      })
+    }
+    return false;
   }
 
   searchForm = this.fb.group({
@@ -100,9 +112,9 @@ export class AppComponent {
   })
   resMsg!: string;
 
-  submit(){
+  submit() {
     // this.isSearch = !this.isSearch;
-    console.log("searchForm",this.searchForm.value);
+    console.log("searchForm", this.searchForm.value);
 
     if (this.searchForm.invalid) {
       this.searchForm.markAllAsTouched();
@@ -116,5 +128,17 @@ export class AppComponent {
         console.log("ressearch", res);
       });
     }
+
+  }
+  navigateToProducts() {
+    this.serchValue = this.searchForm.controls.name.value;
+    console.log("this.serchValueeeeeeee", this.serchValue);
+    // this.router.navigate(["search", this.serchValue])
+
+    // if (this.router.url.includes('search')) {
+      
+      window.location.href='/search/'+this.serchValue;
+    // }
+   
   }
 }

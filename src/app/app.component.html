@@ -47,29 +47,29 @@
                             <ul class="navbar-nav  mb-2 mb-lg-0">
                                 <li class="nav-item ">
                                     <a class="nav-link active" routerLink="/" [ngClass]="{'active':active == 0}"
-                                        (click)="setActive(0)">
+                                        (click)="setActive(0 , 'none')">
                                         {{'Navbar.main' | translate}}</a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" routerLink="/products" [ngClass]="{'active': active == 1}"
-                                        (click)="setActive(1)"> {{'Navbar.products_gallery' | translate}} </a>
+                                        (click)="setActive(1 , 'none')"> {{'Navbar.products_gallery' | translate}} </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link " routerLink="/weare" [ngClass]="{'active': active==2}"
-                                        (click)="setActive(2)">
+                                        (click)="setActive(2 , 'about-us')">
                                         {{'Navbar.who_we_are' | translate}} </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" routerLink="/terms&conditions" [ngClass]="{'active':active==3}"
-                                        (click)="setActive(3)">{{'Navbar.terms_conditions' | translate}} </a>
+                                        (click)="setActive(3 , 'terms_and_conditions')">{{'Navbar.terms_conditions' | translate}} </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" routerLink="/callus" [ngClass]="{'active':active==4}"
-                                        (click)="setActive(4)">{{'Navbar.call_us' | translate}} </a>
+                                        (click)="setActive(4 , 'none')">{{'Navbar.call_us' | translate}} </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link cursor-pointer" (click)="translateLanguageTo('en')"
@@ -100,6 +100,10 @@
                                 formControlName="name">
                         </div>
                         <div class="">
+                            <!-- routerLink="/search/thermo" -->
+                            <a  (click)="navigateToProducts()">
+                                 seaRCH       
+                            </a>
                             <!-- search -->
                             <div class="">
                                 <div class="search_icon " (click)="submit()">
@@ -161,53 +165,43 @@
                         </div>
                     </div>
                     <div class="col-4 line">
-                        <h2 class="text-3xl mb-6">
+                        <h2 class="text-3xl ">
                             {{'footer.links' | translate}}
                         </h2>
                         <div class="row">
                             <div class="col-6">
                                 <p>
-                                    <a href="" routerLink="/terms&conditions" (click)="setActive(3)">
+                                    <a routerLink="/terms&conditions" (click)="setActive(3 , 'terms_and_conditions')">
                                         {{'footer.terms_conditions' | translate}}
                                     </a>
                                 </p>
                                 <p>
-                                    <a href="" routerLink="/privacy_policy" (click)="setActive(0)">
+                                    <a routerLink="/privacy_policy" (click)="setActive(0 , 'Privacy_Policy')">
                                         {{'footer.privacy_policy' | translate}}
                                     </a>
                                 </p>
                                 <p>
-                                    <a href="" routerLink="/callus" (click)="setActive(4)">
+                                    <a routerLink="/callus" (click)="setActive(4 , 'none' )">
                                         {{'footer.call_us' | translate}}
                                     </a>
                                 </p>
                                 <p>
-                                    <a href="" routerLink="/weare" (click)="setActive(2)">
+                                    <a routerLink="/weare" (click)="setActive(2, 'about-us')">
                                         {{'We_Are.h1' | translate}}
                                     </a>
                                 </p>
                             </div>
                             <div class="col-6">
-                                <!-- <p>
-                                    <a href="" routerLink="/returnPolicy" (click)="setActive(0)">
-                                        {{'footer.return_policy' | translate}}
-                                    </a>
-                                </p> -->
-                                <!-- <p>
-                                    <a href="" routerLink="/ShippingPolicy" (click)="setActive(0)">
-                                        {{'footer.shipping_policy' | translate}}
-                                    </a>
-                                </p> -->
                                 <p>
-                                    <a href="" routerLink="/products" (click)="setActive(1)">
+                                    <a routerLink="/products" (click)="setActive(1 , 'none')">
                                         {{'Navbar.products_gallery' | translate}}
                                     </a>
                                 </p>
-                                <!-- <p>
-                                    <a href="" routerLink="/AuthorizedDistributors" (click)="setActive(0)">
-                                        {{'footer.authorized_distributors' | translate}}
+                                <p>
+                                    <a routerLink="/bolgs" (click)="setActive(0 , 'none')">
+                                        {{'footer.blogs' | translate}}
                                     </a>
-                                </p> -->
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -231,7 +225,8 @@
             </div>
         </div>
         <div class="copyRight">
-            <p>جميع الحقوق محفوظة - تصميم وبرمجة شركة نستطيع لتكنولوجيا المعلومات</p>
+            <p> {{'footer.copyright' | translate}}
+            </p>
         </div>
     </section>
 </div>
