@@ -1,4 +1,24 @@
-<section class="h-10 bg-red-300"> 
-    <p>search works!</p>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="items" *ngIf="ressearch">
+                    <!-- for -->
+                    <div *ngFor="let res of ressearch" class="card">
 
+                        <div class="card-img">
+                            <img class="card-img-top img-fluid" src="{{ url }}/{{ res.image }}">
+                        </div>
+                        <div class="card-body">
+                            <a routerLink="/product/{{ res.id }}">
+                                <h4>{{ res.name }}</h4>
+                            </a>
+                        </div>
+
+                        <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

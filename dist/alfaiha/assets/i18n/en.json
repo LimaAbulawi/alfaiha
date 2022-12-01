@@ -11,7 +11,8 @@
         "h1": "Al-Fayha' Sciences"
     },
     "Products": {
-        "h1": "our products"
+        "h1": "our products", 
+        "related" :"related product"
     },
     "We_Are": {
         "h1": "who we are "

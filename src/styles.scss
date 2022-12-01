@@ -152,7 +152,7 @@ section:last-child {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 29px;
+  width: 32px;
   height: 18px;
 }
 
@@ -558,6 +558,33 @@ span.counter {
 
 .card-title {
   font-weight: 600;
+}
+.items{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.items > .card  {
+  width: 170px;
+  height: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  min-height: 208px;
+  overflow: hidden;
+}
+
+.items>.card h4 {
+  text-align: center;
+}
+.items>.card img {
+  margin-bottom: 10px;
+}
+
+.items>.card  .card-img {
+
+  height: 160px !important;
 }
 
 .slick-slide {

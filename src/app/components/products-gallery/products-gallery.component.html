@@ -29,13 +29,16 @@
               <div class="items">
                 <!-- for -->
                 <ng-container *ngFor="let product of products">
-                  <div class="item">
-                    <img class="img-fluid" src="{{ url }}/{{ product.image }}">
-                    <a routerLink="/product/{{ product.id }}">
-                      <h4>{{ product.cat_number }}</h4>
-                    </a>
+                  <div class="card " >
+                    <div class="card-img">
+                      <img class="card-img-top img-fluid" src="{{ url }}/{{ product.image }}">
+                    </div>
+                    <div class="card-body">
+                      <a routerLink="/product/{{ product.id }}">
+                        <h4>{{ product.cat_number }}</h4>
+                      </a>
+                    </div>
                   </div>
-                  
                   <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
                 </ng-container>
               </div>

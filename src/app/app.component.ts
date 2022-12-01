@@ -120,13 +120,7 @@ export class AppComponent {
       this.searchForm.markAllAsTouched();
     }
     if (this.searchForm.valid) {
-      console.log("name");
-      this._ser.search(this.searchForm.value).subscribe((res: any) => {
-        this.resMsg = res.msg;
-        if (res.code == 200) {
-        }
-        console.log("ressearch", res);
-      });
+     this.navigateToProducts();
     }
 
   }
@@ -134,7 +128,6 @@ export class AppComponent {
     this.serchValue = this.searchForm.controls.name.value;
     console.log("this.serchValueeeeeeee", this.serchValue);
     // this.router.navigate(["search", this.serchValue])
-
     // if (this.router.url.includes('search')) {
       
       window.location.href='/search/'+this.serchValue;

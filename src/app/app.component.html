@@ -57,13 +57,13 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link " routerLink="/weare" [ngClass]="{'active': active==2}"
+                                    <a class="nav-link " routerLink="/weare" routerLinkActive="active" 
                                         (click)="setActive(2 , 'about-us')">
                                         {{'Navbar.who_we_are' | translate}} </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" routerLink="/terms&conditions" [ngClass]="{'active':active==3}"
+                                    <a class="nav-link" routerLink="/terms&conditions" routerLinkActive="active" 
                                         (click)="setActive(3 , 'terms_and_conditions')">{{'Navbar.terms_conditions' | translate}} </a>
                                 </li>
 
@@ -101,9 +101,9 @@
                         </div>
                         <div class="">
                             <!-- routerLink="/search/thermo" -->
-                            <a  (click)="navigateToProducts()">
+                            <!-- <a  (click)="navigateToProducts()">
                                  seaRCH       
-                            </a>
+                            </a> -->
                             <!-- search -->
                             <div class="">
                                 <div class="search_icon " (click)="submit()">

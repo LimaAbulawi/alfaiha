@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { environment } from 'src/environments/environment.prod';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,7 +14,7 @@ const httpOptions = {
 })
 export class ProductsService {
   currentLang: any;
-  basicUrl = "https://alfaihascientific.com/alfaihascientific.com/api/public";
+  basicUrl = environment.basicUrl;
 
   headers = new HttpHeaders()
     .set('content-type', 'application/json')
