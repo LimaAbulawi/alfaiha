@@ -95,8 +95,8 @@ export class AppComponent {
   }
 
   setActive(event: any, slug: any) {
-    localStorage.setItem("active", event);
-    this.active = localStorage.getItem("active");
+    // localStorage.setItem("active", event);
+    // this.active = localStorage.getItem("active");
 
     if (slug != 'none') {
       return this.ser.getView(slug).subscribe((res: any) => {
