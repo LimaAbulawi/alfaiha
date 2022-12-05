@@ -14,7 +14,7 @@ import { BagesService } from './services/bages.service';
 })
 export class AppComponent {
   title = 'Alfaiha';
-  active: any = 0;
+  // active: any = 0;
   isScrollerd: boolean = false;
   isSearch: boolean = true;
   pathName: Array<any> = [];
@@ -40,12 +40,12 @@ export class AppComponent {
     //   console.log("eachRoute", eachRoute['routeName'])
     // })
     // first run
-    if (localStorage.getItem("active") !== null) {
-      this.active = localStorage.getItem("active");
-    } else {
-      localStorage.setItem('active', this.active);
-      this.router.navigate(['/']);
-    }
+    // if (localStorage.getItem("active") !== null) {
+    //   this.active = localStorage.getItem("active");
+    // } else {
+    //   localStorage.setItem('active', this.active);
+    //   this.router.navigate(['/']);
+    // }
   }
 
   ngOnInit(): void {

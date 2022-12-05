@@ -17,6 +17,7 @@ import { BlogsComponent } from './components/blogs/blogs.component';
 
 const routes: Routes = [
   { path: "", component: MainComponent },
+  { path: "main", component: MainComponent },
   { path: "cart", component: CartComponent , data: {routeName: "cart"} },
   { path: "checkout", component: CheckoutComponent , data: {routeName: "checkout"} },
   { path: "products", component: ProductsGalleryComponent , data: {routeName: "products"} },

@@ -298,7 +298,12 @@ header.header {
 
 @media (max-width: 1281px) {
   header.header .container {
-    max-width: 1100px !important;
+    max-width: 900px !important;
+  }
+
+  // new
+  .nav-link {
+    font-size: 15px !important;
   }
 }
 
@@ -306,10 +311,17 @@ header.header {
   header.header .container {
     max-width: 870px !important;
   }
+
+}
+// new
+@media (max-width: 1000px) {
+  header.header .container {
+    max-width: 723px !important;
+  }
 }
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 850px) {
   header.header {
     top: 30px;
   }
@@ -322,6 +334,11 @@ header.header {
     top: auto;
     bottom: 20px;
     z-index: 9;
+  }
+
+  // new
+  .search-form {
+    left: 135px;
   }
 
   .social-icons ul {
@@ -338,30 +355,6 @@ header.header {
   .social-icons ul li img {
     width: 50px;
   }
-
-  // .search-form {
-  //   width: 50px;
-  //   position: fixed;
-  //   left: 25px;
-  //   bottom: 20px;
-  //   top: auto;
-  //   padding-right: 5px;
-  // }
-
-
-
-  // .search-form::after {
-  //   content: no-close-quote;
-  //   height: 80px;
-  //   position: fixed;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   background: #fff;
-  //   border-top-left-radius: 25px;
-  //   border-top-right-radius: 25px;
-  //   z-index: -1;
-  // }
 
   .navbar-collapse {
     background: #fff;
@@ -383,6 +376,7 @@ header.header {
   .footerMargin {
     margin-bottom: 80px;
   }
+
 
 }
 
@@ -426,6 +420,10 @@ nav * {
     margin-right: 0;
   }
 
+  // new
+  .search-form {
+    left: 105px;
+  }
 
 }
 
@@ -545,6 +543,7 @@ span.counter {
 .card-body h5 {
   color: #636363;
 }
+
 .card-body p {
   color: #727272;
 }
@@ -554,20 +553,22 @@ span.counter {
   border-bottom-right-radius: 26PX;
   border-bottom-left-radius: 26px;
   text-align: right;
+  font-size: 13px;
 }
 
 .card-title {
   font-weight: 600;
 }
-.items{
+
+.items {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.items > .card  {
+.items>.card {
   width: 170px;
-  height: 200px;
+  // height: 200px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 20px;
@@ -578,11 +579,12 @@ span.counter {
 .items>.card h4 {
   text-align: center;
 }
+
 .items>.card img {
   margin-bottom: 10px;
 }
 
-.items>.card  .card-img {
+.items>.card .card-img {
 
   height: 160px !important;
 }
