@@ -22,6 +22,7 @@ export class AppComponent {
   count: any;
   token: any;
   isEn: boolean = true;
+  isAR: boolean = false;
   name: any;
   textDir: string = 'rtl';
   slug: any;
@@ -57,6 +58,12 @@ export class AppComponent {
     }
     console.log(localStorage.getItem('anonymous-key'))
     this.cartCount();
+
+    if(localStorage.getItem('locale') == null){
+      localStorage.setItem('locale','en');
+    }else{
+      this.translateLanguageTo(localStorage.getItem('locale'))
+    }
   }
 
   cartCount() {
@@ -83,14 +90,23 @@ export class AppComponent {
     }
   }
   //Switch language
-  translateLanguageTo(lang: string) {
+  translateLanguageTo(lang: any,click = 0) {
     this.translate.use(lang);
-    this.isEn = !this.isEn;
     if (lang === "ar") {
       this.textDir = 'rtl';
+      
+      this.isAR = true;
+      this.isEn = false;
     }
     else {
       this.textDir = 'ltr';
+      this.isEn = true;
+      this.isAR = false;
+    }
+
+    localStorage.setItem('locale',lang);
+    if( click ){
+      window.location.reload()
     }
   }
 

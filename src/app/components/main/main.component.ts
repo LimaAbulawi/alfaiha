@@ -41,7 +41,7 @@ export class MainComponent implements OnInit {
 
   ourProducts: Slick.Config = {
     infinite: true,
-    slidesToShow: 5.5,
+    slidesToShow: 6.5,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,

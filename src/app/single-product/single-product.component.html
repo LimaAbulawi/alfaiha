@@ -18,7 +18,7 @@
 
       <h2 class="">{{ product.name }}</h2>
       <h3 class="">catalog number :
-        <span>{{ product.cat_number}} </span> 
+        <span>{{ product.cat_number}} </span>
       </h3>
       <p class="product-body mb-3">{{ product.content}}</p>
       <h3 class="">brand :
@@ -50,17 +50,21 @@
     </div>
   </div>
 
-
+  <!-- semi products -->
   <div class="container" dir="ltr">
     <div slickContainer #slickController="slick" [slickConfig]="ourProducts">
       <div *ngIf="slickController.initialize">
-        <ng-container *ngFor="let product of products">
+        <ng-container *ngFor="let product of relatedProducts.related_products">
           <div slickItem>
-            <img src="{{ url }}/{{product.image}}">
-            <!-- -->
-            <a routerLink="/product/{{product.id}}" (click)="scroll(product.id)" class="cursor-pointer">
-              <h4>{{product.name}}</h4>
-            </a>
+            <div class="semiproduct">
+
+              <img src="{{ url }}/{{product.image}}">
+              <!-- -->
+              <a routerLink="/product/{{product.id}}" (click)="scroll(product.id)" class="cursor-pointer">
+                <h4>{{product.name}}</h4>
+              </a>
+
+            </div>
           </div>
           <!-- <img slickItem *ngFor="let item of getArray(arrayLength); let index = index" src="https://placeholder.pics/svg/400/DEDEDE/555555/{{ index + 1 }}" class="p-10"> -->
         </ng-container>

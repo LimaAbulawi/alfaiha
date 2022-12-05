@@ -5,31 +5,41 @@ import { environment } from 'src/environments/environment.prod';
 
 const httpOptions = {
   headers: new HttpHeaders({
-   'Authorization': 'Bearer '+localStorage.getItem('token')
+    'Authorization': 'Bearer ' + localStorage.getItem('token')
   }),
   withCredentials: true
- };
+};
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
+
   currentLang: any;
   basicUrl = environment.basicUrl;
 
   headers = new HttpHeaders()
-    .set('content-type', 'application/json')
-    .set('Authorization', 'Bearer '+localStorage.getItem('token'));
+  .set('content-type', 'application/json')
+  .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+  .set('X-localization', ''+localStorage.getItem('locale'));
 
-    headers2 = new HttpHeaders()
-    .set('Authorization', 'Bearer '+localStorage.getItem('token'));
+    //console.log("this.translate.currentLang ", localStorage.getItem('locale')?.toString());
+
+  headers2 = new HttpHeaders()
+    .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    .set('X-localization', "'"+localStorage.getItem('locale')?.toString()+"'");
 
 
-  constructor(private translate: TranslateService,private http: HttpClient) {
+
+  constructor(private translate: TranslateService, private http: HttpClient) {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-      console.log(event.lang);
+      // console.log("event.lang ", event.lang);
       // service here :  send to service event.lang in hedear
+      
+    
     });
+
   }
+  
 
   getList() {
     // console.log(localStorage.getItem(LOCALSTORAGE_TOKEN_KEY));
@@ -41,32 +51,36 @@ export class ProductsService {
     return this.http.get(this.basicUrl + "/api/v1/categories", { 'headers': this.headers })
   }
 
- 
+
   getProduct(Id: number) {
-    return this.http.get(this.basicUrl + "/api/v1/products/"+Id, { 'headers': this.headers })
+    return this.http.get(this.basicUrl + "/api/v1/products/" + Id, { 'headers': this.headers })
+  }
+
+  getReltedProduct(Id: number) {
+    return this.http.get(this.basicUrl + "/api/v1/products/related/" + Id, { 'headers': this.headers })
   }
 
 
   addToCart(Id: number) {
-    return this.http.get(this.basicUrl + "/api/v1/addToCart/"+localStorage.getItem('anonymous-key') +'/'+ Id, { 'headers': this.headers })
+    return this.http.get(this.basicUrl + "/api/v1/addToCart/" + localStorage.getItem('anonymous-key') + '/' + Id, { 'headers': this.headers })
   }
 
   cartCount() {
-    return this.http.get<{}>(this.basicUrl + "/api/v1/cartCount/"+localStorage.getItem('anonymous-key'), { 'headers': this.headers })
+    return this.http.get<{}>(this.basicUrl + "/api/v1/cartCount/" + localStorage.getItem('anonymous-key'), { 'headers': this.headers })
   }
 
   getCart() {
-    return this.http.get<{}>(this.basicUrl + "/api/v1/getCart/"+localStorage.getItem('anonymous-key'), { 'headers': this.headers })
+    return this.http.get<{}>(this.basicUrl + "/api/v1/getCart/" + localStorage.getItem('anonymous-key'), { 'headers': this.headers })
   }
 
-  confirmOrder(form : any){
-    return this.http.post<any>(this.basicUrl + "/api/v1/checkout-create", form ,{ 'headers': this.headers2} )
+  confirmOrder(form: any) {
+    return this.http.post<any>(this.basicUrl + "/api/v1/checkout-create", form, { 'headers': this.headers2 })
 
   }
-  search(form : any){
+  search(form: any) {
 
     console.log("form", form);
-    return this.http.post<any>(this.basicUrl + "/api/v1/search", form ,{ 'headers': this.headers2} )
+    return this.http.post<any>(this.basicUrl + "/api/v1/search", form, { 'headers': this.headers2 })
   }
 
   lang() {
@@ -74,11 +88,11 @@ export class ProductsService {
     console.log("currentLang", this.currentLang);
   }
 
-  delete(Id:number) {
-    return this.http.get<{}>(this.basicUrl + "/api/v1/deleteFromCart/"+localStorage.getItem('anonymous-key')+"/"+ Id, { 'headers': this.headers })
+  delete(Id: number) {
+    return this.http.get<{}>(this.basicUrl + "/api/v1/deleteFromCart/" + localStorage.getItem('anonymous-key') + "/" + Id, { 'headers': this.headers })
   }
 
-  updateCart(Id:number , quantity :number) {
-    return this.http.get<{}>(this.basicUrl + "/api/v1/updateCart/"+localStorage.getItem('anonymous-key')+"/"+ Id+"/"+ quantity, { 'headers': this.headers })
+  updateCart(Id: number, quantity: number) {
+    return this.http.get<{}>(this.basicUrl + "/api/v1/updateCart/" + localStorage.getItem('anonymous-key') + "/" + Id + "/" + quantity, { 'headers': this.headers })
   }
 }

@@ -72,10 +72,10 @@
                                         (click)="setActive(4 , 'none')">{{'Navbar.call_us' | translate}} </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link cursor-pointer" (click)="translateLanguageTo('en')"
-                                        *ngIf="isEn">English</a>
-                                    <a class="nav-link cursor-pointer" (click)="translateLanguageTo('ar')"
-                                        *ngIf="!isEn">عربي</a>
+                                    <a class="nav-link cursor-pointer" (click)="translateLanguageTo('en',1)"
+                                        *ngIf="isAR">English</a>
+                                    <a class="nav-link cursor-pointer" (click)="translateLanguageTo('ar',1)"
+                                        *ngIf="isEn">عربي</a>
                                 </li>
                             </ul>
                         </div>

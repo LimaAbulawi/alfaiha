@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class SingleProductComponent implements OnInit {
 
-  products: any = [];
+  relatedProducts: any = [];
   product: any = [];
   url: any = [];
   cart: any;
@@ -50,14 +50,21 @@ export class SingleProductComponent implements OnInit {
 
     this.url = this._ser.basicUrl;
     this.details(id);
-    this.getProductsListFromService();
+    this.getRelatedProducts(id);
+    // this.getProductsListFromService();
   }
 
-  getProductsListFromService() {
-    return this._ser.getList().subscribe((res: any) => {
-      this.products = res.data;
+  getRelatedProducts(productId: any) {
+    return this._ser.getReltedProduct(productId).subscribe((res: any) => {
+      this.relatedProducts = res.data;
+      console.log("this.relatedProducts" , this.relatedProducts)
     })
   }
+  // getProductsListFromService() {
+  //   return this._ser.getList().subscribe((res: any) => {
+      // this.products = res.data;
+  //   })
+  // }
 
   details(Id: any) {
     // this.isShown[Id] = !this.isShown[Id];
