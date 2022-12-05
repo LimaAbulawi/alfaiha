@@ -1,10 +1,15 @@
 <section class="overflow-hidden">
-    <div class="h-96 " dir="ltr">
+    <div class="h-[27rem]" dir="ltr">
         <div slickContainer #slickController="slick" [slickConfig]="slidersSlick">
             <div *ngIf="slickController.initialize">
                 <ng-container *ngFor="let slider of sliders">
                     <div slickItem>
                         <img src="{{ url }}/{{ slider.image }}" class="">
+                        <div class=" content">
+                            <h2>Multiskan™ FC Microplate Photometer</h2>
+                            <!-- <img class="w-28 mb-2 first-line:" src="../assets/images/whitelogo@2x.png" alt=""> -->
+                            <img class="w-28 mb-2 first-line:" src="../assets/images/OIP.jfif" alt="">
+                        </div>
                     </div>
                 </ng-container>
             </div>

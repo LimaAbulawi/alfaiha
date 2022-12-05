@@ -645,3 +645,12 @@ span.counter {
 
   width: 100% !important;
 }
+.content{
+  display: flex;
+  height: 74px;
+  justify-content: space-around;
+  align-items: center;
+}
+.slick-slide .content img {
+  width: 135px  !important;
+}
