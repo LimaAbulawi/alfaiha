@@ -54,7 +54,7 @@ export class MainComponent implements OnInit {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     variableWidth: false,
     pauseOnFocus: true
