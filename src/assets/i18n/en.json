@@ -15,7 +15,10 @@
         "related" :"related product"
     },
     "We_Are": {
-        "h1": "who we are "
+        "h1": "who we are " , 
+        "massage" : "Massage" ,
+        "Vision" : "Vision" 
+
     },
     "news": {
         "h1": "Faiha Science News "
@@ -49,7 +52,11 @@
         "order_list": "Order List"
     },
     "single_product": {
-        "add_to_cart": "add to cart"
+        "add_to_cart": "add to cart"  ,
+        "catalog_number" :"catalog number" , 
+        "brand" :"brand" , 
+        "country" :"country" 
+
     },
     "More": {
         "h2": "more"
