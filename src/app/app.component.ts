@@ -14,7 +14,7 @@ import { BagesService } from './services/bages.service';
 })
 export class AppComponent {
   title = 'Alfaiha';
-  // active: any = 0;
+  active: any = 0;
   isScrollerd: boolean = false;
   isSearch: boolean = true;
   pathName: Array<any> = [];
@@ -64,6 +64,7 @@ export class AppComponent {
     }else{
       this.translateLanguageTo(localStorage.getItem('locale'))
     }
+    this.active = localStorage.getItem("active");
   }
 
   cartCount() {
@@ -111,8 +112,10 @@ export class AppComponent {
   }
 
   setActive(event: any, slug: any) {
-    // localStorage.setItem("active", event);
-    // this.active = localStorage.getItem("active");
+
+    console.log("event, " , event)
+    localStorage.setItem("active", event);
+    this.active = localStorage.getItem("active");
 
     if (slug != 'none') {
       return this.ser.getView(slug).subscribe((res: any) => {

@@ -24,6 +24,7 @@ import { ShippingPolicyComponent } from './components/shipping-policy/shipping-p
 import { AuthorizedDistributorsComponent } from './components/authorized-distributors/authorized-distributors.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { SearchComponent } from './components/search/search.component';
+import { SingleBlogComponent } from './components/blogs/single-blog/single-blog.component';
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -46,7 +47,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     ShippingPolicyComponent,
     AuthorizedDistributorsComponent,
     BlogsComponent,
-    SearchComponent
+    SearchComponent,
+    SingleBlogComponent
 
   ],
   imports: [

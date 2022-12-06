@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment.prod';
+import * as shared from '../components/shared/shared';
+
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -17,29 +19,17 @@ export class ProductsService {
   currentLang: any;
   basicUrl = environment.basicUrl;
 
-  headers = new HttpHeaders()
-  .set('content-type', 'application/json')
-  .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
-  .set('X-localization', ''+localStorage.getItem('locale'));
-
-    //console.log("this.translate.currentLang ", localStorage.getItem('locale')?.toString());
-
-  headers2 = new HttpHeaders()
-    .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
-    .set('X-localization', "'"+localStorage.getItem('locale')?.toString()+"'");
-
-
+  headers = shared.headers ;
+  headers2 = shared.headers2 ;
 
   constructor(private translate: TranslateService, private http: HttpClient) {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       // console.log("event.lang ", event.lang);
       // service here :  send to service event.lang in hedear
-      
-    
     });
 
   }
-  
+
 
   getList() {
     // console.log(localStorage.getItem(LOCALSTORAGE_TOKEN_KEY));

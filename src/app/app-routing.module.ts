@@ -14,6 +14,7 @@ import { ShippingPolicyComponent } from './components/shipping-policy/shipping-p
 import { AuthorizedDistributorsComponent } from './components/authorized-distributors/authorized-distributors.component';
 import { SearchComponent } from './components/search/search.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
+import { SingleBlogComponent } from './components/blogs/single-blog/single-blog.component';
 
 const routes: Routes = [
   { path: "", component: MainComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: "AuthorizedDistributors", component: AuthorizedDistributorsComponent },
   { path: "search/:result", component: SearchComponent },
   { path: "bolgs", component: BlogsComponent },
+  { path: "bolgs/:id", component: SingleBlogComponent },
 ];
 
 @NgModule({

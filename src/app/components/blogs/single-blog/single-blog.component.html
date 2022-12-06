@@ -1,0 +1,35 @@
+<section>
+    <div class="row single-product">
+        <div class="col-md-6">
+            <div class="container" dir="ltr">
+                <img src="{{ url }}/{{ item.image }}" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-md-6 blog ">
+
+            <h2 class="">{{ item.name }}</h2>
+            <p class="product-body mb-3">{{ item.content}}</p>
+            <!-- <button class="active custom-btn" (click)="addToCart(product.id)" type="text">{{'single_product.add_to_cart'|translate}} </button> -->
+        </div>
+    </div>
+</section>
+<!-- blogs slider -->
+<app-news></app-news>
+
+<!-- <section class="">
+    <div class="sub-h2">
+        <div class="addresses">
+            <img class="icon-logo" src="../../../assets/images/Group 19@2x.png" alt="">
+            <h2> {{ 'Products.related' | translate}}</h2>
+        </div>
+        <div class="more">
+            <h3>
+                {{'More.h2' | translate}}
+            </h3>
+            <div class="red_circle">
+                <i class="fas fa-chevron-left" [ngClass]="{'block': isLeft ,'hidden': !isLeft }"></i>
+                <i class="fas fa-chevron-right" [ngClass]="{'block': !isLeft ,'hidden':isLeft }"></i>
+            </div>
+        </div>
+    </div>
+</section> -->

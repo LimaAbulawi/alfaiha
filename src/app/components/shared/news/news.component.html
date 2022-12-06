@@ -27,7 +27,9 @@
                             <img class="card-img-top" src="{{ url }}/{{ blog.image }}">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">{{ blog.name }}</h5>
+                            <a routerLink="/bolgs/{{ blog.id }}">
+                                <h5 class="card-title">{{ blog.name }}</h5>
+                            </a>
                             <p class="card-text">{{ blog.content }}</p>
                         </div>
                     </div>

@@ -46,29 +46,32 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav  mb-2 mb-lg-0">
                                 <li class="nav-item ">
-                                    <a class="nav-link active" routerLink="/main" routerLinkActive="active" 
+                                    <!-- routerLinkActive="active" -->
+                                    <a class="nav-link active" routerLink="/main" [ngClass]="{'active':active == 0}"
                                         (click)="setActive(0 , 'none')">
                                         {{'Navbar.main' | translate}}</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" routerLink="/products" routerLinkActive="active" 
+                                    <a class="nav-link" routerLink="/products" [ngClass]="{'active':active == 1}"
                                         (click)="setActive(1 , 'none')"> {{'Navbar.products_gallery' | translate}} </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link " routerLink="/weare" routerLinkActive="active" 
-                                       >
+                                    <a class="nav-link " routerLink="/weare" [ngClass]="{'active':active == 2}"
+                                        (click)="setActive(2 , 'about-us')">
                                         {{'Navbar.who_we_are' | translate}} </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" routerLink="/terms&conditions" routerLinkActive="active" 
-                                        (click)="setActive(3 , 'terms_and_conditions')">{{'Navbar.terms_conditions' | translate}} </a>
+                                    <a class="nav-link" routerLink="/terms&conditions"
+                                        [ngClass]="{'active':active == 3}"
+                                        (click)="setActive(3 , 'terms_and_conditions')">{{'Navbar.terms_conditions' |
+                                        translate}} </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" routerLink="/callus" routerLinkActive="active" 
+                                    <a class="nav-link" routerLink="/callus" [ngClass]="{'active':active == 4}"
                                         (click)="setActive(4 , 'none')">{{'Navbar.call_us' | translate}} </a>
                                 </li>
                                 <li class="nav-item">
