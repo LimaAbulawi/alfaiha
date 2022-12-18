@@ -4,6 +4,7 @@ import { ProductsService } from 'src/app/services/products.service';
 import { SlidersService } from 'src/app/services/sliders.service';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { BagesService } from 'src/app/services/bages.service';
 
 @Component({
   selector: 'app-main',
@@ -18,9 +19,10 @@ export class MainComponent implements OnInit {
   arrayLength = 10;
   lang: any;
   isLeft: boolean = true;
-
+  about_us:any;
+  
   constructor(private _ser: ProductsService, private sliderSer: SlidersService,
-    private router: Router, private translate: TranslateService) {
+    private router: Router, private translate: TranslateService , private ser: BagesService) {
 
     translate.onLangChange.subscribe(lang => {
       this.lang = lang.lang;
@@ -37,7 +39,14 @@ export class MainComponent implements OnInit {
     this.url = this._ser.basicUrl;
     this.getProductsListFromService();
     this.getSlidersListFromService();
+
+    this.ser.getView('about-us').subscribe((res: any) => {
+      this.about_us = res.data;
+      console.log("about-us", this.about_us);
+    });
+
   }
+ 
 
   ourProducts: Slick.Config = {
     infinite: true,

@@ -47,6 +47,7 @@ export class AppComponent {
     //   localStorage.setItem('active', this.active);
     //   this.router.navigate(['/']);
     // }
+    
   }
 
   ngOnInit(): void {
@@ -64,6 +65,7 @@ export class AppComponent {
     }else{
       this.translateLanguageTo(localStorage.getItem('locale'))
     }
+    
     this.active = localStorage.getItem("active");
   }
 

@@ -11,7 +11,7 @@
         "h1": "Al-Fayha' Sciences"
     },
     "Products": {
-        "h1": "our products", 
+        "h1": "Our Products", 
         "related" :"related product"
     },
     "We_Are": {
@@ -74,6 +74,6 @@
         "email": "email",
         "phonenumber": "phone number",
         "title": "Message title",
-        "send": "send message"
+        "send": "Send Message"
     }
 }

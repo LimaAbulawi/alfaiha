@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class SearchComponent implements OnInit {
 
-  myParam: any = '';
+  myParam: any;
 
   searchForm = this.fb.group({
     name: ['', Validators.required],
@@ -29,21 +29,35 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
 
     this.myParam = window.location.pathname.split("/").pop();
-    console.log(" this.myParam", this.myParam)
-    
-    this.searchForm.controls.name.setValue(this.myParam);
+    console.log("window.location.pathname", window.location.pathname)
 
+    this.searchForm.controls.name.setValue(decodeURIComponent(this.myParam)); // decode for arabic 
+     console.log("decodeURIComponent", decodeURIComponent(this.myParam))
     this.getListFromService();
   }
 
+   toUTF(str:any) {       
+    var b64 = window.btoa(unescape(encodeURIComponent(str)));
+    var str2 = decodeURIComponent(escape(window.atob(b64)));
+    return str2;
+}
+
   getListFromService() {
+
+    console.log("(this.searchForm.value)", this.searchForm.value)
+
     this._ser.search(this.searchForm.value).subscribe((res: any) => {
-      this.ressearch = res.data;
-      if (res.code == 200) {
+      
+      if (res.code == 500) {
+        console.log(res.msg)
       }
-      console.log("ressearch", this.ressearch);
+      this.ressearch = res.data;
+      console.log("res.ressearch", this.ressearch);
+      if (res.code == 200) {
+        console.log(this.searchForm.value);
+        console.log("ressearch", this.ressearch);
+      }
     });
   }
-
 
 }

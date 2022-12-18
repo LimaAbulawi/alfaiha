@@ -8,7 +8,9 @@ import { BagesService } from 'src/app/services/bages.service';
 })
 export class WhoAreWeComponent implements OnInit {
 
-  resdata: any;
+  resdata1: any;
+  resdata2: any;
+  resdata3: any;
 
   constructor(private _ser: BagesService) {
  
@@ -16,9 +18,20 @@ export class WhoAreWeComponent implements OnInit {
 
   ngOnInit(): void {
     this._ser.getView('about-us').subscribe((res: any) => {
-      this.resdata = res.data;
-      console.log("about-us", this.resdata);
+      this.resdata1 = res.data;
+      console.log("about-us", this.resdata1);
     });
+
+    this._ser.getView('vision').subscribe((res: any) => {
+      this.resdata2 = res.data;
+      console.log("about-us-vision", this.resdata2);
+    });
+
+    this._ser.getView('massage').subscribe((res: any) => {
+      this.resdata3 = res.data;
+      console.log("about-us-massage", this.resdata3);
+    });
+
   }
 
 }

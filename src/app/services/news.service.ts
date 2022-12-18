@@ -7,6 +7,7 @@ import * as shared from '../components/shared/shared';
   providedIn: 'root'
 })
 export class NewsService {
+  
   basicUrl = environment.basicUrl;
   headers = shared.headers;
   headers2 = shared.headers2;

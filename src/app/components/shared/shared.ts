@@ -13,5 +13,5 @@ export const headers = new HttpHeaders()
 
 export const headers2 = new HttpHeaders()
     .set('Authorization', 'Bearer ' + localStorage.getItem('token'))
-    .set('X-localization', '' + localStorage.getItem('locale'));
-
+    .set('X-localization', '' + localStorage.getItem('locale'))
+    

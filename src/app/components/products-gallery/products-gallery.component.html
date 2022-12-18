@@ -18,9 +18,11 @@
     <div class="col-9">
       <div class="flex cat">
         <!-- sup catigories -->
-        <ng-container *ngFor="let cat of cats">
-          <button class="active" type="text">{{cat.name}}</button>
-        </ng-container>
+        <div *ngFor="let cat of cats">
+          <ng-container *ngFor="let supcat of cat.sup_categories">
+            <button class="active" type="text">{{supcat.name}}</button>
+          </ng-container>
+        </div>
       </div>
       <div class="products">
         <div class="tab-content" id="nav-tabContent">

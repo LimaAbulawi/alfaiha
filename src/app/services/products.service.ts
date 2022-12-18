@@ -68,8 +68,9 @@ export class ProductsService {
 
   }
   search(form: any) {
+    console.log("local",  localStorage.getItem('locale'))
+    console.log("form",  form)
 
-    console.log("form", form);
     return this.http.post<any>(this.basicUrl + "/api/v1/search", form, { 'headers': this.headers2 })
   }
 
