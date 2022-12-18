@@ -14,7 +14,7 @@ export class TermsConditionsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this._ser.getView('terms-and-conditions').subscribe((res: any) => {
+    this._ser.getView('terms-and-condition').subscribe((res: any) => {
       this.resdata = res.data;
       console.log("terms-and-conditions", this.resdata);
     });
