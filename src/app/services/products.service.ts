@@ -46,6 +46,10 @@ export class ProductsService {
     return this.http.get(this.basicUrl + "/api/v1/products/" + Id, { 'headers': this.headers })
   }
 
+  getCategoryProduct(Id: number) {
+    return this.http.get(this.basicUrl + "/api/v1/category/products/" + Id, { 'headers': this.headers })
+  }
+
   getReltedProduct(Id: number) {
     return this.http.get(this.basicUrl + "/api/v1/products/related/" + Id, { 'headers': this.headers })
   }
@@ -86,4 +90,8 @@ export class ProductsService {
   updateCart(Id: number, quantity: number) {
     return this.http.get<{}>(this.basicUrl + "/api/v1/updateCart/" + localStorage.getItem('anonymous-key') + "/" + Id + "/" + quantity, { 'headers': this.headers })
   }
+
+
+
+
 }

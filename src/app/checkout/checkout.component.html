@@ -1,6 +1,6 @@
 <form action="" class="" [formGroup]="confirmOrderForm" (ngSubmit)="submit()">
   <div class="row mt-24">
-    <h2 class="head">تأكيد الطلب</h2>
+    <h2 class="head">{{'checkout.title' | translate}}</h2>
     <div class="col-sm-12 col-md-4">
       <!-- name is required -->
       <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
@@ -8,7 +8,7 @@
         !name is required
       </label>
       <!-- name input -->
-      <input type="text" formControlName="name" class="inputData" placeholder="الاسم الكامل" [ngClass]="{'!border-red-600':
+      <input type="text" formControlName="name" class="inputData" placeholder="{{'callus.fullname' | translate}}" [ngClass]="{'!border-red-600':
       this.confirmOrderForm.get('name')?.touched && this.confirmOrderForm.get('name')?.hasError('required') }">
 
       <!-- address is required -->
@@ -17,7 +17,7 @@
 
         !address is required
       </label>
-      <input type="text" formControlName="address" class="inputData" placeholder="العنوان" [ngClass]="{'!border-red-600':
+      <input type="text" formControlName="address" class="inputData" placeholder="{{'checkout.address' | translate}}" [ngClass]="{'!border-red-600':
         this.confirmOrderForm.get('address')?.touched && this.confirmOrderForm.get('address')?.hasError('required') }">
 
       <!-- email validation -->
@@ -36,7 +36,7 @@
         </label>
       </div>
       <!-- email input -->
-      <input type="text" formControlName="email" class="inputData" placeholder="البريد الالكتروني" [ngClass]="{'!border-red-600':
+      <input type="text" formControlName="email" class="inputData" placeholder="{{'callus.email' | translate}}" [ngClass]="{'!border-red-600':
         this.confirmOrderForm.get('email')?.touched && this.confirmOrderForm.get('email')?.hasError('required')
         || (this.confirmOrderForm.get('email')?.touched && this.confirmOrderForm.get('email')?.hasError('email')) }">
 
@@ -56,7 +56,7 @@
         </label>
       </div>
       <!-- phone input -->
-      <input type="text" formControlName="phone" class="inputData" placeholder="الهاتف" [ngClass]="{'!border-red-600':
+      <input type="text" formControlName="phone" class="inputData" placeholder="{{'callus.phonenumber' | translate}}" [ngClass]="{'!border-red-600':
       this.confirmOrderForm.get('phone')?.touched && this.confirmOrderForm.get('phone')?.hasError('required') }"
         (input)="onInput($event)" minlength="10" maxlength="10">
     </div>
@@ -68,13 +68,13 @@
         !note is required
       </label>
       <!-- phone input -->
-      <textarea type="text" formControlName="note" class="inputData h-[92%] " placeholder="ملاحظات حول الطلب "
+      <textarea type="text" formControlName="note" class="inputData h-[92%] " placeholder="{{'checkout.note' | translate}}"
         [ngClass]="{'!border-red-600':
       this.confirmOrderForm.get('note')?.touched && this.confirmOrderForm.get('note')?.hasError('required') }"></textarea>
     </div>
     <div class="col-sm-12 col-md-4">
-      <button class="active custom-btn" type="submit">تاكيد الطلب</button>
-      <button class="active custom-btn tow" routerLink="/products" type="text">متابعه التسوق</button>
+      <button class="active custom-btn" type="submit">{{'cart.confirm' | translate}} </button>
+      <button class="active custom-btn tow" routerLink="/products" type="text">{{'cart.continue_shopping' | translate}}</button>
 
 
     </div>

@@ -47,8 +47,8 @@
         "lap_equipment": "lap equipment"
     },
     "cart": {
-        "confirm": "confirm order",
-        "continue_shopping": "Continue shopping",
+        "confirm": "Confirm Order",
+        "continue_shopping": "Continue Shopping",
         "order_list": "Order List"
     },
     "single_product": {
@@ -75,5 +75,11 @@
         "phonenumber": "phone number",
         "title": "Message title",
         "send": "Send Message"
+    }
+    ,
+    "checkout": {
+        "title": "Check Out",
+        "address" : "address",
+        "note": "notes about the order" 
     }
 }

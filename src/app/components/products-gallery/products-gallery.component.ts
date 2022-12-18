@@ -11,7 +11,7 @@ export class ProductsGalleryComponent implements OnInit {
   products: any = [];
   cats: any = [];
   url: any = [];
-
+  id: any = 14;
   constructor(private _ser: ProductsService) {
 
   }
@@ -19,7 +19,9 @@ export class ProductsGalleryComponent implements OnInit {
   ngOnInit(): void {
     this.url = this._ser.basicUrl;
     this.getCatListFromService();
-    this.getProductsListFromService();
+    setTimeout(() => this.getProducts(), 1000);
+
+    // this.getProductsListFromService();
   }
 
   getProductsListFromService() {
@@ -33,4 +35,19 @@ export class ProductsGalleryComponent implements OnInit {
       this.cats = res.Categorys;
     })
   }
+
+  getCategoryProduct(id: any) {
+    return this._ser.getCategoryProduct(id).subscribe((res: any) => {
+      this.products[id] =  res.data;
+      console.log( this.products )
+    })
+  }
+
+  getProducts() {
+    console.log('bawaneh')
+    this.cats.forEach((element: any) => {
+      this.getCategoryProduct(element.id)
+    });
+  }
+
 }
