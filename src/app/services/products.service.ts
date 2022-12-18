@@ -91,6 +91,14 @@ export class ProductsService {
     return this.http.get<{}>(this.basicUrl + "/api/v1/updateCart/" + localStorage.getItem('anonymous-key') + "/" + Id + "/" + quantity, { 'headers': this.headers })
   }
 
+  // supQuentityCart(Id: number, quantity: number) {
+  //   return this.http.get<{}>(this.basicUrl + "/api/v1/supQuentityCart/" + localStorage.getItem('anonymous-key') + "/" + Id + "/" + quantity, { 'headers': this.headers })
+  // }
+
+  deleteitem(Id: number) {
+    return this.http.get<{}>(this.basicUrl + "/api/v1/deleteitem/" + localStorage.getItem('anonymous-key') + "/" + Id , { 'headers': this.headers })
+  }
+
 
 
 

@@ -15,9 +15,9 @@ export class PrivacyPolicyComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this._ser.getView('Privacy_Policy').subscribe((res: any) => {
+    this._ser.getView('privacy').subscribe((res: any) => {
       this.resdata = res.data;
-      console.log("Privacy_Policy", this.resdata);
+      console.log("privacy", this.resdata);
     });
   }
 

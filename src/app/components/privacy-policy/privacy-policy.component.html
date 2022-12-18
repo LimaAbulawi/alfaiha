@@ -1,13 +1,14 @@
-
-
-<section class=" h-60">
-
-    <h2 class="head">
-        {{resdata.title}}
-    </h2>
-
-    <div>
-        {{resdata.content}}
+<div class="container" *ngIf="resdata"> 
+    <div class="row">
+        <div class="col-10">
+            <section class=" h-60">
+                <h2 class="head">
+                    {{resdata.title}}
+                </h2>
+                <div>
+                    {{resdata.content}}
+                </div>
+            </section>
+        </div>
     </div>
-
-</section>
+</div>

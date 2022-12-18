@@ -16,8 +16,8 @@ export class CartComponent implements OnInit {
   isdelete: any;
   product_quantity: any;
 
-  constructor(private _ser: ProductsService, private route: ActivatedRoute) { }
 
+  constructor(private _ser: ProductsService, private route: ActivatedRoute) { }
   ngOnInit(): void {
     this.url = this._ser.basicUrl;
     this.getCart()
@@ -32,15 +32,28 @@ export class CartComponent implements OnInit {
 
   adding(product: any) {
     product.quantity += 1;
-console.log(product.quantity)
-    return this._ser.updateCart( product.product_id, 1).subscribe((res: any) => {
+    console.log(product.quantity)
+
+    return this._ser.updateCart(product.product_id, 1).subscribe((res: any) => {
       this.product_quantity = res;
       console.log("this.product_quantity", this.product_quantity);
     })
   }
 
   subtract(product: any) {
-     product.quantity -= 1;
+    // supQuentityCart
+    product.quantity -= 1;
+    console.log("before", product.quantity)
+    if (product.quantity != 0) {
+      this._ser.deleteitem(product.product_id).subscribe((res: any) => {
+        this.product_quantity = res;
+        console.log("this.product_quantity", this.product_quantity);
+      })
+    }
+    console.log("after", product.quantity)
+
+
+    console.log(this.products)
 
     if (product.quantity == 0) {
       Swal.fire({
@@ -62,5 +75,6 @@ console.log(product.quantity)
         }
       })
     }
+
   }
 }
