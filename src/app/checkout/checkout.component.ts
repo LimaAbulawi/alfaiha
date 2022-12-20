@@ -43,7 +43,10 @@ export class CheckoutComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+          this.confirmOrderForm.reset();
+
         }
+
         console.log("res", res);
       });
     }

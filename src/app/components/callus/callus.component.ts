@@ -48,6 +48,7 @@ export class CallusComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+          this.callUsForm.reset();
         }
         console.log("res", res);
       });
