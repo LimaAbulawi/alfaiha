@@ -18,38 +18,39 @@ export class CallusComponent implements OnInit {
 
 
   callUsForm = this.fb.group({
-    name: ['', Validators.required],
+    full_name: ['', Validators.required],
     email: ['', Validators.compose([Validators.email, Validators.required])],
     phone: ['', Validators.required],
-    title: ['', Validators.required],
-    message_content: ['', Validators.required],
+    msg_title: ['', Validators.required],
+    msg_content: ['', Validators.required],
   })
   ngOnInit(): void {
+
   }
   submit() {
+
     this.callUsForm.controls.phone.setValue(this.destroyMask(this.callUsForm.controls.phone.value));
     console.log(this.callUsForm.value);
 
     if (this.callUsForm.invalid) {
       this.callUsForm.markAllAsTouched();
     }
+
     if (this.callUsForm.valid) {
-
-
       // console.log("lima");
-      // this._ser.callus(this.callUsForm.value).subscribe((res: any) => {
-      //   this.resMsg = res.msg;
-      //   if (res.code == 200) {
-      //     Swal.fire({
-      //       position: 'top-end',
-      //       icon: 'success',
-      //       title: 'تم ارسال الرسالة ',
-      //       showConfirmButton: false,
-      //       timer: 1500
-      //     })
-      //   }
-      //   console.log("res", res);
-      // });
+      this._ser.callus(this.callUsForm.value).subscribe((res: any) => {
+        this.resMsg = res.msg;
+        if (res.code == 200) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'تم ارسال الرسالة ',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+        console.log("res", res);
+      });
     }
   }
 

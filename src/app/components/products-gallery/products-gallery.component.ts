@@ -39,7 +39,7 @@ export class ProductsGalleryComponent implements OnInit {
   getCategoryProduct(id: any) {
     return this._ser.getCategoryProduct(id).subscribe((res: any) => {
       this.products[id] =  res.data;
-      console.log( this.products )
+      // console.log( this.products )
     })
   }
 

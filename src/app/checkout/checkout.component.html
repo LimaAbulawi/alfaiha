@@ -49,16 +49,12 @@
           !phone is required
         </label>
 
-        <!-- must be valid phone -->
-        <label class="errorLabel" *ngIf="this.confirmOrderForm
-                   .get('phone')?.touched && this.confirmOrderForm.get('phone')?.value?.length !=10">
-          !phone must be 10 numbers
-        </label>
+
       </div>
       <!-- phone input -->
       <input type="text" formControlName="phone" class="inputData" placeholder="{{'callus.phonenumber' | translate}}" [ngClass]="{'!border-red-600':
       this.confirmOrderForm.get('phone')?.touched && this.confirmOrderForm.get('phone')?.hasError('required') }"
-        (input)="onInput($event)" minlength="10" maxlength="10">
+        (input)="onInput($event)">
     </div>
     <div class="col-sm-12 col-md-4">
       <!-- note is required -->

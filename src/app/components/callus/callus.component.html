@@ -2,15 +2,15 @@
     <div class="row mt-24">
         <h2 class="head">{{'Navbar.call_us' | translate}}</h2>
         <div class="col-sm-12 col-md-4">
-            <!-- name is required -->
+            <!-- full_name is required -->
             <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
-        this.callUsForm.get('name')?.touched && this.callUsForm.get('name')?.hasError('required') }">
-                !name is required
+        this.callUsForm.get('full_name')?.touched && this.callUsForm.get('full_name')?.hasError('required') }">
+                !full_name is required
             </label>
-            <!-- name input -->
-            <input type="text" formControlName="name" class="inputData" placeholder="{{'callus.fullname' | translate}}"
-                [ngClass]="{'!border-red-600':
-        this.callUsForm.get('name')?.touched && this.callUsForm.get('name')?.hasError('required') }">
+            <!-- full_name input -->
+            <input type="text" formControlName="full_name" class="inputData"
+                placeholder="{{'callus.fullname' | translate}}" [ngClass]="{'!border-red-600':
+        this.callUsForm.get('full_name')?.touched && this.callUsForm.get('full_name')?.hasError('required') }">
             <!-- email validation -->
             <div class="flex justify-between mb-1">
 
@@ -39,41 +39,34 @@ this.callUsForm.get('email')?.touched && this.callUsForm.get('email')?.hasError(
 this.callUsForm.get('phone')?.touched && this.callUsForm.get('phone')?.hasError('required') }">
                     !phone is required
                 </label>
-
-                <!-- must be valid phone -->
-                <label class="errorLabel" *ngIf="this.callUsForm
-         .get('phone')?.touched && this.callUsForm.get('phone')?.value?.length !=10">
-                    !phone must be 10 numbers
-                </label>
             </div>
             <!-- phone input -->
             <input type="text" formControlName="phone" class="inputData"
                 placeholder="{{'callus.phonenumber' | translate}}" [ngClass]="{'!border-red-600':
 this.callUsForm.get('phone')?.touched && this.callUsForm.get('phone')?.hasError('required') }"
-                (input)="onInput($event)" minlength="10" maxlength="10">
-            <!-- title is required -->
+                (input)="onInput($event)">
+            <!-- msg_title is required -->
             <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
-     this.callUsForm.get('title')?.touched && this.callUsForm.get('title')?.hasError('required') }">
+     this.callUsForm.get('msg_title')?.touched && this.callUsForm.get('msg_title')?.hasError('required') }">
 
-                !title is required
+                !msg_title is required
             </label>
-            <input type="text" formControlName="title" class="inputData" placeholder="{{'callus.title' | translate}}"
-                [ngClass]="{'!border-red-600':
-          this.callUsForm.get('title')?.touched && this.callUsForm.get('title')?.hasError('required') }">
+            <input type="text" formControlName="msg_title" class="inputData"
+                placeholder="{{'callus.title' | translate}}" [ngClass]="{'!border-red-600':
+          this.callUsForm.get('msg_title')?.touched && this.callUsForm.get('msg_title')?.hasError('required') }">
 
         </div>
         <div class="col-sm-12 col-md-4">
-            <!-- message_content is required -->
-            <label class="errorLabel opacity-0"
-                [ngClass]="{'!opacity-100':
-     this.callUsForm.get('message_content')?.touched && this.callUsForm.get('message_content')?.hasError('required') }">
+            <!-- msg_content is required -->
+            <label class="errorLabel opacity-0" [ngClass]="{'!opacity-100':
+     this.callUsForm.get('msg_content')?.touched && this.callUsForm.get('msg_content')?.hasError('required') }">
                 !message content is required
             </label>
-            <!-- phone input -->
-            <textarea type="text" formControlName="message_content" class="inputData h-[92%] "
+            <!-- msg_content input -->
+            <textarea type="text" formControlName="msg_content" class="inputData h-[92%] "
                 placeholder="{{'callus.content' | translate}}"
                 [ngClass]="{'!border-red-600':
-        this.callUsForm.get('message_content')?.touched && this.callUsForm.get('message_content')?.hasError('required') }"></textarea>
+        this.callUsForm.get('msg_content')?.touched && this.callUsForm.get('msg_content')?.hasError('required') }"></textarea>
         </div>
         <div class="col-sm-12 col-md-4 callus">
             <button class="active custom-btn" type="submit">{{'callus.send' | translate}}</button>

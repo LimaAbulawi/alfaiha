@@ -33,7 +33,6 @@ export class CheckoutComponent implements OnInit {
       this.confirmOrderForm.markAllAsTouched();
     }
     if (this.confirmOrderForm.valid) {
-      console.log("lima");
       this._ser.confirmOrder(this.confirmOrderForm.value).subscribe((res: any) => {
         this.resMsg = res.msg;
         if (res.code == 200) {
