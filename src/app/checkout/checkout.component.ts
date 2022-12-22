@@ -18,9 +18,14 @@ export class CheckoutComponent implements OnInit {
     email: ['', Validators.compose([Validators.email, Validators.required])],
     phone: ['', Validators.required],
     note: ['', Validators.required],
+    cart_code: [localStorage.getItem('anonymous-key'), Validators.required],
+
   })
 
-  constructor(private fb: FormBuilder, private _ser: ProductsService) { }
+  constructor(private fb: FormBuilder, private _ser: ProductsService) { 
+
+  }
+
 
   ngOnInit(): void {
   }
@@ -44,9 +49,7 @@ export class CheckoutComponent implements OnInit {
             timer: 1500
           })
           this.confirmOrderForm.reset();
-
         }
-
         console.log("res", res);
       });
     }
