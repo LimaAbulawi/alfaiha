@@ -49,7 +49,9 @@
     "cart": {
         "confirm": "Confirm Order",
         "continue_shopping": "Continue Shopping",
-        "order_list": "Order List"
+        "order_list": "Order List",
+        "code": "product code"
+
     },
     "single_product": {
         "add_to_cart": "add to cart"  ,
