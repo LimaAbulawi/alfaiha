@@ -48,6 +48,11 @@ export class CheckoutComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+          setTimeout(function(){
+            localStorage.setItem('anonymous-key', (Math.random() + 1).toString(36).substring(7));
+          window.location.reload();
+          } ,2000 )
+          
           this.confirmOrderForm.reset();
         }
         console.log("res", res);
